@@ -16,7 +16,7 @@ public class CameraMovement : MonoBehaviour
     }
 
     // Update is called after all updates have been called
-    void LateUpdate()
+    void FixedUpdate()
     {
         if(transform.position != target.position)
         {   
