@@ -9,9 +9,12 @@ public class KnightMovement : MonoBehaviour
     private Rigidbody2D Rigidbody;
     private Vector3 PositionUpdate;
 
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         Rigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -34,7 +37,21 @@ public class KnightMovement : MonoBehaviour
         {
             MoveCharacter(isShiftPressed);
         }
+        UpdateAnimation();
     }
+
+    void UpdateAnimation()
+    {
+        if (PositionUpdate != Vector3.zero)
+        {
+            animator.SetFloat("moveX", PositionUpdate.x);
+            animator.SetFloat("moveY", PositionUpdate.y);
+            animator.SetBool("moving", true);
+        }
+        else
+            animator.SetBool("moving", false);
+    }
+
     void MoveCharacter(bool isShiftPressed)
     {
         //If shift is pressed sprint
