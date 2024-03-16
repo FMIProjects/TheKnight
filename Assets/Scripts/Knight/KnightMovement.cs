@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementScript : MonoBehaviour
+public class KnightMovement : MonoBehaviour
 {
-    public float MovementSpeed = 10;
+    public float MovementSpeed = 5;
     public float CurrentMovementSpeed;
     private Rigidbody2D Rigidbody;
     private Vector3 PositionUpdate;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class MovementScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //The position is updated to zero at every frame
         PositionUpdate = Vector3.zero;
@@ -40,7 +41,7 @@ public class MovementScript : MonoBehaviour
         if (isShiftPressed)
         {
             Rigidbody.MovePosition(
-                transform.position + PositionUpdate * MovementSpeed * Time.deltaTime * 2
+                transform.position + PositionUpdate * MovementSpeed * Time.fixedDeltaTime * 2
                 
             );
             CurrentMovementSpeed = MovementSpeed * 2;
