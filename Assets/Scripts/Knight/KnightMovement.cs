@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class KnightMovement : MonoBehaviour
 {
@@ -10,6 +11,13 @@ public class KnightMovement : MonoBehaviour
     private Vector3 PositionUpdate;
 
     private Animator animator;
+
+    public Image StaminaBar;
+    public float Stamina=100, MaxStamina=100;
+    public float RunningCost=20;
+    private Coroutine Recharge;
+    //It should take 3 seconds to charge from 33 stamina to 100
+    public float ChargingRate=33;
 
     // Start is called before the first frame update
     void Start()
@@ -57,18 +65,85 @@ public class KnightMovement : MonoBehaviour
         //If shift is pressed sprint
         if (isShiftPressed)
         {
-            Rigidbody.MovePosition(
-                transform.position + PositionUpdate * MovementSpeed * Time.fixedDeltaTime * 2
-                
-            );
-            CurrentMovementSpeed = MovementSpeed * 2;
+            if (Stamina > 0)
+            {
+                Rigidbody.MovePosition(
+                    transform.position + PositionUpdate * MovementSpeed * Time.fixedDeltaTime * 2
+
+                );
+                CurrentMovementSpeed = MovementSpeed * 2;
+            }
+            else
+            {
+                Rigidbody.MovePosition(
+                   transform.position + PositionUpdate * MovementSpeed * Time.fixedDeltaTime
+           );
+                CurrentMovementSpeed = MovementSpeed;
+            }
+
+            
+            Stamina -= RunningCost * Time.fixedDeltaTime;
+
+            if (Stamina < 0)
+            {
+                Stamina = 0;
+            }
+            StaminaBar.fillAmount = Stamina / MaxStamina;
+
+            //Stop recharging if sprinting again and start again when stoping
+            if (Recharge != null)
+            {
+                StopCoroutine(Recharge);
+
+            }
+            Recharge = StartCoroutine(RechargeStamina());
+            
         }
         else
         {
             Rigidbody.MovePosition(
-                    transform.position + PositionUpdate * MovementSpeed * Time.deltaTime
+                    transform.position + PositionUpdate * MovementSpeed * Time.fixedDeltaTime
             );
             CurrentMovementSpeed = MovementSpeed;
         }
+    }
+
+    private IEnumerator RechargeStamina()
+    {
+        //Wait for a second before recharging
+        yield return new WaitForSeconds(1f);
+
+        while(Stamina < MaxStamina)
+        {
+            //Gradually recharge stamina
+            Stamina += ChargingRate/10f ;
+            if (Stamina > MaxStamina) Stamina = MaxStamina;
+            float fillRatio = Stamina / MaxStamina;
+            
+            //Start recharging the stamina bar from current amount of stamina to the next "milestone", but do it gradually 
+            StartCoroutine(UpdateStaminaBar(StaminaBar.fillAmount, fillRatio, 0.1f));
+
+            //Make sure the stamina is not filled all at once
+            yield return new WaitForSeconds(.1f);
+            
+        }
+    }
+    
+
+    private IEnumerator UpdateStaminaBar(float startAmount, float targetAmount, float duration)
+    {
+        //This method recharges the stamina bar over a duration of time, assuring a smoother experience
+        float startTime = Time.time;
+        while (Time.time < startTime + duration)
+        {
+
+            float elapsedTime = Time.time - startTime;
+            float percentageComplete = elapsedTime / duration;
+            StaminaBar.fillAmount = Mathf.Lerp(startAmount, targetAmount, percentageComplete);
+            yield return null;
+        }
+        
+        //Make sure that at the end of the interpolation the Stamina Bar reached the target amount
+        StaminaBar.fillAmount = targetAmount;
     }
 }
