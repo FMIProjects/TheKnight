@@ -8,13 +8,11 @@ public class CameraMovement : MonoBehaviour
     public Vector2 maxPosition;
     public Vector2 minPosition;
 
-    // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    // Update is called after all updates have been called
     void FixedUpdate()
     {
         if (transform.position != target.position)
