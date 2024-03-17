@@ -17,3 +17,4 @@
 *.xml text eol=lf
 *.txt text eol=lf
 *.vsconfig text eol=lf
+*.physicsMaterial2D text eol=lf
