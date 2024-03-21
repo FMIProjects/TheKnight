@@ -4,30 +4,37 @@ using UnityEngine.UI;
 
 public class KnightMovement : MonoBehaviour
 {
-    public float MovementSpeed = 5;
-    public float CurrentMovementSpeed;
+    [SerializeField] private float MovementSpeed = 5;
+    [SerializeField] private float CurrentMovementSpeed;
+
     private Rigidbody2D Rigidbody;
     private Vector3 PositionUpdate;
 
     private Animator animator;
 
-    public Image StaminaBar;
-    public float Stamina = 100, MaxStamina = 100;
-    public float RunningCost = 35;
+    [SerializeField] private Image StaminaBar;
+    [SerializeField] private float Stamina = 100;
+    [SerializeField] private float MaxStamina = 100;
+    [SerializeField] private float RunningCost = 35;
+
+    //MaxCharge -> 3 seconds
+    [SerializeField] private float ChargingRate = 33;
+
     private Coroutine Recharge;
 
-    //It should take 3 seconds to charge from 33 stamina to 100
-    public float ChargingRate = 33;
-
-    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         Rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
+    {
+        UpdatePosition();
+        UpdateAnimation();
+    }
+
+    private void UpdatePosition()
     {
         //The position is updated to zero at every frame
         PositionUpdate = Vector3.zero;
@@ -35,32 +42,32 @@ public class KnightMovement : MonoBehaviour
         PositionUpdate.x = Input.GetAxisRaw("Horizontal");
         PositionUpdate.y = Input.GetAxisRaw("Vertical");
 
-
         //Check if shift is pressed 
         bool isShiftPressed = Input.GetKey(KeyCode.LeftShift);
-
 
         //The character is moving only when there is a key pressed
         if (PositionUpdate != Vector3.zero)
         {
             MoveCharacter(isShiftPressed);
         }
-        UpdateAnimation();
     }
 
-    void UpdateAnimation()
+    private void UpdateAnimation()
     {
         if (PositionUpdate != Vector3.zero)
         {
             animator.SetFloat("moveX", PositionUpdate.x);
             animator.SetFloat("moveY", PositionUpdate.y);
-            animator.SetBool("moving", true);
+            animator.SetBool("isMoving", true);
         }
         else
-            animator.SetBool("moving", false);
+        {
+            animator.SetBool("isMoving", false);
+            animator.SetBool("isSprinting", false);
+        }
     }
 
-    void MoveCharacter(bool isShiftPressed)
+    private void MoveCharacter(bool isShiftPressed)
     {
         //If shift is pressed sprint
         if (isShiftPressed)
@@ -71,6 +78,8 @@ public class KnightMovement : MonoBehaviour
                     transform.position + PositionUpdate * MovementSpeed * Time.fixedDeltaTime * 1.5f
                 );
                 CurrentMovementSpeed = MovementSpeed * 1.5f;
+                animator.SetBool("isMoving", false);
+                animator.SetBool("isSprinting", true);
             }
             else
             {
@@ -78,6 +87,8 @@ public class KnightMovement : MonoBehaviour
                    transform.position + PositionUpdate * MovementSpeed * Time.fixedDeltaTime
                 );
                 CurrentMovementSpeed = MovementSpeed;
+                animator.SetBool("isSprinting", false);
+                animator.SetBool("isMoving", true);
             }
 
 
@@ -104,6 +115,8 @@ public class KnightMovement : MonoBehaviour
                     transform.position + PositionUpdate * MovementSpeed * Time.fixedDeltaTime
             );
             CurrentMovementSpeed = MovementSpeed;
+            animator.SetBool("isMoving", true);
+            animator.SetBool("isSprinting", false);
         }
     }
 
