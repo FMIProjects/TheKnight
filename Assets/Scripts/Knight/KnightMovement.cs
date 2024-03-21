@@ -13,7 +13,7 @@ public class KnightMovement : MonoBehaviour
 
     public Image StaminaBar;
     public float Stamina = 100, MaxStamina = 100;
-    public float RunningCost = 20;
+    public float RunningCost = 35;
     private Coroutine Recharge;
 
     //It should take 3 seconds to charge from 33 stamina to 100
@@ -68,9 +68,9 @@ public class KnightMovement : MonoBehaviour
             if (Stamina > 0)
             {
                 Rigidbody.MovePosition(
-                    transform.position + PositionUpdate * MovementSpeed * Time.fixedDeltaTime * 2
+                    transform.position + PositionUpdate * MovementSpeed * Time.fixedDeltaTime * 1.5f
                 );
-                CurrentMovementSpeed = MovementSpeed * 2;
+                CurrentMovementSpeed = MovementSpeed * 1.5f;
             }
             else
             {
