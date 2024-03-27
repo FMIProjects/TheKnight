@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
@@ -35,7 +36,7 @@ public class HealthManager : MonoBehaviour
         if (Input.GetKeyDown("g"))
         {
             TakeDamage(20f);
-            damageFlash.Flash();
+           
         }
 
         if (Input.GetKeyDown("h"))
@@ -45,7 +46,8 @@ public class HealthManager : MonoBehaviour
     }
 
     public void TakeDamage(float damage)
-    {
+    { 
+        damageFlash.Flash();
         healthAmount -= damage;
         HealthBar.fillAmount = healthAmount / 100f;
     }
@@ -61,7 +63,7 @@ public class HealthManager : MonoBehaviour
     private IEnumerator Respawn()
     {
         yield return new WaitForSeconds(5f);
-        Application.LoadLevel(Application.loadedLevel);
+        SceneManager.LoadScene("SampleScene");
     }
 
     

@@ -47,6 +47,7 @@ public class KnightMovement : MonoBehaviour
         {
             PositionUpdate.x = Input.GetAxisRaw("Horizontal");
             PositionUpdate.y = Input.GetAxisRaw("Vertical");
+            
         
             
         }
