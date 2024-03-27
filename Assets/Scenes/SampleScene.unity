@@ -247,8 +247,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0, y: 0}
-      - {x: 1.5, y: 1.5}
-      - {x: 1.5, y: -1.5}
+      - {x: 0.8, y: 0.1}
+      - {x: 0.8, y: -1}
   m_UseDelaunayMesh: 0
 --- !u!114 &294739033
 MonoBehaviour:
@@ -621,8 +621,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0, y: 0}
-      - {x: -1.5, y: -1.5}
-      - {x: -1.5, y: 1.5}
+      - {x: -0.8, y: 0.1}
+      - {x: -0.8, y: -1}
   m_UseDelaunayMesh: 0
 --- !u!114 &523989624
 MonoBehaviour:
@@ -59503,8 +59503,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0, y: 0}
-      - {x: 1.5, y: 1.5}
-      - {x: -1.5, y: 1.5}
+      - {x: 0.25, y: 0.45}
+      - {x: -0.25, y: 0.45}
   m_UseDelaunayMesh: 0
 --- !u!114 &1560094664
 MonoBehaviour:
@@ -59921,8 +59921,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0, y: 0}
-      - {x: -1.5, y: -1.5}
-      - {x: 1.5, y: -1.5}
+      - {x: -0.4, y: -1.2}
+      - {x: 0.4, y: -1.2}
   m_UseDelaunayMesh: 0
 --- !u!114 &2023587315
 MonoBehaviour:
