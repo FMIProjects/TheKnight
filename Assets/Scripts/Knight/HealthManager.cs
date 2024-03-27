@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HealthManager : MonoBehaviour
@@ -10,23 +11,32 @@ public class HealthManager : MonoBehaviour
     public Image HealthBar;
     public float healthAmount = 100f;
 
+    public GameObject knightObject;
+    DamageFlash damageFlash;
+
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        knightObject = GameObject.Find("Knight");
+        damageFlash = knightObject.GetComponent<DamageFlash>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if(healthAmount <= 0)
+        animator.SetFloat("Health", healthAmount);
+        if (healthAmount <= 0)
         {
-            Respawn();
+            
+            StartCoroutine(Respawn());
         }
 
-        if(Input.GetKeyDown("g")) {
+        if (Input.GetKeyDown("g"))
+        {
             TakeDamage(20f);
+           
         }
 
         if (Input.GetKeyDown("h"))
@@ -36,22 +46,26 @@ public class HealthManager : MonoBehaviour
     }
 
     public void TakeDamage(float damage)
-    {
+    { 
+        damageFlash.Flash();
         healthAmount -= damage;
-        HealthBar.fillAmount = healthAmount/100f;
+        HealthBar.fillAmount = healthAmount / 100f;
     }
-     
+
     public void Heal(float healAmount)
     {
         healthAmount += healAmount;
-        healthAmount = Mathf.Clamp(healthAmount, 0f,100f);
+        healthAmount = Mathf.Clamp(healthAmount, 0f, 100f);
 
         HealthBar.fillAmount = healthAmount / 100f;
     }
 
-    public void Respawn()
+    private IEnumerator Respawn()
     {
-        Application.LoadLevel(Application.loadedLevel);
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("SampleScene");
     }
+
+    
 
 }
