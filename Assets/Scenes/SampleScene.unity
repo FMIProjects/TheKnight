@@ -59116,6 +59116,7 @@ GameObject:
   - component: {fileID: 2003404194}
   - component: {fileID: 2003404195}
   - component: {fileID: 2003404196}
+  - component: {fileID: 2003404197}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -59204,6 +59205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 5
   CurrentMovementSpeed: 0
+  knightObject: {fileID: 0}
   StaminaBar: {fileID: 341645316}
   Stamina: 100
   MaxStamina: 100
@@ -59316,6 +59318,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 890437741}
   healthAmount: 100
+  knightObject: {fileID: 0}
+--- !u!114 &2003404197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003404189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223309466cf09194eb4ac50023230375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: d42be4cf358b4d54ca4a16f814ba5615, type: 2}
+  duration: 0.125
 --- !u!1 &2106801199
 GameObject:
   m_ObjectHideFlags: 0
