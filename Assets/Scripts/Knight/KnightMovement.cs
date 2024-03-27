@@ -12,6 +12,9 @@ public class KnightMovement : MonoBehaviour
 
     private Animator animator;
 
+    public GameObject knightObject;
+    HealthManager healthManager;
+
     [SerializeField] private Image StaminaBar;
     [SerializeField] private float Stamina = 100;
     [SerializeField] private float MaxStamina = 100;
@@ -26,6 +29,8 @@ public class KnightMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         Rigidbody = GetComponent<Rigidbody2D>();
+        knightObject = GameObject.Find("Knight");
+        healthManager = knightObject.GetComponent<HealthManager>();
     }
 
     void FixedUpdate()
@@ -38,10 +43,13 @@ public class KnightMovement : MonoBehaviour
     {
         //The position is updated to zero at every frame
         PositionUpdate = Vector3.zero;
-
-        PositionUpdate.x = Input.GetAxisRaw("Horizontal");
-        PositionUpdate.y = Input.GetAxisRaw("Vertical");
-
+        if (healthManager.healthAmount > 0f)
+        {
+            PositionUpdate.x = Input.GetAxisRaw("Horizontal");
+            PositionUpdate.y = Input.GetAxisRaw("Vertical");
+        
+            
+        }
         //Check if shift is pressed 
         bool isShiftPressed = Input.GetKey(KeyCode.LeftShift);
 
