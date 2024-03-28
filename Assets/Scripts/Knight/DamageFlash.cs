@@ -1,10 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageFlash : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField] private Material flashMaterial;
     [SerializeField] private float duration = 0.125f;
 
@@ -12,18 +10,13 @@ public class DamageFlash : MonoBehaviour
     private Material defMaterial;
     private Coroutine flashCoroutine;
 
-
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         defMaterial = spriteRenderer.material;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    void Update(){}
 
     public void Flash()
     {

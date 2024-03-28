@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AreaMelee : MonoBehaviour
@@ -13,8 +11,8 @@ public class AreaMelee : MonoBehaviour
     {
         knightObject = GameObject.Find("KnightDummy");
         healthManager = knightObject.GetComponent<HealthManager>();
-
     }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
 

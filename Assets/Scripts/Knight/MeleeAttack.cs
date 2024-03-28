@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MeleeAttack : MonoBehaviour
@@ -16,10 +14,9 @@ public class MeleeAttack : MonoBehaviour
 
     private Animator animator;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+
         animator = GetComponent<Animator>();
         rangeOfAttackRight = transform.GetChild(0).gameObject;
         rangeOfAttackLeft = transform.GetChild(1).gameObject;
@@ -31,11 +28,10 @@ public class MeleeAttack : MonoBehaviour
         rangeOfAttackDown.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.RightArrow)&&isAttacking==false)
+
+        if (Input.GetKeyDown(KeyCode.RightArrow) && isAttacking == false)
         {
             animator.SetFloat("moveX", 1f);
             animator.SetFloat("moveY", 0f);

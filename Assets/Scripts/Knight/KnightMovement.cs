@@ -47,9 +47,6 @@ public class KnightMovement : MonoBehaviour
         {
             PositionUpdate.x = Input.GetAxisRaw("Horizontal");
             PositionUpdate.y = Input.GetAxisRaw("Vertical");
-            
-        
-            
         }
         //Check if shift is pressed 
         bool isShiftPressed = Input.GetKey(KeyCode.LeftShift);
