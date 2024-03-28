@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 24dcba129c0adf147828bf607b18cf1e
+guid: a14582192a2e20a4e88746ace8f49dd2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,91 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpriteUp_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f71bb81c8e4beec45a695c74cf3f6b25
-      internalID: 1373907662
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteUp_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0af074b9baf1a8e4b83706059e60d3e1
-      internalID: -15009571
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteUp_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6aa0caaf8a58350499b592e5c01f2a35
-      internalID: 1473514791
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteUp_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1f3e1c2a9d41cd747a6d1cd7c5b362df
-      internalID: 869498315
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteUp_4
+      name: RedEnemyWalkRight_0
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe1fcdbd77fe6394bb013a4e67cf41ec
-      internalID: -2001993595
+      spriteID: a6e2406d09d188942b33f05ca9c34407
+      internalID: -360533758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteUp_5
+      name: RedEnemyWalkRight_1
       rect:
         serializedVersion: 2
         x: 16
@@ -229,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77e9ad85c0540724e8265adadc34e188
-      internalID: 969430940
+      spriteID: ce7b8efa0968c49468e4b8eb313ca3df
+      internalID: -739513951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteUp_6
+      name: RedEnemyWalkRight_2
       rect:
         serializedVersion: 2
         x: 32
@@ -250,35 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce81a397025f6a74a907e89d1318ddec
-      internalID: -1263064561
+      spriteID: a4abd0de6c10e754dbe9ab1e9ac8d25a
+      internalID: -2129775140
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteUp_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 048e17e2bbb181a49b7b138b78e0304e
-      internalID: -1925503159
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteUp_8
+      name: RedEnemyWalkRight_3
       rect:
         serializedVersion: 2
         x: 0
@@ -292,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3721563a5cb1d904f9626e232306b5c6
-      internalID: 1492400835
+      spriteID: b6cd874096eae014d9208deaecff9d69
+      internalID: -1166557319
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteUp_9
+      name: RedEnemyWalkRight_4
       rect:
         serializedVersion: 2
         x: 16
@@ -313,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df5c5e01ddc824e499ad31aa70e21850
-      internalID: 1957863118
+      spriteID: c670e39e944f90d4a96da399aa6b5dc5
+      internalID: 1263821189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteUp_10
+      name: RedEnemyWalkRight_5
       rect:
         serializedVersion: 2
         x: 32
@@ -334,35 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bcf5cc895ba39304bb77db7c31b85fa3
-      internalID: 855493734
+      spriteID: 04499b443816cc94f8971864352da9e5
+      internalID: -671581541
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteUp_11
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a9ace5479fa6dc4da74e3da5ada1dfe
-      internalID: -2012754442
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteUp_12
+      name: RedEnemyWalkRight_6
       rect:
         serializedVersion: 2
         x: 0
@@ -376,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6911b0e8dd183d94c9c9462736e8dcad
-      internalID: 1191172060
+      spriteID: a57cdd4f1ef0cf948a4321050def0d3c
+      internalID: -698671965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteUp_13
+      name: RedEnemyWalkRight_7
       rect:
         serializedVersion: 2
         x: 16
@@ -397,50 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e22726d1af5b89d40a19b0272745ad10
-      internalID: -438273506
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteUp_14
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0790c87b14e8ae488d3eef6781b2e69
-      internalID: 343856586
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpriteUp_15
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e71404d6c7912ea448c0f47c456cb985
-      internalID: 10088074
+      spriteID: a4268db7e54c23f4ebcce6ce522d8b97
+      internalID: -1508974065
       vertices: []
       indices: 
       edges: []
@@ -456,22 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SpriteUp_0: 1373907662
-      SpriteUp_1: -15009571
-      SpriteUp_10: 855493734
-      SpriteUp_11: -2012754442
-      SpriteUp_12: 1191172060
-      SpriteUp_13: -438273506
-      SpriteUp_14: 343856586
-      SpriteUp_15: 10088074
-      SpriteUp_2: 1473514791
-      SpriteUp_3: 869498315
-      SpriteUp_4: -2001993595
-      SpriteUp_5: 969430940
-      SpriteUp_6: -1263064561
-      SpriteUp_7: -1925503159
-      SpriteUp_8: 1492400835
-      SpriteUp_9: 1957863118
+      RedEnemyWalkRight_0: -360533758
+      RedEnemyWalkRight_1: -739513951
+      RedEnemyWalkRight_2: -2129775140
+      RedEnemyWalkRight_3: -1166557319
+      RedEnemyWalkRight_4: 1263821189
+      RedEnemyWalkRight_5: -671581541
+      RedEnemyWalkRight_6: -698671965
+      RedEnemyWalkRight_7: -1508974065
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 41b4abd6cd7a3b74aaf7c22b7e255af3
+guid: 24dcba129c0adf147828bf607b18cf1e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DieRight_0
+      name: KnightDieUp_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cc3d9a30afeb6a449508f34deda34bd
-      internalID: 1373629345
+      spriteID: 1ebc90c1b8bb0e044a039de533b15764
+      internalID: -170981583
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DieRight_1
+      name: KnightDieUp_1
       rect:
         serializedVersion: 2
         x: 16
@@ -145,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63c5599da357fd5469af17e9068e041b
-      internalID: -364171046
+      spriteID: cb4ef1a5c5d7c9f47b9a925b86af9f8c
+      internalID: -800194797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DieRight_2
+      name: KnightDieUp_2
       rect:
         serializedVersion: 2
         x: 32
@@ -166,35 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a8aebc4d221d7a488c09ed2d8a76871
-      internalID: 362686020
+      spriteID: a5e71e5fd61d18449a3146fc58a1d41a
+      internalID: -1362022249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DieRight_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09f9ef443a8a0004aa6c01bf6da52957
-      internalID: -1720662257
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DieRight_4
+      name: KnightDieUp_3
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8af69995f21904c44b0f411a48de5921
-      internalID: -1919187193
+      spriteID: 591a5f6e9eb2aed42a126ef5fba6bc04
+      internalID: -1237735091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DieRight_5
+      name: KnightDieUp_4
       rect:
         serializedVersion: 2
         x: 16
@@ -229,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25e7336aae1adfe42b27b55926dbc1b7
-      internalID: -1928991064
+      spriteID: e7fde8c8573ac294a8ed7ca29bb46b8c
+      internalID: 1142133728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DieRight_6
+      name: KnightDieUp_5
       rect:
         serializedVersion: 2
         x: 32
@@ -250,35 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f77191a475dc3cd4dab34fe7b928dd8b
-      internalID: 456502206
+      spriteID: 06c0073cd73357e46949b8cddcb3cfd5
+      internalID: -1144843410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DieRight_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72788cf0313fe264ebb7bad42b920033
-      internalID: -628499764
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DieRight_8
+      name: KnightDieUp_6
       rect:
         serializedVersion: 2
         x: 0
@@ -292,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a683068d113ba82449887bd2d838587e
-      internalID: 1148011754
+      spriteID: dd526509b0a2dad47bfbaf1016f0b4ab
+      internalID: 1718263928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DieRight_9
+      name: KnightDieUp_7
       rect:
         serializedVersion: 2
         x: 16
@@ -313,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 184f958b3c79c34459f1eeda0ac8dc9d
-      internalID: -1228144217
+      spriteID: 541374c95d666a849b6ca4e8f5edbeee
+      internalID: 1879525254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DieRight_10
+      name: KnightDieUp_8
       rect:
         serializedVersion: 2
         x: 32
@@ -334,35 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a3ba7a9d578d8b4e98d92b2348f72e6
-      internalID: 1123958643
+      spriteID: 0f26b6398ec3d1a4f99d9c7d72ac869a
+      internalID: 1662682780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DieRight_11
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 559660d7bdc623a4799f3d9855178007
-      internalID: 1049531332
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DieRight_12
+      name: KnightDieUp_9
       rect:
         serializedVersion: 2
         x: 0
@@ -376,8 +313,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0372f2e574aca5e40ac1714d8a55b938
-      internalID: -1752533561
+      spriteID: a4f540570145a2e4f9a0fa706a02690e
+      internalID: 983857815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KnightDieUp_10
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e12c2fd1374363b4f82e3a0453e3be4b
+      internalID: -898737581
       vertices: []
       indices: 
       edges: []
@@ -393,19 +351,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DieRight_0: 1373629345
-      DieRight_1: -364171046
-      DieRight_10: 1123958643
-      DieRight_11: 1049531332
-      DieRight_12: -1752533561
-      DieRight_2: 362686020
-      DieRight_3: -1720662257
-      DieRight_4: -1919187193
-      DieRight_5: -1928991064
-      DieRight_6: 456502206
-      DieRight_7: -628499764
-      DieRight_8: 1148011754
-      DieRight_9: -1228144217
+      KnightDieUp_0: -170981583
+      KnightDieUp_1: -800194797
+      KnightDieUp_10: -898737581
+      KnightDieUp_2: -1362022249
+      KnightDieUp_3: -1237735091
+      KnightDieUp_4: 1142133728
+      KnightDieUp_5: -1144843410
+      KnightDieUp_6: 1718263928
+      KnightDieUp_7: 1879525254
+      KnightDieUp_8: 1662682780
+      KnightDieUp_9: 983857815
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

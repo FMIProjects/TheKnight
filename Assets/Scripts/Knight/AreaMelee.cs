@@ -9,7 +9,7 @@ public class AreaMelee : MonoBehaviour
 
     void Start()
     {
-        knightObject = GameObject.Find("KnightDummy");
+        knightObject = GameObject.Find("RedEnemy");
         healthManager = knightObject.GetComponent<HealthManager>();
     }
 

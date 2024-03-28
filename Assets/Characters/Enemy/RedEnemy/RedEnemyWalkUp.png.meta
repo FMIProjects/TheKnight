@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6a006c7f64804514ab07f2cb222a8a3a
+guid: a9f9258285677fb46a3d397315587b48
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,91 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dieDown_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 60924fb162ac0904bbfc89716417696f
-      internalID: 1582951313
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dieDown_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1caaabef627b604dbb54892bc11a6d6
-      internalID: 1502805878
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dieDown_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7fdcd1b6aa14aa47b38e740e12feaba
-      internalID: 2082443529
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dieDown_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8794ad1716ab5824abcda2a7c22bc5fd
-      internalID: -1236733377
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dieDown_4
+      name: RedEnemyWalkUp_0
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 497ad71a34ce5c940a0ea5bd0d072d8d
-      internalID: 339131311
+      spriteID: f2ea4c8a833086c45b515a876c8ebe95
+      internalID: -2108641564
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dieDown_5
+      name: RedEnemyWalkUp_1
       rect:
         serializedVersion: 2
         x: 16
@@ -229,14 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 422453aca2d291644a3743bf0f03993c
-      internalID: 995665066
+      spriteID: 90ab11ad43961f741b80685926742df2
+      internalID: -627501906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dieDown_6
+      name: RedEnemyWalkUp_2
       rect:
         serializedVersion: 2
         x: 32
@@ -250,35 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1263345fe364ae4db4130374a94641c
-      internalID: 1416956493
+      spriteID: 075059352d3162b40a29989fea829a11
+      internalID: 1535257916
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dieDown_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 089a41ef910ab994e9cf47e4d5df40e8
-      internalID: 71409346
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dieDown_8
+      name: RedEnemyWalkUp_3
       rect:
         serializedVersion: 2
         x: 0
@@ -292,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8cb270b0ee5e5284ebc0f34cafc1b01f
-      internalID: 77520650
+      spriteID: 52dc49b87129c1347bd0917d1c094ea2
+      internalID: 320549108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dieDown_9
+      name: RedEnemyWalkUp_4
       rect:
         serializedVersion: 2
         x: 16
@@ -313,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d36922643ac20564e9015aef569b1dc2
-      internalID: 1892054297
+      spriteID: fbafb8e42acd04a4ab768df4734bc60b
+      internalID: -312844148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dieDown_10
+      name: RedEnemyWalkUp_5
       rect:
         serializedVersion: 2
         x: 32
@@ -334,35 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57ac5d137fff4834086c60881bed4c9c
-      internalID: 657713991
+      spriteID: 3c32d83ddd876d24fbb4ec7010f8671b
+      internalID: -460597016
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dieDown_11
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06615a6079bda024aa0968fe7738546f
-      internalID: -638144678
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dieDown_12
+      name: RedEnemyWalkUp_6
       rect:
         serializedVersion: 2
         x: 0
@@ -376,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5df8c00f1c3d0c04bbc067c691d634b8
-      internalID: 1054108790
+      spriteID: d3629bff294d9a2488f5c0d5d3f18c06
+      internalID: -525504410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dieDown_13
+      name: RedEnemyWalkUp_7
       rect:
         serializedVersion: 2
         x: 16
@@ -397,50 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 157e27d6925e6e947b4fe74b03585cbd
-      internalID: 244953799
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dieDown_14
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1e63068a1543d84a99179d432495fdf
-      internalID: 1964467767
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dieDown_15
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 272c2417ac896654c96276b842c39ad0
-      internalID: -137793080
+      spriteID: ae568f84a41125d48bab70d56a7b3796
+      internalID: -871108138
       vertices: []
       indices: 
       edges: []
@@ -456,22 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dieDown_0: 1582951313
-      dieDown_1: 1502805878
-      dieDown_10: 657713991
-      dieDown_11: -638144678
-      dieDown_12: 1054108790
-      dieDown_13: 244953799
-      dieDown_14: 1964467767
-      dieDown_15: -137793080
-      dieDown_2: 2082443529
-      dieDown_3: -1236733377
-      dieDown_4: 339131311
-      dieDown_5: 995665066
-      dieDown_6: 1416956493
-      dieDown_7: 71409346
-      dieDown_8: 77520650
-      dieDown_9: 1892054297
+      RedEnemyWalkUp_0: -2108641564
+      RedEnemyWalkUp_1: -627501906
+      RedEnemyWalkUp_2: 1535257916
+      RedEnemyWalkUp_3: 320549108
+      RedEnemyWalkUp_4: -312844148
+      RedEnemyWalkUp_5: -460597016
+      RedEnemyWalkUp_6: -525504410
+      RedEnemyWalkUp_7: -871108138
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

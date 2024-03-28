@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b4a745acb75accb42a19ff4996c3fe67
+guid: 4d6b873335d8ee847bd8db91c239de23
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,91 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DieLeft_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aaac3ba80fedd664f98e00a7b2a25934
-      internalID: 1156602010
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DieLeft_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 12c4f99b42b4ce3408c3d51a1577bb03
-      internalID: 153860384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DieLeft_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 172025b6ff4a1714cb7d58a87bc17cc6
-      internalID: -1940847463
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DieLeft_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f3ffd8ee796d8a4fa5e3626a75afa6e
-      internalID: 860115071
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DieLeft_4
+      name: RedEnemyIdleDown_0
       rect:
         serializedVersion: 2
         x: 0
@@ -208,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3581de36faef76f478c158deef117c09
-      internalID: -1079797043
+      spriteID: 1d0a6b726e35db741ac15ad30dbc96e8
+      internalID: 1912576726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DieLeft_5
+      name: RedEnemyIdleDown_1
       rect:
         serializedVersion: 2
         x: 16
@@ -229,56 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce843e110c1ef0c4a8d5a5cdc44e9977
-      internalID: -1260626046
+      spriteID: e9217865eb8e77343bf68b941d2d63be
+      internalID: 1226085822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DieLeft_6
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3f5df2ca9972fef42867512c95116669
-      internalID: 1205230269
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DieLeft_7
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e5be1ae2f572fd46bfff7787b0533eb
-      internalID: 323525206
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DieLeft_8
+      name: RedEnemyIdleDown_2
       rect:
         serializedVersion: 2
         x: 0
@@ -292,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bfe930ae6fdb6148b29983fc07762cd
-      internalID: -598336958
+      spriteID: cee3f766587f20940b609eb61460fd58
+      internalID: -2082942000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DieLeft_9
+      name: RedEnemyIdleDown_3
       rect:
         serializedVersion: 2
         x: 16
@@ -313,56 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 418ad8f453291f8449b6faf0fdadf5a6
-      internalID: 782145290
+      spriteID: cc4e5cf189228864c8fa6da8d6022020
+      internalID: 97237109
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DieLeft_10
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ab930d1ea6f03b448e86ba2768809d5
-      internalID: 1102490550
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DieLeft_11
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 822071c3aa4c7a94ab1f0fccd8aad751
-      internalID: 1185959437
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DieLeft_12
+      name: RedEnemyIdleDown_4
       rect:
         serializedVersion: 2
         x: 0
@@ -376,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a9257824c0ef084a949a4de98c50646
-      internalID: 1796419531
+      spriteID: 39e2a2efca31e364cac82c740d6d1984
+      internalID: -1094481337
       vertices: []
       indices: 
       edges: []
@@ -393,19 +225,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DieLeft_0: 1156602010
-      DieLeft_1: 153860384
-      DieLeft_10: 1102490550
-      DieLeft_11: 1185959437
-      DieLeft_12: 1796419531
-      DieLeft_2: -1940847463
-      DieLeft_3: 860115071
-      DieLeft_4: -1079797043
-      DieLeft_5: -1260626046
-      DieLeft_6: 1205230269
-      DieLeft_7: 323525206
-      DieLeft_8: -598336958
-      DieLeft_9: 782145290
+      RedEnemyIdleDown_0: 1912576726
+      RedEnemyIdleDown_1: 1226085822
+      RedEnemyIdleDown_2: -2082942000
+      RedEnemyIdleDown_3: 97237109
+      RedEnemyIdleDown_4: -1094481337
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

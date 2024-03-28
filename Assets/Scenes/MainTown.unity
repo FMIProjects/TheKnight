@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 575308421}
   - component: {fileID: 575308420}
   m_Layer: 0
-  m_Name: KnightDummy
+  m_Name: RedEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -698,7 +698,7 @@ Animator:
   m_GameObject: {fileID: 575308419}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4156bd3e6fcf1144384c534be3e2cc5d, type: 2}
+  m_Controller: {fileID: 9100000, guid: dcec96a096c0d1442b14eff453ea5091, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -822,7 +822,7 @@ SpriteRenderer:
   m_SortingLayerID: 1203037041
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1002980679, guid: 8daddf9140d002740bffd650781e92f0, type: 3}
+  m_Sprite: {fileID: 955498513, guid: 9014631cb2d66604881f34111afc5a90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -843,7 +843,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.98, y: -0.06, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
