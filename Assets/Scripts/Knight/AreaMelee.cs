@@ -1,26 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AreaMelee : MonoBehaviour
 {
-    private float damage = 5f;
+    private float power = 5f;
 
-    public GameObject knightObject;
-    HealthManager healthManager;
+    public GameObject enemy;
+    EnemyHealthManager healthManager;
 
     void Start()
     {
-        knightObject = GameObject.Find("KnightDummy");
-        healthManager = knightObject.GetComponent<HealthManager>();
-
+        enemy = GameObject.Find("RedEnemy");
+        healthManager = enemy.GetComponent<EnemyHealthManager>();
     }
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
 
-        if (collider.GetComponent<HealthManager>() != null)
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Enemy")
         {
-            healthManager.TakeDamage(damage);
+            healthManager.TakeDamage(power);
         }
     }
 }
