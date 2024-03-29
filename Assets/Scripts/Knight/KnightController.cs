@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KnightMovement : MonoBehaviour
+public class KnightController : MonoBehaviour
 {
     [SerializeField] private float MovementSpeed = 5;
     [SerializeField] private float CurrentMovementSpeed;
