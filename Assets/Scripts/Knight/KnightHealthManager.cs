@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class HealthManager : MonoBehaviour
+public class KnightHealthManager : MonoBehaviour
 {
 
     public Image HealthBar;
@@ -13,7 +13,7 @@ public class HealthManager : MonoBehaviour
     DamageFlash damageFlash;
 
     private Animator animator;
-    // Start is called before the first frame update
+    
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -21,7 +21,6 @@ public class HealthManager : MonoBehaviour
         damageFlash = knightObject.GetComponent<DamageFlash>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         animator.SetFloat("Health", healthAmount);

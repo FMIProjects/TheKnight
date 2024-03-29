@@ -2,23 +2,22 @@ using UnityEngine;
 
 public class AreaMelee : MonoBehaviour
 {
-    private float damage = 5f;
+    private float power = 5f;
 
-    public GameObject knightObject;
-    HealthManager healthManager;
+    public GameObject enemy;
+    EnemyHealthManager healthManager;
 
     void Start()
     {
-        knightObject = GameObject.Find("RedEnemy");
-        healthManager = knightObject.GetComponent<HealthManager>();
+        enemy = GameObject.Find("RedEnemy");
+        healthManager = enemy.GetComponent<EnemyHealthManager>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (collider.GetComponent<HealthManager>() != null)
+        if(other.tag == "Enemy")
         {
-            healthManager.TakeDamage(damage);
+            healthManager.TakeDamage(power);
         }
     }
 }

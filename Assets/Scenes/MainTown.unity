@@ -262,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d07be71fcbf5d4418157bd1d81aab4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knightObject: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!1 &341645314
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,7 +636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d07be71fcbf5d4418157bd1d81aab4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knightObject: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!1 &575308419
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,12 +650,13 @@ GameObject:
   - component: {fileID: 575308424}
   - component: {fileID: 575308423}
   - component: {fileID: 575308422}
-  - component: {fileID: 575308421}
   - component: {fileID: 575308420}
   - component: {fileID: 575308427}
+  - component: {fileID: 575308428}
+  - component: {fileID: 575308429}
   m_Layer: 0
   m_Name: RedEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -674,21 +675,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashMaterial: {fileID: 2100000, guid: d42be4cf358b4d54ca4a16f814ba5615, type: 2}
   duration: 0.125
---- !u!114 &575308421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575308419}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67ecb5c3d74699e4aa900be407716bf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HealthBar: {fileID: 890437741}
-  healthAmount: 100
-  knightObject: {fileID: 0}
 --- !u!95 &575308422
 Animator:
   serializedVersion: 5
@@ -742,7 +728,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.027906418, y: -0.40464577}
+  m_Offset: {x: -0.027906418, y: -0.43128482}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -753,7 +739,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4604721, y: 0.19070846}
+  m_Size: {x: 0.4604721, y: 0.13743037}
   m_EdgeRadius: 0
 --- !u!50 &575308424
 Rigidbody2D:
@@ -767,7 +753,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10000
+  m_Mass: 100000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -781,7 +767,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!212 &575308425
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -864,7 +850,34 @@ MonoBehaviour:
   spawnPos: {fileID: 1078356474}
   speed: 3
   maxRange: 5
-  minRange: 0.75
+  minRange: 0.71
+--- !u!114 &575308428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575308419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0885a32ed9f23d34f8b9f0bd2158f89e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 10
+--- !u!114 &575308429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575308419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8378c35c99f3f40b6548e4c63308ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAmount: 20
+  enemyObject: {fileID: 0}
 --- !u!1 &610883567
 GameObject:
   m_ObjectHideFlags: 0
@@ -59566,7 +59579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d07be71fcbf5d4418157bd1d81aab4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knightObject: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!1 &1619606432
 GameObject:
   m_ObjectHideFlags: 0
@@ -59661,7 +59674,7 @@ GameObject:
   - component: {fileID: 2003404198}
   m_Layer: 0
   m_Name: Knight
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59816,7 +59829,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.027906418, y: -0.40464577}
+  m_Offset: {x: -0.027906418, y: -0.39737144}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -59827,7 +59840,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.4604721, y: 0.19070846}
+  m_Size: {x: 0.4604721, y: 0.20525712}
   m_EdgeRadius: 0
 --- !u!95 &2003404195
 Animator:
@@ -59984,7 +59997,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d07be71fcbf5d4418157bd1d81aab4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knightObject: {fileID: 0}
+  enemy: {fileID: 0}
 --- !u!1 &2106801199
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class KnightController : MonoBehaviour
     private Animator animator;
 
     public GameObject knightObject;
-    HealthManager healthManager;
+    KnightHealthManager healthManager;
 
     [SerializeField] private Image StaminaBar;
     [SerializeField] private float Stamina = 100;
@@ -30,7 +30,7 @@ public class KnightController : MonoBehaviour
         animator = GetComponent<Animator>();
         Rigidbody = GetComponent<Rigidbody2D>();
         knightObject = GameObject.Find("Knight");
-        healthManager = knightObject.GetComponent<HealthManager>();
+        healthManager = knightObject.GetComponent<KnightHealthManager>();
     }
 
     void FixedUpdate()
