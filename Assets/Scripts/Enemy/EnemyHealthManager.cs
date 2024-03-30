@@ -14,7 +14,9 @@ public class EnemyHealthManager : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        enemyObject = GameObject.Find("RedEnemy");
+
+        // get the reference to the object to which this script is attached
+        enemyObject = gameObject;
         damageFlash = enemyObject.GetComponent<DamageFlash>();
     }
 
@@ -37,6 +39,7 @@ public class EnemyHealthManager : MonoBehaviour
     private IEnumerator Death()
     {
         yield return new WaitForSeconds(5f);
+        // destroy the object
         Destroy(enemyObject);
     }
 }
