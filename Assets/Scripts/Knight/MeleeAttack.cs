@@ -18,6 +18,7 @@ public class MeleeAttack : MonoBehaviour
     {
 
         animator = GetComponent<Animator>();
+        animator.SetBool("isMeleeAttacking", false);
         rangeOfAttackRight = transform.GetChild(0).gameObject;
         rangeOfAttackLeft = transform.GetChild(1).gameObject;
         rangeOfAttackUp = transform.GetChild(2).gameObject;
@@ -30,30 +31,42 @@ public class MeleeAttack : MonoBehaviour
 
     void Update()
     {
-
+        animator.SetBool("isMeleeAttacking", isAttacking);
         if (Input.GetKeyDown(KeyCode.RightArrow) && isAttacking == false)
         {
+            
             animator.SetFloat("moveX", 1f);
             animator.SetFloat("moveY", 0f);
+            
             AttackRight();
+            
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow) && isAttacking == false)
         {
+           
             animator.SetFloat("moveX", -1f);
             animator.SetFloat("moveY", 0f);
+            
             AttackLeft();
+           
         }
         if (Input.GetKeyDown(KeyCode.UpArrow) && isAttacking == false)
         {
+          
             animator.SetFloat("moveX", 0f);
             animator.SetFloat("moveY", 1f);
+            
             AttackUp();
+
         }
         if (Input.GetKeyDown(KeyCode.DownArrow) && isAttacking == false)
         {
+            
             animator.SetFloat("moveX", 0f);
             animator.SetFloat("moveY", -1f);
+            
             AttackDown();
+            
         }
 
         if (isAttacking)
