@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour
     private Transform target;
     private Rigidbody2D rigidBody;
 
-    [SerializeField] private Transform spawnPos;
+    private Vector3 spawnPos;
     [SerializeField] private float speed;
     [SerializeField] private float maxRange;
     [SerializeField] private float minRange;
@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
         target = FindObjectOfType<KnightController>().transform;
+        spawnPos = transform.position;
     }
 
     void FixedUpdate()
@@ -41,13 +42,13 @@ public class EnemyController : MonoBehaviour
 
     public void GoToSpawn()
     {
-        animator.SetFloat("moveX", (spawnPos.position.x - transform.position.x));
-        animator.SetFloat("moveY", (spawnPos.position.y - transform.position.y));
+        animator.SetFloat("moveX", (spawnPos.x - transform.position.x));
+        animator.SetFloat("moveY", (spawnPos.y - transform.position.y));
 
-        Vector3 direction = (spawnPos.transform.position - rigidBody.transform.position).normalized;
+        Vector3 direction = (spawnPos - rigidBody.transform.position).normalized;
         rigidBody.MovePosition(rigidBody.transform.position + direction * speed * Time.fixedDeltaTime);
 
-        if (Vector3.Distance(transform.position, spawnPos.position) == 0)
+        if (Vector3.Distance(transform.position, spawnPos) == 0)
         {
             animator.SetBool("isMoving", false);
         }

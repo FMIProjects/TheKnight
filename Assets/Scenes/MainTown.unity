@@ -1013,7 +1013,7 @@ Transform:
   m_GameObject: {fileID: 575308419}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.98, y: 0.1, z: 0}
+  m_LocalPosition: {x: -30, y: 35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1031,7 +1031,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ee760326c0f7e449a379e1c8283f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPos: {fileID: 1078356474}
   speed: 3
   maxRange: 5
   minRange: 0.71
@@ -33525,7 +33524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 575308419}
-  numberEnemies: 3
+  numberEnemies: 10
   minSpawnCoordinates: {x: 48, y: -20}
   maxSpawnCoordinates: {x: 95, y: 16}
   spawnInterval: 15
@@ -33672,37 +33671,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890437739}
   m_CullTransparentMesh: 1
---- !u!1 &1078356473
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1078356474}
-  m_Layer: 0
-  m_Name: Spawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1078356474
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078356473}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.98, y: -0.06, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115602296
 GameObject:
   m_ObjectHideFlags: 0
@@ -118546,7 +118514,6 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 2003404191}
   - {fileID: 575308426}
-  - {fileID: 1078356474}
   - {fileID: 1252497359}
   - {fileID: 878046062}
   - {fileID: 162796463}
