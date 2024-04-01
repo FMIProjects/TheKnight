@@ -4,6 +4,8 @@ public class EnemyController : MonoBehaviour
 {
     private Animator animator;
     private Transform target;
+    private Rigidbody2D rigidBody;
+
     [SerializeField] private Transform spawnPos;
     [SerializeField] private float speed;
     [SerializeField] private float maxRange;
@@ -12,6 +14,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        rigidBody = GetComponent<Rigidbody2D>();
         target = FindObjectOfType<KnightController>().transform;
     }
 
@@ -30,14 +33,19 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("isMoving", true);
         animator.SetFloat("moveX", (target.position.x - transform.position.x));
         animator.SetFloat("moveY", (target.position.y - transform.position.y));
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.fixedDeltaTime);
+
+        Vector3 direction = (target.transform.position - rigidBody.transform.position).normalized;
+        rigidBody.MovePosition(rigidBody.transform.position + direction * speed * Time.fixedDeltaTime);
+
     }
 
     public void GoToSpawn()
     {
         animator.SetFloat("moveX", (spawnPos.position.x - transform.position.x));
         animator.SetFloat("moveY", (spawnPos.position.y - transform.position.y));
-        transform.position = Vector3.MoveTowards(transform.position, spawnPos.position, speed * Time.fixedDeltaTime);
+
+        Vector3 direction = (spawnPos.transform.position - rigidBody.transform.position).normalized;
+        rigidBody.MovePosition(rigidBody.transform.position + direction * speed * Time.fixedDeltaTime);
 
         if (Vector3.Distance(transform.position, spawnPos.position) == 0)
         {

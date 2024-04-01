@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class DamageFlash : MonoBehaviour
 {
-    [SerializeField] private Material flashMaterial;
-    [SerializeField] private float duration = 0.125f;
-
     private SpriteRenderer spriteRenderer;
     private Material defMaterial;
     private Coroutine flashCoroutine;
+
+    [SerializeField] private Material flashMaterial;
+    [SerializeField] private float duration = 0.125f;
 
     void Start()
     {

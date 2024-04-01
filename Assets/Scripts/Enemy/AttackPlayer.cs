@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class AttackPlayer : MonoBehaviour
 {
-    [SerializeField] private float power = 10f;
-    private KnightHealthManager healthManager;
+    KnightHealthManager healthManager;
     private float waitToAttack = 10f;
     private bool isTouching;
+
+    [SerializeField] private float power = 10f;
 
     void Start()
     {
