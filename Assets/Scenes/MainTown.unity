@@ -686,7 +686,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07, y: 20.04, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -937,7 +937,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100000
+  m_Mass: 10000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -951,7 +951,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!212 &575308425
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1013,7 +1013,7 @@ Transform:
   m_GameObject: {fileID: 575308419}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.98, y: 0.1, z: 0}
+  m_LocalPosition: {x: -30, y: 35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1031,7 +1031,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ee760326c0f7e449a379e1c8283f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPos: {fileID: 1078356474}
   speed: 3
   maxRange: 5
   minRange: 0.71
@@ -1061,7 +1060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthAmount: 20
-  enemyObject: {fileID: 0}
+  enemyObject: {fileID: 575308419}
 --- !u!1 &610883567
 GameObject:
   m_ObjectHideFlags: 0
@@ -33525,7 +33524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 575308419}
-  numberEnemies: 3
+  numberEnemies: 10
   minSpawnCoordinates: {x: 48, y: -20}
   maxSpawnCoordinates: {x: 95, y: 16}
   spawnInterval: 15
@@ -33672,37 +33671,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890437739}
   m_CullTransparentMesh: 1
---- !u!1 &1078356473
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1078356474}
-  m_Layer: 0
-  m_Name: Spawn
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1078356474
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078356473}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.98, y: -0.06, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115602296
 GameObject:
   m_ObjectHideFlags: 0
@@ -118132,10 +118100,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2003404191}
   - component: {fileID: 2003404190}
-  - component: {fileID: 2003404192}
   - component: {fileID: 2003404193}
   - component: {fileID: 2003404194}
   - component: {fileID: 2003404195}
+  - component: {fileID: 2003404192}
   - component: {fileID: 2003404196}
   - component: {fileID: 2003404197}
   - component: {fileID: 2003404198}
@@ -118229,13 +118197,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c0b24de18da0e4ea3bfefaeb1abd16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 5
-  CurrentMovementSpeed: 0
-  knightObject: {fileID: 0}
-  StaminaBar: {fileID: 341645316}
-  Stamina: 100
-  MaxStamina: 100
-  RunningCost: 35
+  knightObject: {fileID: 2003404189}
+  movementSpeed: 5
+  currentMovementSpeed: 0
+  staminaBar: {fileID: 341645316}
+  stamina: 100
+  maxStamina: 100
+  runningCost: 35
   ChargingRate: 33
 --- !u!50 &2003404193
 Rigidbody2D:
@@ -118342,9 +118310,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ecb5c3d74699e4aa900be407716bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthBar: {fileID: 890437741}
+  healthBar: {fileID: 890437741}
+  knightObject: {fileID: 2003404189}
   healthAmount: 100
-  knightObject: {fileID: 0}
 --- !u!114 &2003404197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118546,7 +118514,6 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 2003404191}
   - {fileID: 575308426}
-  - {fileID: 1078356474}
   - {fileID: 1252497359}
   - {fileID: 878046062}
   - {fileID: 162796463}

@@ -4,31 +4,29 @@ using UnityEngine.UI;
 
 public class KnightController : MonoBehaviour
 {
-    [SerializeField] private float MovementSpeed = 5;
-    [SerializeField] private float CurrentMovementSpeed;
-
-    private Rigidbody2D Rigidbody;
-    private Vector3 PositionUpdate;
-
-    private Animator animator;
-
     public GameObject knightObject;
+
     KnightHealthManager healthManager;
 
-    [SerializeField] private Image StaminaBar;
-    [SerializeField] private float Stamina = 100;
-    [SerializeField] private float MaxStamina = 100;
-    [SerializeField] private float RunningCost = 35;
+    private Rigidbody2D rigidBody;
+    private Vector3 positionUpdate;
+    private Animator animator;
+    private Coroutine recharge;
+
+    [SerializeField] private float movementSpeed = 5;
+    [SerializeField] private float currentMovementSpeed;
+    [SerializeField] private Image staminaBar;
+    [SerializeField] private float stamina = 100;
+    [SerializeField] private float maxStamina = 100;
+    [SerializeField] private float runningCost = 35;
 
     //MaxCharge -> 3 seconds
     [SerializeField] private float ChargingRate = 33;
 
-    private Coroutine Recharge;
-
     void Start()
     {
         animator = GetComponent<Animator>();
-        Rigidbody = GetComponent<Rigidbody2D>();
+        rigidBody = GetComponent<Rigidbody2D>();
         knightObject = GameObject.Find("Knight");
         healthManager = knightObject.GetComponent<KnightHealthManager>();
     }
@@ -42,17 +40,17 @@ public class KnightController : MonoBehaviour
     private void UpdatePosition()
     {
         //The position is updated to zero at every frame
-        PositionUpdate = Vector3.zero;
+        positionUpdate = Vector3.zero;
         if (healthManager.healthAmount > 0f)
         {
-            PositionUpdate.x = Input.GetAxisRaw("Horizontal");
-            PositionUpdate.y = Input.GetAxisRaw("Vertical");
+            positionUpdate.x = Input.GetAxisRaw("Horizontal");
+            positionUpdate.y = Input.GetAxisRaw("Vertical");
         }
         //Check if shift is pressed 
         bool isShiftPressed = Input.GetKey(KeyCode.LeftShift);
 
         //The character is moving only when there is a key pressed
-        if (PositionUpdate != Vector3.zero)
+        if (positionUpdate != Vector3.zero)
         {
             MoveCharacter(isShiftPressed);
         }
@@ -60,10 +58,10 @@ public class KnightController : MonoBehaviour
 
     private void UpdateAnimation()
     {
-        if (PositionUpdate != Vector3.zero)
+        if (positionUpdate != Vector3.zero)
         {
-            animator.SetFloat("moveX", PositionUpdate.x);
-            animator.SetFloat("moveY", PositionUpdate.y);
+            animator.SetFloat("moveX", positionUpdate.x);
+            animator.SetFloat("moveY", positionUpdate.y);
             animator.SetBool("isMoving", true);
         }
         else
@@ -78,49 +76,49 @@ public class KnightController : MonoBehaviour
         //If shift is pressed sprint
         if (isShiftPressed)
         {
-            if (Stamina > 0)
+            if (stamina > 0)
             {
-                Rigidbody.MovePosition(
-                    transform.position + PositionUpdate * MovementSpeed * Time.fixedDeltaTime * 1.5f
+                rigidBody.MovePosition(
+                    transform.position + positionUpdate * movementSpeed * Time.fixedDeltaTime * 1.5f
                 );
-                CurrentMovementSpeed = MovementSpeed * 1.5f;
+                currentMovementSpeed = movementSpeed * 1.5f;
                 animator.SetBool("isMoving", false);
                 animator.SetBool("isSprinting", true);
             }
             else
             {
-                Rigidbody.MovePosition(
-                   transform.position + PositionUpdate * MovementSpeed * Time.fixedDeltaTime
+                rigidBody.MovePosition(
+                   transform.position + positionUpdate * movementSpeed * Time.fixedDeltaTime
                 );
-                CurrentMovementSpeed = MovementSpeed;
+                currentMovementSpeed = movementSpeed;
                 animator.SetBool("isSprinting", false);
                 animator.SetBool("isMoving", true);
             }
 
 
-            Stamina -= RunningCost * Time.fixedDeltaTime;
+            stamina -= runningCost * Time.fixedDeltaTime;
 
-            if (Stamina < 0)
+            if (stamina < 0)
             {
-                Stamina = 0;
+                stamina = 0;
             }
-            StaminaBar.fillAmount = Stamina / MaxStamina;
+            staminaBar.fillAmount = stamina / maxStamina;
 
             //Stop recharging if sprinting again and start again when stoping
-            if (Recharge != null)
+            if (recharge != null)
             {
-                StopCoroutine(Recharge);
+                StopCoroutine(recharge);
 
             }
-            Recharge = StartCoroutine(RechargeStamina());
+            recharge = StartCoroutine(RechargeStamina());
 
         }
         else
         {
-            Rigidbody.MovePosition(
-                    transform.position + PositionUpdate * MovementSpeed * Time.fixedDeltaTime
+            rigidBody.MovePosition(
+                    transform.position + positionUpdate * movementSpeed * Time.fixedDeltaTime
             );
-            CurrentMovementSpeed = MovementSpeed;
+            currentMovementSpeed = movementSpeed;
             animator.SetBool("isMoving", true);
             animator.SetBool("isSprinting", false);
         }
@@ -131,15 +129,15 @@ public class KnightController : MonoBehaviour
         //Wait for a second before recharging
         yield return new WaitForSeconds(1f);
 
-        while (Stamina < MaxStamina)
+        while (stamina < maxStamina)
         {
             //Gradually recharge stamina
-            Stamina += ChargingRate / 10f;
-            if (Stamina > MaxStamina) Stamina = MaxStamina;
-            float fillRatio = Stamina / MaxStamina;
+            stamina += ChargingRate / 10f;
+            if (stamina > maxStamina) stamina = maxStamina;
+            float fillRatio = stamina / maxStamina;
 
             //Start recharging the stamina bar from current amount of stamina to the next "milestone", but do it gradually 
-            StartCoroutine(UpdateStaminaBar(StaminaBar.fillAmount, fillRatio, 0.1f));
+            StartCoroutine(UpdateStaminaBar(staminaBar.fillAmount, fillRatio, 0.1f));
 
             //Make sure the stamina is not filled all at once
             yield return new WaitForSeconds(.1f);
@@ -156,11 +154,11 @@ public class KnightController : MonoBehaviour
         {
             float elapsedTime = Time.time - startTime;
             float percentageComplete = elapsedTime / duration;
-            StaminaBar.fillAmount = Mathf.Lerp(startAmount, targetAmount, percentageComplete);
+            staminaBar.fillAmount = Mathf.Lerp(startAmount, targetAmount, percentageComplete);
             yield return null;
         }
 
         //Make sure that at the end of the interpolation the Stamina Bar reached the target amount
-        StaminaBar.fillAmount = targetAmount;
+        staminaBar.fillAmount = targetAmount;
     }
 }

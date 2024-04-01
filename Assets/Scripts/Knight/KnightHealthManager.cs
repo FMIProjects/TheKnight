@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class KnightHealthManager : MonoBehaviour
 {
-
-    public Image HealthBar;
-    public float healthAmount = 100f;
-
-    public GameObject knightObject;
     DamageFlash damageFlash;
 
     private Animator animator;
-    
+
+    [SerializeField] private Image healthBar;
+    [SerializeField] private GameObject knightObject;
+
+    public float healthAmount = 100f;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -46,7 +46,7 @@ public class KnightHealthManager : MonoBehaviour
     {
         damageFlash.Flash();
         healthAmount -= damage;
-        HealthBar.fillAmount = healthAmount / 100f;
+        healthBar.fillAmount = healthAmount / 100f;
     }
 
     public void Heal(float healAmount)
@@ -54,7 +54,7 @@ public class KnightHealthManager : MonoBehaviour
         healthAmount += healAmount;
         healthAmount = Mathf.Clamp(healthAmount, 0f, 100f);
 
-        HealthBar.fillAmount = healthAmount / 100f;
+        healthBar.fillAmount = healthAmount / 100f;
     }
 
     private IEnumerator Respawn()

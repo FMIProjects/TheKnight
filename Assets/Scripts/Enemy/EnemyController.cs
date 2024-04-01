@@ -4,7 +4,9 @@ public class EnemyController : MonoBehaviour
 {
     private Animator animator;
     private Transform target;
-    [SerializeField] private Transform spawnPos;
+    private Rigidbody2D rigidBody;
+
+    private Vector3 spawnPos;
     [SerializeField] private float speed;
     [SerializeField] private float maxRange;
     [SerializeField] private float minRange;
@@ -12,7 +14,9 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        rigidBody = GetComponent<Rigidbody2D>();
         target = FindObjectOfType<KnightController>().transform;
+        spawnPos = transform.position;
     }
 
     void FixedUpdate()
@@ -30,16 +34,21 @@ public class EnemyController : MonoBehaviour
         animator.SetBool("isMoving", true);
         animator.SetFloat("moveX", (target.position.x - transform.position.x));
         animator.SetFloat("moveY", (target.position.y - transform.position.y));
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.fixedDeltaTime);
+
+        Vector3 direction = (target.transform.position - rigidBody.transform.position).normalized;
+        rigidBody.MovePosition(rigidBody.transform.position + direction * speed * Time.fixedDeltaTime);
+
     }
 
     public void GoToSpawn()
     {
-        animator.SetFloat("moveX", (spawnPos.position.x - transform.position.x));
-        animator.SetFloat("moveY", (spawnPos.position.y - transform.position.y));
-        transform.position = Vector3.MoveTowards(transform.position, spawnPos.position, speed * Time.fixedDeltaTime);
+        animator.SetFloat("moveX", (spawnPos.x - transform.position.x));
+        animator.SetFloat("moveY", (spawnPos.y - transform.position.y));
 
-        if (Vector3.Distance(transform.position, spawnPos.position) == 0)
+        Vector3 direction = (spawnPos - rigidBody.transform.position).normalized;
+        rigidBody.MovePosition(rigidBody.transform.position + direction * speed * Time.fixedDeltaTime);
+
+        if (Vector3.Distance(transform.position, spawnPos) == 0)
         {
             animator.SetBool("isMoving", false);
         }
