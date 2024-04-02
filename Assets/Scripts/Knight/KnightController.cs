@@ -12,6 +12,8 @@ public class KnightController : MonoBehaviour
     private Vector3 positionUpdate;
     private Animator animator;
     private Coroutine recharge;
+    private Vector2 mousePosition,pointerPosition;
+    private SwordParent swordParent;
 
     [SerializeField] private float movementSpeed = 5;
     [SerializeField] private float currentMovementSpeed;
@@ -27,12 +29,15 @@ public class KnightController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
+        swordParent = GetComponentInChildren<SwordParent>();
         knightObject = GameObject.Find("Knight");
         healthManager = knightObject.GetComponent<KnightHealthManager>();
     }
 
     void FixedUpdate()
     {
+        pointerPosition = getMousePosition();
+        swordParent.mousePosition = pointerPosition;
         UpdatePosition();
         UpdateAnimation();
     }
@@ -160,5 +165,12 @@ public class KnightController : MonoBehaviour
 
         //Make sure that at the end of the interpolation the Stamina Bar reached the target amount
         staminaBar.fillAmount = targetAmount;
+    }
+
+    private Vector2 getMousePosition()
+    {
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = Camera.main.nearClipPlane;
+        return Camera.main.ScreenToWorldPoint(mousePos);
     }
 }
