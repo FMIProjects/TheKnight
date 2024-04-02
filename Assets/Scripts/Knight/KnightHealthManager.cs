@@ -7,15 +7,19 @@ public class KnightHealthManager : MonoBehaviour
 {
     DamageFlash damageFlash;
 
+    
+
     private Animator animator;
 
     [SerializeField] private Image healthBar;
     [SerializeField] private GameObject knightObject;
+    private GameObject sword;
 
     public float healthAmount = 100f;
 
     void Start()
     {
+        sword = GameObject.Find("SwordParent");
         animator = GetComponent<Animator>();
         knightObject = GameObject.Find("Knight");
         damageFlash = knightObject.GetComponent<DamageFlash>();
@@ -26,7 +30,7 @@ public class KnightHealthManager : MonoBehaviour
         animator.SetFloat("Health", healthAmount);
         if (healthAmount <= 0)
         {
-
+            sword.SetActive(false);
             StartCoroutine(Respawn());
         }
 
