@@ -11,6 +11,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float maxRange;
     [SerializeField] private float minRange;
 
+    private int index = 0;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -48,17 +50,26 @@ public class EnemyController : MonoBehaviour
 
     public void GoToSpawn()
     {
-        // set the animator to moving 
-        animator.SetFloat("moveX", (spawnPos.x - transform.position.x));
-        animator.SetFloat("moveY", (spawnPos.y - transform.position.y));
 
-        Vector3 direction = (spawnPos - rigidBody.transform.position).normalized;
-        rigidBody.MovePosition(rigidBody.transform.position + direction * speed * Time.fixedDeltaTime);
-
-        // if the enemy reached the spawn point , stop moving
-        if (Vector3.Distance(transform.position, spawnPos) == 0)
+        // check if the character is moving, otherwise there is no use in computing the direction vectors
+        if (animator.GetBool("isMoving"))
         {
-            animator.SetBool("isMoving", false);
+            // set the animator to moving 
+            animator.SetFloat("moveX", (spawnPos.x - transform.position.x));
+            animator.SetFloat("moveY", (spawnPos.y - transform.position.y));
+
+            Vector3 direction = (spawnPos - rigidBody.transform.position).normalized;
+            rigidBody.MovePosition(rigidBody.transform.position + direction * speed * Time.fixedDeltaTime);
+
+            // if the enemy reached the spawn point , stop moving
+            if (Vector3.Distance(transform.position, spawnPos) <= 0.5)
+            {
+                index++;
+                Debug.Log("Move set to false!" + index);
+                animator.SetBool("isMoving", false);
+            }
         }
+
+        
     }
 }
