@@ -2,76 +2,84 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordParent : MonoBehaviour
+public class EnemySwordParent : MonoBehaviour
 {
-
-    private Animator knightAnimator,swordAnimator;
+    private Transform target;
+    private Animator enemyAnimator, swordAnimator;
     private bool isAttacking;
-    [SerializeField] private float delay = 0.25f;
+    [SerializeField] private float delay = 1f;
     [SerializeField] private float damageAmount = 5f;
-    public Vector2 mousePosition { get; set; }
 
     public Transform center;
     public float radius;
 
+    EnemyHealthManager enemyHealth;
+    KnightHealthManager knightHealth;
+
     private void Start()
     {
-        knightAnimator = GetComponentInParent<Animator>();
+        enemyAnimator = GetComponentInParent<Animator>();
         swordAnimator = GetComponentInChildren<Animator>();
+        target = FindObjectOfType<KnightController>().transform;
+        enemyHealth = GetComponentInParent<EnemyHealthManager>();
+        knightHealth = GameObject.Find("Knight").GetComponent<KnightHealthManager>();
     }
     void Update()
     {
-        if (!isAttacking)
+        if (enemyHealth.healthAmount <= 0)
         {
-            Vector2 direction = (mousePosition - (Vector2)transform.position).normalized;
+            GetComponentInChildren<SpriteRenderer>().enabled = false;
+
+        }
+        bool isMoving = enemyAnimator.GetBool("isMoving");
+        if (!isAttacking&&isMoving&&enemyHealth.healthAmount>0&&knightHealth.healthAmount>0)
+        {
+            Vector2 direction = (transform.position -target.position ).normalized;
             transform.right = direction;
             Vector2 scale = transform.localScale;
+            
             if (direction.x < 0)
             {
                 scale.y = -1;
             }
             else
             {
-                if (direction.x > 0)
-                {
+                if(direction.x>0)
                     scale.y = 1;
-                }
+                
             }
             transform.localScale = scale;
             if (direction.y > 0)
             {
                 if (direction.x < 0.35f && direction.x > -0.35f)
                 {
-                    knightAnimator.SetFloat("moveX", 0);
-                    knightAnimator.SetFloat("moveY", 1);
+                    enemyAnimator.SetFloat("moveX", 0);
+                    enemyAnimator.SetFloat("moveY", -1);
                 }
                 else
                 {
-                    knightAnimator.SetFloat("moveX", scale.y);
-                    knightAnimator.SetFloat("moveY", 0);
+                    enemyAnimator.SetFloat("moveX", scale.y);
+                    enemyAnimator.SetFloat("moveY", 0);
                 }
             }
             else
             {
                 if (direction.x < 0.35f && direction.x > -0.35f)
                 {
-                    knightAnimator.SetFloat("moveX", 0);
-                    knightAnimator.SetFloat("moveY", -1);
+                    enemyAnimator.SetFloat("moveX", 0);
+                    enemyAnimator.SetFloat("moveY", 1);
                 }
                 else
                 {
-                    knightAnimator.SetFloat("moveX", scale.y);
-                    knightAnimator.SetFloat("moveY", 0);
+                    enemyAnimator.SetFloat("moveX", scale.y);
+                    enemyAnimator.SetFloat("moveY", 0);
                 }
             }
 
-            
-            
+            DetectColliders();
+
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            Attack();
-        }
+        
     }
 
     public void Attack()
@@ -110,9 +118,10 @@ public class SwordParent : MonoBehaviour
     {
         foreach (Collider2D collider in Physics2D.OverlapCircleAll(center.position, radius))
         {
-            EnemyHealthManager health;
-            if (health = collider.GetComponent<EnemyHealthManager>())
+            KnightHealthManager health;
+            if (health = collider.GetComponent<KnightHealthManager>())
             {
+                Attack();
                 health.TakeDamage(damageAmount);
             }
         }

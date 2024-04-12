@@ -6,6 +6,9 @@ public class EnemyController : MonoBehaviour
     private Transform target;
     private Rigidbody2D rigidBody;
 
+    GameObject knightObject;
+    KnightHealthManager knightHealth;
+
     private Vector3 spawnPos;
     [SerializeField] private float speed;
     [SerializeField] private float maxRange;
@@ -22,17 +25,19 @@ public class EnemyController : MonoBehaviour
         target = FindObjectOfType<KnightController>().transform;
         // gets the spawn point of the enemy
         spawnPos = transform.position;
+        knightObject = GameObject.Find("Knight");
+        knightHealth = knightObject.GetComponent<KnightHealthManager>();
     }
 
     void FixedUpdate()
     {
         // follow the player if it is in the range
-        if (Vector3.Distance(transform.position, target.position) <= maxRange && Vector3.Distance(transform.position, target.position) >= minRange)
+        if (Vector3.Distance(transform.position, target.position) <= maxRange && Vector3.Distance(transform.position, target.position) >= minRange&&knightHealth.healthAmount>0)
         {
             FollowPlayer();
         }
         // retreat to spawn poit if gone too far away
-        else if (Vector3.Distance(target.position, transform.position) >= maxRange)
+        else if (Vector3.Distance(target.position, transform.position) >= maxRange||knightHealth.healthAmount<=0)
             GoToSpawn();
     }
 
