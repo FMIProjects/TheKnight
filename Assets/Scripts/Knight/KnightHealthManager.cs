@@ -48,9 +48,12 @@ public class KnightHealthManager : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        damageFlash.Flash();
-        healthAmount -= damage;
-        healthBar.fillAmount = healthAmount / 100f;
+        if (healthAmount > 0)
+        {
+            damageFlash.Flash();
+            healthAmount -= damage;
+            healthBar.fillAmount = healthAmount / 100f;
+        }
     }
 
     public void Heal(float healAmount)

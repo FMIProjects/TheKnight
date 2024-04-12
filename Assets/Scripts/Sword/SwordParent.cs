@@ -24,26 +24,48 @@ public class SwordParent : MonoBehaviour
         if (!isAttacking)
         {
             Vector2 direction = (mousePosition - (Vector2)transform.position).normalized;
-
             transform.right = direction;
             Vector2 scale = transform.localScale;
             if (direction.x < 0)
             {
                 scale.y = -1;
-
-
-
             }
             else
             {
                 if (direction.x > 0)
                 {
                     scale.y = 1;
-
                 }
             }
             transform.localScale = scale;
-            knightAnimator.SetFloat("moveX", scale.y);
+            if (direction.y > 0)
+            {
+                if (direction.x < 0.35f && direction.x > -0.35f)
+                {
+                    knightAnimator.SetFloat("moveX", 0);
+                    knightAnimator.SetFloat("moveY", 1);
+                }
+                else
+                {
+                    knightAnimator.SetFloat("moveX", scale.y);
+                    knightAnimator.SetFloat("moveY", 0);
+                }
+            }
+            else
+            {
+                if (direction.x < 0.35f && direction.x > -0.35f)
+                {
+                    knightAnimator.SetFloat("moveX", 0);
+                    knightAnimator.SetFloat("moveY", -1);
+                }
+                else
+                {
+                    knightAnimator.SetFloat("moveX", scale.y);
+                    knightAnimator.SetFloat("moveY", 0);
+                }
+            }
+
+            
             
         }
         if (Input.GetMouseButtonDown(0))
@@ -92,7 +114,6 @@ public class SwordParent : MonoBehaviour
             if (health = collider.GetComponent<EnemyHealthManager>())
             {
                 health.TakeDamage(damageAmount);
-                Debug.Log("aaa");
             }
         }
     }
