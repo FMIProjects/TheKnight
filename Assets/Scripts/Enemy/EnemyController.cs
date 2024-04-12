@@ -45,8 +45,9 @@ public class EnemyController : MonoBehaviour
     {
         // set the animator to moving 
         animator.SetBool("isMoving", true);
-        animator.SetFloat("moveX", (target.position.x - transform.position.x));
-        animator.SetFloat("moveY", (target.position.y - transform.position.y));
+        animator.SetBool("isReturning", false);
+        animator.SetFloat("moveX", getDirection(target.position.x - transform.position.x));
+        animator.SetFloat("moveY", getDirection(target.position.y - transform.position.y));
 
         Vector3 direction = (target.transform.position - rigidBody.transform.position).normalized;
         rigidBody.MovePosition(rigidBody.transform.position + direction * speed * Time.fixedDeltaTime);
@@ -59,9 +60,10 @@ public class EnemyController : MonoBehaviour
         // check if the character is moving, otherwise there is no use in computing the direction vectors
         if (animator.GetBool("isMoving"))
         {
+            animator.SetBool("isReturning", true);
             // set the animator to moving 
-            animator.SetFloat("moveX", (spawnPos.x - transform.position.x));
-            animator.SetFloat("moveY", (spawnPos.y - transform.position.y));
+            animator.SetFloat("moveX", getDirection(spawnPos.x - transform.position.x));
+            animator.SetFloat("moveY", getDirection(spawnPos.y - transform.position.y));
 
             Vector3 direction = (spawnPos - rigidBody.transform.position).normalized;
             rigidBody.MovePosition(rigidBody.transform.position + direction * speed * Time.fixedDeltaTime);
@@ -69,12 +71,23 @@ public class EnemyController : MonoBehaviour
             // if the enemy reached the spawn point , stop moving
             if (Vector3.Distance(transform.position, spawnPos) <= 0.5)
             {
+                animator.SetBool("isReturning", false);
                 index++;
                 Debug.Log("Move set to false!" + index);
                 animator.SetBool("isMoving", false);
             }
+        }   
+    }
+    public int getDirection(float x)
+    {
+        if (x < 0)
+            return -1;
+        else
+        {
+            if (x > 0)
+                return 1;
+            else
+                return 0;
         }
-
-        
     }
 }

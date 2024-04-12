@@ -32,10 +32,12 @@ public class EnemySwordParent : MonoBehaviour
 
         }
         bool isMoving = enemyAnimator.GetBool("isMoving");
-        if (!isAttacking&&isMoving&&enemyHealth.healthAmount>0&&knightHealth.healthAmount>0)
+        bool isReturning = enemyAnimator.GetBool("isReturning");
+        if (!isReturning&&isMoving&&enemyHealth.healthAmount>0&&knightHealth.healthAmount>0)
         {
             Vector2 direction = (transform.position -target.position ).normalized;
-            transform.right = direction;
+            if(!isAttacking)
+                transform.right = direction;
             Vector2 scale = transform.localScale;
             
             if (direction.x < 0)
@@ -48,7 +50,8 @@ public class EnemySwordParent : MonoBehaviour
                     scale.y = 1;
                 
             }
-            transform.localScale = scale;
+            if(!isAttacking)
+                transform.localScale = scale;
             if (direction.y > 0)
             {
                 if (direction.x < 0.35f && direction.x > -0.35f)
@@ -75,9 +78,56 @@ public class EnemySwordParent : MonoBehaviour
                     enemyAnimator.SetFloat("moveY", 0);
                 }
             }
+            if(!isAttacking)
+                DetectColliders();
 
-            DetectColliders();
+        }
+        else
+        {
+            if ((knightHealth.healthAmount <= 0 && isMoving)||isReturning)
+            {
+                Vector2 direction = ( target.position-transform.position ).normalized;
+                transform.right = direction;
+                Vector2 scale = transform.localScale;
 
+                if (direction.x < 0)
+                {
+                    scale.y = -1;
+                }
+                else
+                {
+                    if (direction.x > 0)
+                        scale.y = 1;
+
+                }
+                transform.localScale = scale;
+                if (direction.y > 0)
+                {
+                    if (direction.x < 0.35f && direction.x > -0.35f)
+                    {
+                        enemyAnimator.SetFloat("moveX", 0);
+                        enemyAnimator.SetFloat("moveY", -1);
+                    }
+                    else
+                    {
+                        enemyAnimator.SetFloat("moveX", scale.y);
+                        enemyAnimator.SetFloat("moveY", 0);
+                    }
+                }
+                else
+                {
+                    if (direction.x < 0.35f && direction.x > -0.35f)
+                    {
+                        enemyAnimator.SetFloat("moveX", 0);
+                        enemyAnimator.SetFloat("moveY", 1);
+                    }
+                    else
+                    {
+                        enemyAnimator.SetFloat("moveX", scale.y);
+                        enemyAnimator.SetFloat("moveY", 0);
+                    }
+                }
+            }
         }
         
     }
