@@ -1,4 +1,4 @@
-<img src="Resources\logo.png" alt="The Knight" style="border: 2px solid  gray; border-radius:10%">
+<img src="Resources\logo1.png" alt="The Knight" style="border: 2px solid  gray; border-radius:10%">
 
 
 [![Code-Lines](https://hitsofcode.com/github/fmiprojects/theknight?branch=main&label=Code-Lines)](https://hitsofcode.com/github/fmiprojects/theknight/view?branch=main&label=Code-Lines)
