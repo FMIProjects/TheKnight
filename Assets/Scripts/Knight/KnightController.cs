@@ -37,7 +37,11 @@ public class KnightController : MonoBehaviour
     void FixedUpdate()
     {
         pointerPosition = getMousePosition();
-        swordParent.mousePosition = pointerPosition;
+        if(swordParent!= null)
+        {
+            swordParent.mousePosition = pointerPosition;
+        }
+        
         UpdatePosition();
         UpdateAnimation();
     }
