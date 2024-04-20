@@ -80,11 +80,17 @@ public class Hotbar : MonoBehaviour
 
     void ChangeSlot(int newIndex)
     {
-       
+        // test if the indexdoes not go out of bound
+        if (slots.Count <= newIndex)
+            return;
+        
+        // deactivate current object
         slots[currentSlotIndex].SetActive(false);
 
+        // update slot index
         currentSlotIndex = newIndex;
-
+        
+        // activate new object
         slots[currentSlotIndex].SetActive(true);
 
 
