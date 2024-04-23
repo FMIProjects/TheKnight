@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - TileMapCollider
+  - Slot
+  - Coin
+  - Blue Coin
   layers:
   - Default
   - TransparentFX

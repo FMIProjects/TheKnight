@@ -117,4 +117,9 @@ public class SwordParent : MonoBehaviour
             }
         }
     }
+
+    public bool checkAttacking()
+    {
+        return isAttacking;
+    }
 }
