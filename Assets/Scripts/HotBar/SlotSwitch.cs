@@ -26,65 +26,42 @@ public class SlotSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        int slot_to_change=getPressedKey();
+        if (slot_to_change!=-1)
         {
-            if(current != 0)
+            if(current != slot_to_change)
             {
                 Image last_img = slotsBg[current].GetComponent<Image>();
                 Color last_col = last_img.color;
                 last_col.a = 1f;
                 last_img.color = last_col;
             }
-            Image img = slotsBg[0].GetComponent<Image>();
+            Image img = slotsBg[slot_to_change].GetComponent<Image>();
             Color col = img.color;
             col.a = 0.5f;
             img.color = col;
-            current = 0;
+            current = slot_to_change;
+        }
+    }
+
+    int getPressedKey()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            return 0;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if (current != 1)
-            {
-                Image last_img = slotsBg[current].GetComponent<Image>();
-                Color last_col = last_img.color;
-                last_col.a = 1f;
-                last_img.color = last_col;
-            }
-            Image img = slotsBg[1].GetComponent<Image>();
-            Color col = img.color;
-            col.a = 0.5f;
-            img.color = col;
-            current = 1;
+            return 1;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            if (current != 2)
-            {
-                Image last_img = slotsBg[current].GetComponent<Image>();
-                Color last_col = last_img.color;
-                last_col.a = 1f;
-                last_img.color = last_col;
-            }
-            Image img = slotsBg[2].GetComponent<Image>();
-            Color col = img.color;
-            col.a = 0.5f;
-            img.color = col;
-            current = 2;
+            return 2;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            if (current != 3)
-            {
-                Image last_img = slotsBg[current].GetComponent<Image>();
-                Color last_col = last_img.color;
-                last_col.a = 1f;
-                last_img.color = last_col;
-            }
-            Image img = slotsBg[3].GetComponent<Image>();
-            Color col = img.color;
-            col.a = 0.5f;
-            img.color = col;
-            current = 3;
+            return 3;
         }
+        return -1;
     }
 }

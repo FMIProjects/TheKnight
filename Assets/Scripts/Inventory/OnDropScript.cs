@@ -17,8 +17,6 @@ public class OnDropScript : MonoBehaviour, IDropHandler
             
             if (transform.GetChild(0).name == eventData.pointerDrag.name && !dragDropOriginal.isFull(dragDrop.getCount()) && !dragDrop.isFull(dragDropOriginal.getCount()))
             {
-                
-                
                 dragDropOriginal.refreshCount(dragDrop.getCount());
                 Destroy(dragDrop.gameObject);
                 Debug.Log(dragDropOriginal.getCount());
@@ -26,12 +24,9 @@ public class OnDropScript : MonoBehaviour, IDropHandler
             }
             else
             {
-                
                 dragDropOriginal.transform.SetParent(dragDrop.originalPos);
             }
         }
-        
-        
         dragDrop.originalPos = transform;
     }
 }

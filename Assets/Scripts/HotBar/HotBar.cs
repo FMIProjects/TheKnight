@@ -24,8 +24,6 @@ public class Hotbar : MonoBehaviour
         // meaning get all the ToolParent
         for (int i = 0; i < transform.childCount; i++)
         {
-           
-           
             
             // get the current ToolParent
             GameObject childObject = transform.GetChild(i).gameObject;
