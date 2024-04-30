@@ -117,4 +117,10 @@ public class SwordParent : MonoBehaviour
             }
         }
     }
+
+     //check if player is attacking
+    public bool checkAttacking()
+    {
+        return isAttacking;
+    }
 }

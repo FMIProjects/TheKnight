@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool gameIsPaused = false;
+    public bool gameIsPaused = false;
 
     public int gameStartScene;
 
@@ -17,12 +17,16 @@ public class PauseMenu : MonoBehaviour
 
     PostProcessVolume ppVolume;
 
+    [SerializeField] private GameObject inventory;
+    [SerializeField] private GameObject knight;
+
 
     private void Start()
     {
         ppVolume = mainCamera.GetComponent<PostProcessVolume>();
         ppVolume.enabled = false;
         pauseMenuUI.SetActive(false);
+        
     }
 
     void Update()
@@ -31,10 +35,12 @@ public class PauseMenu : MonoBehaviour
         {
             if (gameIsPaused)
             {
+                
                 Resume();
             }
             else
             {
+                knight.GetComponent<InventoryController>().disableInventory();
                 Pause();
             }
         }

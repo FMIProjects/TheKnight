@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System.Collections;
 
 public class Hotbar : MonoBehaviour
 {
@@ -9,21 +10,26 @@ public class Hotbar : MonoBehaviour
 
     private List<GameObject> slots;
     private int currentSlotIndex = 0;
+
+    private SwordParent sword;
     
     void Start()
     {
 
         slots = new List<GameObject>();
 
+        sword = GetComponentInChildren<SwordParent>();
+
         // get all the children of the parent ( the player)
         // meaning get all the ToolParent
         for (int i = 0; i < transform.childCount; i++)
         {
+            
             // get the current ToolParent
             GameObject childObject = transform.GetChild(i).gameObject;
 
             // get the canvasSlot mapped to the current tool
-            GameObject canvasSlot = HotBarCanvas.transform.GetChild(i).gameObject;
+            GameObject canvasSlot = HotBarCanvas.transform.GetChild(i+4).gameObject;
             // get the canvas sprite
             var canvasImage = canvasSlot.GetComponent<Image>();
 
@@ -54,27 +60,33 @@ public class Hotbar : MonoBehaviour
             }
         }
 
-      
+        
     }
 
     void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        bool isAttacking = sword.checkAttacking();
+        if (!isAttacking && Input.GetKeyDown(KeyCode.Alpha1))
         {
+            Wait(.1f);
             ChangeSlot(0);
+
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (!isAttacking && Input.GetKeyDown(KeyCode.Alpha2))
         {
+            Wait(.1f);
             ChangeSlot(1);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (!isAttacking && Input.GetKeyDown(KeyCode.Alpha3))
         {
+            Wait(.1f);
             ChangeSlot(2);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        else if (!isAttacking && Input.GetKeyDown(KeyCode.Alpha4))
         {
+            Wait(.1f);
             ChangeSlot(3);
+            
         }
     }
 
@@ -94,5 +106,10 @@ public class Hotbar : MonoBehaviour
         slots[currentSlotIndex].SetActive(true);
 
 
+    }
+    private IEnumerator Wait(float s)
+    {
+        
+        yield return new WaitForSeconds(s);
     }
 }
