@@ -8,9 +8,9 @@ public class CameraController : MonoBehaviour
     [SerializeField] public Vector2 maxPosition;
     [SerializeField] public Vector2 minPosition;
 
-    void Start() { }
+    private void Start() { }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         if (transform.position != target.position)
         {

@@ -15,11 +15,11 @@ public class OnDropScript : MonoBehaviour, IDropHandler
         {
             DragDropScript dragDropOriginal = transform.GetChild(0).GetComponent<DragDropScript>();
             
-            if (transform.GetChild(0).name == eventData.pointerDrag.name && !dragDropOriginal.isFull(dragDrop.getCount()) && !dragDrop.isFull(dragDropOriginal.getCount()))
+            if (transform.GetChild(0).name == eventData.pointerDrag.name && !dragDropOriginal.IsFull(dragDrop.GetCount()) && !dragDrop.IsFull(dragDropOriginal.GetCount()))
             {
-                dragDropOriginal.refreshCount(dragDrop.getCount());
+                dragDropOriginal.RefreshCount(dragDrop.GetCount());
                 Destroy(dragDrop.gameObject);
-                Debug.Log(dragDropOriginal.getCount());
+                Debug.Log(dragDropOriginal.GetCount());
                 return;
             }
             else

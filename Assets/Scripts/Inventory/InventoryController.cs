@@ -1,66 +1,78 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
-
     private bool isInInventory;
-    KnightController knightController;
-
-    PauseMenu pauseMenu;
+    private KnightController knightController;
+    private PauseMenu pauseMenu;
 
     [SerializeField] private GameObject inventory;
     [SerializeField] private GameObject spawnItemButton;
-    // Start is called before the first frame update
+
     void Start()
     {
+        // Set initial state
         isInInventory = false;
         inventory.SetActive(false);
+
+        // Get references to other components
         knightController = GetComponent<KnightController>();
         pauseMenu = inventory.GetComponentInParent<PauseMenu>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            enableInventory();
-        }
-        else if(Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.D)|| Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.S))
-        {
-            disableInventory();
-        }
-        
+        // Handle inventory input
+        HandleInventoryInput();
     }
 
-    public void enableInventory()
+    public void HandleInventoryInput()
     {
-        if (isInInventory == false && pauseMenu.gameIsPaused == false)
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            isInInventory = true;
-            knightController.enabled = false;
-            inventory.SetActive(true);
-            spawnItemButton.SetActive(true);
+            // Toggle inventory
+            ToggleInventory();
+        }
+        else if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S))
+        {
+            // Disable inventory
+            DisableInventory();
+        }
+    }
+
+    public void ToggleInventory()
+    {
+        if (!isInInventory && !pauseMenu.gameIsPaused)
+        {
+            // Enable inventory
+            EnableInventory();
         }
         else
         {
-            isInInventory = false;
-            knightController.enabled = true;
-            inventory.SetActive(false);
-            spawnItemButton.SetActive(false);
+            // Disable inventory
+            DisableInventory();
         }
     }
 
-    public void disableInventory()
+    public void EnableInventory()
     {
+        isInInventory = true;
 
-        isInInventory = false;
-        knightController.enabled = true;
-        inventory.SetActive(false);
-        spawnItemButton.SetActive(false);
+        knightController.enabled = false;
+
+        inventory.SetActive(true);
+
+        spawnItemButton.SetActive(true);
     }
 
+    public void DisableInventory()
+    {
+        isInInventory = false;
+
+        knightController.enabled = true;
+
+        inventory.SetActive(false);
+
+        spawnItemButton.SetActive(false);
+    }
 }

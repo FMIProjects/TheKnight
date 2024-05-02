@@ -7,9 +7,8 @@ public class TriggerAttack : MonoBehaviour
 {
     public UnityEvent onAttack;
 
-    public void AttackTriger()
+    public void AttackTrigger()
     {
         onAttack?.Invoke();
     }
-
 }

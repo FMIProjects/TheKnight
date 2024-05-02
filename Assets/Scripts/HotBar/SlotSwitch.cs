@@ -5,46 +5,45 @@ using UnityEngine.UI;
 
 public class SlotSwitch : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     private List<GameObject> slotsBg;
     private int current = 0;
+
     void Start()
+    {
+        InitializeSlots();
+        SetSlotColor(0, 0.5f);
+    }
+
+    void Update()
+    {
+        int slotToChange = GetPressedKey();
+
+        if (slotToChange != -1 && current != slotToChange)
+        {
+            SetSlotColor(current, 1f);
+            SetSlotColor(slotToChange, 0.5f);
+            current = slotToChange;
+        }
+    }
+
+    void InitializeSlots()
     {
         slotsBg = new List<GameObject>();
         for (int i = 0; i < 4; i++)
         {
             slotsBg.Add(transform.GetChild(i).gameObject);
         }
-        Image img = slotsBg[0].GetComponent<Image>();
-        Color col = img.color;
-        col.a = 0.5f;
-        img.color = col;
-        current = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    void SetSlotColor(int slotIndex, float alpha)
     {
-        int slot_to_change=getPressedKey();
-        if (slot_to_change!=-1)
-        {
-            if(current != slot_to_change)
-            {
-                Image last_img = slotsBg[current].GetComponent<Image>();
-                Color last_col = last_img.color;
-                last_col.a = 1f;
-                last_img.color = last_col;
-            }
-            Image img = slotsBg[slot_to_change].GetComponent<Image>();
-            Color col = img.color;
-            col.a = 0.5f;
-            img.color = col;
-            current = slot_to_change;
-        }
+        Image img = slotsBg[slotIndex].GetComponent<Image>();
+        Color col = img.color;
+        col.a = alpha;
+        img.color = col;
     }
 
-    int getPressedKey()
+    int GetPressedKey()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {

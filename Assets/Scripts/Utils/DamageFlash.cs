@@ -10,13 +10,13 @@ public class DamageFlash : MonoBehaviour
     [SerializeField] private Material flashMaterial;
     [SerializeField] private float duration = 0.125f;
 
-    void Start()
+    private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         defMaterial = spriteRenderer.material;
     }
 
-    void Update(){}
+    private void Update(){}
 
     public void Flash()
     {

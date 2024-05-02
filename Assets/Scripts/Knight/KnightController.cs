@@ -6,13 +6,12 @@ public class KnightController : MonoBehaviour
 {
     public GameObject knightObject;
 
-    KnightHealthManager healthManager;
-
+    private KnightHealthManager healthManager;
     private Rigidbody2D rigidBody;
     private Vector3 positionUpdate;
     private Animator animator;
     private Coroutine recharge;
-    private Vector2 mousePosition,pointerPosition;
+    private Vector2 mousePosition, pointerPosition;
     private SwordParent swordParent;
 
     [SerializeField] private float movementSpeed = 5;
@@ -21,46 +20,54 @@ public class KnightController : MonoBehaviour
     [SerializeField] private float stamina = 100;
     [SerializeField] private float maxStamina = 100;
     [SerializeField] private float runningCost = 35;
+    [SerializeField] private float chargingRate = 33;
 
-    //MaxCharge -> 3 seconds
-    [SerializeField] private float ChargingRate = 33;
-
-    void Start()
+    private void Start()
     {
+        // Get the animator component
         animator = GetComponent<Animator>();
+        // Get the rigidbody component
         rigidBody = GetComponent<Rigidbody2D>();
+        // Get the SwordParent component
         swordParent = GetComponentInChildren<SwordParent>();
+        // Find the knight object in the scene
         knightObject = GameObject.Find("Knight");
+        // Get the KnightHealthManager component from the knight object
         healthManager = knightObject.GetComponent<KnightHealthManager>();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        pointerPosition = getMousePosition();
-        if(swordParent!= null)
+        // Get the mouse position in world coordinates
+        pointerPosition = GetMousePosition();
+        if (swordParent != null)
         {
+            // Set the mouse position for the SwordParent component
             swordParent.mousePosition = pointerPosition;
         }
-        
+
+        // Update the position and animation
         UpdatePosition();
         UpdateAnimation();
     }
 
     private void UpdatePosition()
     {
-        //The position is updated to zero at every frame
+        // Reset the position update vector
         positionUpdate = Vector3.zero;
         if (healthManager.healthAmount > 0f)
         {
+            // Get the horizontal and vertical input axes
             positionUpdate.x = Input.GetAxisRaw("Horizontal");
             positionUpdate.y = Input.GetAxisRaw("Vertical");
         }
-        //Check if shift is pressed 
+
+        // Check if the left shift key is pressed
         bool isShiftPressed = Input.GetKey(KeyCode.LeftShift);
 
-        //The character is moving only when there is a key pressed
         if (positionUpdate != Vector3.zero)
         {
+            // Move the character
             MoveCharacter(isShiftPressed);
         }
     }
@@ -69,6 +76,7 @@ public class KnightController : MonoBehaviour
     {
         if (positionUpdate != Vector3.zero)
         {
+            // Set the moveX and moveY parameters of the animator
             animator.SetFloat("moveX", positionUpdate.x);
             animator.SetFloat("moveY", positionUpdate.y);
             animator.SetBool("isMoving", true);
@@ -82,11 +90,11 @@ public class KnightController : MonoBehaviour
 
     private void MoveCharacter(bool isShiftPressed)
     {
-        //If shift is pressed sprint
         if (isShiftPressed)
         {
             if (stamina > 0)
             {
+                // Move the character with increased speed
                 rigidBody.MovePosition(
                     transform.position + positionUpdate * movementSpeed * Time.fixedDeltaTime * 1.5f
                 );
@@ -96,15 +104,16 @@ public class KnightController : MonoBehaviour
             }
             else
             {
+                // Move the character with normal speed
                 rigidBody.MovePosition(
-                   transform.position + positionUpdate * movementSpeed * Time.fixedDeltaTime
+                    transform.position + positionUpdate * movementSpeed * Time.fixedDeltaTime
                 );
                 currentMovementSpeed = movementSpeed;
                 animator.SetBool("isSprinting", false);
                 animator.SetBool("isMoving", true);
             }
 
-
+            // Decrease stamina
             stamina -= runningCost * Time.fixedDeltaTime;
 
             if (stamina < 0)
@@ -113,19 +122,17 @@ public class KnightController : MonoBehaviour
             }
             staminaBar.fillAmount = stamina / maxStamina;
 
-            //Stop recharging if sprinting again and start again when stoping
             if (recharge != null)
             {
                 StopCoroutine(recharge);
-
             }
             recharge = StartCoroutine(RechargeStamina());
-
         }
         else
         {
+            // Move the character with normal speed
             rigidBody.MovePosition(
-                    transform.position + positionUpdate * movementSpeed * Time.fixedDeltaTime
+                transform.position + positionUpdate * movementSpeed * Time.fixedDeltaTime
             );
             currentMovementSpeed = movementSpeed;
             animator.SetBool("isMoving", true);
@@ -135,29 +142,26 @@ public class KnightController : MonoBehaviour
 
     private IEnumerator RechargeStamina()
     {
-        //Wait for a second before recharging
         yield return new WaitForSeconds(1f);
 
         while (stamina < maxStamina)
         {
-            //Gradually recharge stamina
-            stamina += ChargingRate / 10f;
-            if (stamina > maxStamina) stamina = maxStamina;
+            // Increase stamina
+            stamina += chargingRate / 10f;
+            if (stamina > maxStamina)
+            {
+                stamina = maxStamina;
+            }
             float fillRatio = stamina / maxStamina;
 
-            //Start recharging the stamina bar from current amount of stamina to the next "milestone", but do it gradually 
             StartCoroutine(UpdateStaminaBar(staminaBar.fillAmount, fillRatio, 0.1f));
 
-            //Make sure the stamina is not filled all at once
             yield return new WaitForSeconds(.1f);
-
         }
     }
 
-
     private IEnumerator UpdateStaminaBar(float startAmount, float targetAmount, float duration)
     {
-        //This method recharges the stamina bar over a duration of time, assuring a smoother experience
         float startTime = Time.time;
         while (Time.time < startTime + duration)
         {
@@ -167,11 +171,10 @@ public class KnightController : MonoBehaviour
             yield return null;
         }
 
-        //Make sure that at the end of the interpolation the Stamina Bar reached the target amount
         staminaBar.fillAmount = targetAmount;
     }
 
-    private Vector2 getMousePosition()
+    private Vector2 GetMousePosition()
     {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Camera.main.nearClipPlane;

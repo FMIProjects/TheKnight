@@ -6,9 +6,10 @@ using UnityEngine.Events;
 public class Knockback : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D body;
-    [SerializeField]private float power = 3500f;
+    [SerializeField] private float power = 3500f;
 
-    public UnityEvent begin, end;
+    public UnityEvent begin;
+    public UnityEvent end;
 
     public void Knock(GameObject sender)
     {
@@ -18,6 +19,7 @@ public class Knockback : MonoBehaviour
         body.AddForce(dir * power, ForceMode2D.Impulse);
         StartCoroutine(Reset());
     }
+
     private IEnumerator Reset()
     {
         yield return new WaitForSeconds(0.16f);
