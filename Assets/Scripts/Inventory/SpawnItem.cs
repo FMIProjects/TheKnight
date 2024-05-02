@@ -6,19 +6,22 @@ using UnityEngine.UI;
 
 public class SpawnItem : MonoBehaviour
 {
-    public void createItem(GameObject itemPrefab)
+    public void CreateItem(GameObject itemPrefab)
     {
         GameObject item = Instantiate(itemPrefab);
-        item.GetComponent<DragDropScript>().img = item.GetComponent<Image>();
+        DragDropScript dragDropOriginal = null;
+
         for (int i = 0; i < transform.childCount; i++)
         {
-            if (transform.GetChild(i).childCount != 0)
-            {
-                DragDropScript dragDropOriginal = transform.GetChild(i).transform.GetChild(0).GetComponent<DragDropScript>();
+            Transform child = transform.GetChild(i);
 
-                if (item.tag == transform.GetChild(i).transform.GetChild(0).gameObject.tag && !dragDropOriginal.isFull(1))
+            if (child.childCount != 0)
+            {
+                dragDropOriginal = child.GetChild(0).GetComponent<DragDropScript>();
+
+                if (item.tag == child.GetChild(0).gameObject.tag && !dragDropOriginal.IsFull(1))
                 {
-                    dragDropOriginal.refreshCount(1);
+                    dragDropOriginal.RefreshCount(1);
                     Destroy(item);
                     return;
                 }
@@ -27,9 +30,11 @@ public class SpawnItem : MonoBehaviour
 
         for (int i = 0; i < transform.childCount; i++)
         {
-            if (transform.GetChild(i).childCount == 0)
+            Transform child = transform.GetChild(i);
+
+            if (child.childCount == 0)
             {
-                item.transform.SetParent(transform.GetChild(i).transform);
+                item.transform.SetParent(child);
                 item.transform.localScale = Vector3.one;
                 break;
             }

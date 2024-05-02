@@ -5,28 +5,24 @@ using UnityEngine.Tilemaps;
 
 public class EnemySpawner : MonoBehaviour
 {
-
     public GameObject enemyPrefab;
     public int numberEnemies = 3;
+    public int maxEnemies = 20;
     public Vector2 minSpawnCoordinates;
     public Vector2 maxSpawnCoordinates;
     public float spawnInterval = 10f;
     public bool isActive = true;
-    
-    
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
         StartCoroutine(SpawnEnemiesRoutine());
     }
 
-    IEnumerator SpawnEnemiesRoutine()
+    // Coroutine to continuously spawn enemies
+    private IEnumerator SpawnEnemiesRoutine()
     {
-        while(true)
+        while (true)
         {
-            // spawn while active
             if (isActive)
                 SpawnEnemies();
 
@@ -34,46 +30,49 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-
-    void SpawnEnemies()
+    // Spawn enemies
+    private void SpawnEnemies()
     {
+        int currentEnemies = GameObject.FindGameObjectsWithTag("Enemy").Length; // Get the current number of enemies
 
-        for (int i = 0;i<3;i++)
+        if (currentEnemies >= maxEnemies) // Check if the maximum cap is reached
+            return;
+
+        int enemiesToSpawn = Mathf.Min(numberEnemies, maxEnemies - currentEnemies); // Calculate the number of enemies to spawn
+
+        for (int i = 0; i < enemiesToSpawn; i++)
         {
-            // generate a random position in the given area 
-            Vector2 spawnPosition = new Vector2(Random.Range(minSpawnCoordinates.x, maxSpawnCoordinates.x),
-                                           Random.Range(minSpawnCoordinates.y, maxSpawnCoordinates.y));
+            Vector2 spawnPosition = GetRandomSpawnPosition();
 
-            // 
             while (IsNotValidSpawnPoint(spawnPosition))
             {
-                
-                spawnPosition.x = Random.Range(minSpawnCoordinates.x, maxSpawnCoordinates.x);
-                spawnPosition.y = Random.Range(minSpawnCoordinates.y, maxSpawnCoordinates.y);
+                spawnPosition = GetRandomSpawnPosition();
             }
 
-
-            // instantiate a new enemies based on a prefab
             Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
         }
-
     }
 
-
-    bool IsNotValidSpawnPoint(Vector2 spawnPosition)
+    // Get a random spawn position within the specified range
+    private Vector2 GetRandomSpawnPosition()
     {
-        // get all colliders close of the spawn-point in a radius of 2
+        return new Vector2(Random.Range(minSpawnCoordinates.x, maxSpawnCoordinates.x),
+                           Random.Range(minSpawnCoordinates.y, maxSpawnCoordinates.y));
+    }
+
+    // Check if the spawn position is valid
+    private bool IsNotValidSpawnPoint(Vector2 spawnPosition)
+    {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(spawnPosition, 2f);
 
         foreach (Collider2D currentCollider in colliders)
         {
-            // if the collider exists and the tag is tilemap return true
             if (currentCollider != null && currentCollider.gameObject.CompareTag("TileMapCollider"))
             {
-                return true; 
+                return true;
             }
         }
-        // returns false if the spawnpoint is valid
+
         return false;
     }
 }

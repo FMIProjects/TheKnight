@@ -5,28 +5,23 @@ using UnityEngine.Events;
 public class EnemyHealthManager : MonoBehaviour
 {
     public float healthAmount = 20f;
-    DamageFlash damageFlash;
-
     public GameObject knightObject;
-    public GameObject enemyObject;
     private Animator animator;
-
+    private DamageFlash damageFlash;
     public UnityEvent<GameObject> OnHitWithReference;
 
-    void Start()
+    private void Start()
     {
         animator = GetComponent<Animator>();
-        // get the reference to the object to which this script is attached
-        enemyObject = gameObject;
-        damageFlash = enemyObject.GetComponent<DamageFlash>();
+        damageFlash = GetComponent<DamageFlash>();
     }
 
-    void Update()
+    private void Update()
     {
         animator.SetFloat("Health", healthAmount);
         if (healthAmount <= 0)
         {
-            enemyObject.GetComponent<EnemyController>().enabled = false;
+            GetComponent<EnemyController>().enabled = false;
             StartCoroutine(Death());
         }
     }
@@ -43,9 +38,7 @@ public class EnemyHealthManager : MonoBehaviour
 
     private IEnumerator Death()
     {
-        
         yield return new WaitForSeconds(5f);
-        // destroy the object
-        Destroy(enemyObject);
+        Destroy(gameObject);
     }
 }

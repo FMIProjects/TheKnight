@@ -24,34 +24,38 @@ public class EnemySwordParent : MonoBehaviour
         enemyHealth = GetComponentInParent<EnemyHealthManager>();
         knightHealth = GameObject.Find("Knight").GetComponent<KnightHealthManager>();
     }
-    void Update()
+
+    private void Update()
     {
         if (enemyHealth.healthAmount <= 0)
         {
             GetComponentInChildren<SpriteRenderer>().enabled = false;
-
         }
+
         bool isMoving = enemyAnimator.GetBool("isMoving");
         bool isReturning = enemyAnimator.GetBool("isReturning");
-        if (!isReturning&&isMoving&&enemyHealth.healthAmount>0&&knightHealth.healthAmount>0)
+
+        if (!isReturning && isMoving && enemyHealth.healthAmount > 0 && knightHealth.healthAmount > 0)
         {
-            Vector2 direction = (transform.position -target.position ).normalized;
-            if(!isAttacking)
+            Vector2 direction = (transform.position - target.position).normalized;
+
+            if (!isAttacking)
                 transform.right = direction;
+
             Vector2 scale = transform.localScale;
-            
+
             if (direction.x < 0)
             {
                 scale.y = -1;
             }
-            else
+            else if (direction.x > 0)
             {
-                if(direction.x>0)
-                    scale.y = 1;
-                
+                scale.y = 1;
             }
-            if(!isAttacking)
+
+            if (!isAttacking)
                 transform.localScale = scale;
+
             if (direction.y > 0)
             {
                 if (direction.x < 0.35f && direction.x > -0.35f)
@@ -78,15 +82,15 @@ public class EnemySwordParent : MonoBehaviour
                     enemyAnimator.SetFloat("moveY", 0);
                 }
             }
-            if(!isAttacking)
-                DetectColliders();
 
+            if (!isAttacking)
+                DetectColliders();
         }
         else
         {
-            if ((knightHealth.healthAmount <= 0 && isMoving)||isReturning)
+            if ((knightHealth.healthAmount <= 0 && isMoving) || isReturning)
             {
-                Vector2 direction = ( target.position-transform.position ).normalized;
+                Vector2 direction = (target.position - transform.position).normalized;
                 transform.right = direction;
                 Vector2 scale = transform.localScale;
 
@@ -94,13 +98,13 @@ public class EnemySwordParent : MonoBehaviour
                 {
                     scale.y = -1;
                 }
-                else
+                else if (direction.x > 0)
                 {
-                    if (direction.x > 0)
-                        scale.y = 1;
-
+                    scale.y = 1;
                 }
+
                 transform.localScale = scale;
+
                 if (direction.y > 0)
                 {
                     if (direction.x < 0.35f && direction.x > -0.35f)
@@ -129,7 +133,6 @@ public class EnemySwordParent : MonoBehaviour
                 }
             }
         }
-        
     }
 
     public void Attack()
@@ -138,10 +141,12 @@ public class EnemySwordParent : MonoBehaviour
         {
             return;
         }
+
         swordAnimator.SetTrigger("Attack");
         isAttacking = true;
         StartCoroutine(DelayAttack());
     }
+
     private IEnumerator DelayAttack()
     {
         yield return new WaitForSeconds(delay);
@@ -150,17 +155,8 @@ public class EnemySwordParent : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-
         Gizmos.color = Color.green;
-        Vector3 position;
-        if (center == null)
-        {
-            position = Vector3.zero;
-        }
-        else
-        {
-            position = center.position;
-        }
+        Vector3 position = center == null ? Vector3.zero : center.position;
         Gizmos.DrawWireSphere(position, radius);
     }
 
@@ -168,8 +164,8 @@ public class EnemySwordParent : MonoBehaviour
     {
         foreach (Collider2D collider in Physics2D.OverlapCircleAll(center.position, radius))
         {
-            KnightHealthManager health;
-            if (health = collider.GetComponent<KnightHealthManager>())
+            KnightHealthManager health = collider.GetComponent<KnightHealthManager>();
+            if (health != null)
             {
                 Attack();
                 health.TakeDamage(damageAmount);

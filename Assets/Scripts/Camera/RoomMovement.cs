@@ -14,18 +14,13 @@ public class RoomMovement : MonoBehaviour
     private CameraController cam;
 
 
-    // Start is called before the first frame update
     void Start()
     {
         // gets the camera movement script
         cam = Camera.main.GetComponent<CameraController>();   
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void Update(){}
 
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -173,7 +173,7 @@ MonoBehaviour:
   onAttack:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 971587189}
         m_TargetAssemblyTypeName: SwordParent, Assembly-CSharp
         m_MethodName: DetectColliders
         m_Mode: 1
@@ -2893,7 +2893,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthAmount: 20
   knightObject: {fileID: 2003404189}
-  enemyObject: {fileID: 575308419}
   OnHitWithReference:
     m_PersistentCalls:
       m_Calls:
@@ -36221,6 +36220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 575308419}
   numberEnemies: 10
+  maxEnemies: 20
   minSpawnCoordinates: {x: 48, y: -20}
   maxSpawnCoordinates: {x: 95, y: 16}
   spawnInterval: 20
@@ -124767,7 +124767,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 603557568}
         m_TargetAssemblyTypeName: SpawnItem, Assembly-CSharp
-        m_MethodName: createItem
+        m_MethodName: CreateItem
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 2980042076661367533, guid: ab6178b11bc9cfa46957b7f1590d8bce, type: 3}
@@ -125729,7 +125729,7 @@ MonoBehaviour:
   stamina: 100
   maxStamina: 100
   runningCost: 35
-  ChargingRate: 33
+  chargingRate: 33
 --- !u!50 &2003404193
 Rigidbody2D:
   serializedVersion: 4

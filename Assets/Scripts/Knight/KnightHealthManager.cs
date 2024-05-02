@@ -5,19 +5,16 @@ using UnityEngine.UI;
 
 public class KnightHealthManager : MonoBehaviour
 {
-    DamageFlash damageFlash;
-
-    
-
-    private Animator animator;
-
     [SerializeField] private Image healthBar;
     [SerializeField] private GameObject knightObject;
     private GameObject sword;
 
     public float healthAmount = 100f;
 
-    void Start()
+    private Animator animator;
+    private DamageFlash damageFlash;
+
+    private void Start()
     {
         sword = GameObject.Find("SwordParent");
         animator = GetComponent<Animator>();
@@ -25,22 +22,22 @@ public class KnightHealthManager : MonoBehaviour
         damageFlash = knightObject.GetComponent<DamageFlash>();
     }
 
-    void Update()
+    private void Update()
     {
         animator.SetFloat("Health", healthAmount);
+
         if (healthAmount <= 0)
         {
             sword.SetActive(false);
             StartCoroutine(Respawn());
         }
 
-        if (Input.GetKeyDown("g"))
+        if (Input.GetKeyDown(KeyCode.G))
         {
             TakeDamage(20f);
-
         }
 
-        if (Input.GetKeyDown("h"))
+        if (Input.GetKeyDown(KeyCode.H))
         {
             Heal(20f);
         }
