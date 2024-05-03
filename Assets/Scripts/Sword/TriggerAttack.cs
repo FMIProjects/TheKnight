@@ -6,9 +6,15 @@ using UnityEngine.Events;
 public class TriggerAttack : MonoBehaviour
 {
     public UnityEvent onAttack;
+    
 
     public void AttackTrigger()
     {
-        onAttack?.Invoke();
+        
+        if(onAttack != null)
+        {     
+            onAttack.Invoke();
+        }
+            
     }
 }

@@ -15,10 +15,20 @@ public class SwordParent : MonoBehaviour
     public Transform center;
     public float radius;
 
+    private Collider2D toolCollider;
+
     private void Start()
     {
         knightAnimator = GetComponentInParent<Animator>();
         swordAnimator = GetComponentInChildren<Animator>();
+        toolCollider = GetComponentInChildren<Collider2D>();
+
+        if (toolCollider != null)
+        {
+            toolCollider.enabled = false;
+        }
+
+        Debug.Log(toolCollider);
     }
 
     private void Update()
@@ -62,9 +72,17 @@ public class SwordParent : MonoBehaviour
 
     private void Attack()
     {
+
+        Debug.Log("Attack");
         if (isAttacking)
         {
             return;
+        }
+
+        // if the collider exsts enable it
+        if (toolCollider != null)
+        {
+            toolCollider.enabled = true;
         }
 
         swordAnimator.SetTrigger("Attack");
@@ -76,6 +94,12 @@ public class SwordParent : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         isAttacking = false;
+
+        // if the collider exsts disable it
+        if (toolCollider != null)
+        {
+            toolCollider.enabled = false;
+        }
     }
 
     private void OnDrawGizmosSelected()

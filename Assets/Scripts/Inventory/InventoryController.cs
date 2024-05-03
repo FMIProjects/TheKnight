@@ -6,6 +6,7 @@ public class InventoryController : MonoBehaviour
     private KnightController knightController;
     private PauseMenu pauseMenu;
 
+    // canvas inventory component and spawn item button
     [SerializeField] private GameObject inventory;
     [SerializeField] private GameObject spawnItemButton;
 
@@ -13,11 +14,13 @@ public class InventoryController : MonoBehaviour
     {
         // Set initial state
         isInInventory = false;
+
         inventory.SetActive(false);
 
         // Get references to other components
         knightController = GetComponent<KnightController>();
         pauseMenu = inventory.GetComponentInParent<PauseMenu>();
+
     }
 
     void Update()
