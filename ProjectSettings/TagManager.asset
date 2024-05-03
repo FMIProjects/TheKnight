@@ -9,8 +9,9 @@ TagManager:
   - Slot
   - Coin
   - Blue Coin
+  - WoodResource
+  - RockResource
   - Resource
-  - SpawnItem
   layers:
   - Default
   - TransparentFX
