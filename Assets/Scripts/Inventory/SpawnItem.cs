@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -12,6 +13,8 @@ public class SpawnItem : MonoBehaviour
         GameObject item = Instantiate(itemPrefab);
         DragDropScript dragDropOriginal = null;
 
+        bool inventoryIsFull = true;    
+
         // Check if the item is already in the inventory
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -25,7 +28,7 @@ public class SpawnItem : MonoBehaviour
                 dragDropOriginal = child.GetChild(0).GetComponent<DragDropScript>();
 
                 // If the item that is being spawned is the same as the item that is already in the slot and the slot is not full
-                if (item.tag == child.GetChild(0).gameObject.tag && !dragDropOriginal.IsFull(1))
+                if (itemPrefab.tag == child.GetChild(0).gameObject.tag && !dragDropOriginal.IsFull(1))
                 {
                
                     dragDropOriginal.RefreshCount(1);
@@ -43,8 +46,16 @@ public class SpawnItem : MonoBehaviour
             {
                 item.transform.SetParent(child);
                 item.transform.localScale = Vector3.one;
+                inventoryIsFull = false;
                 break;
             }
         }
+
+        // If the inventory is full, destroy the item
+        if (inventoryIsFull)
+        {
+            Destroy(item);
+        }
+
     }
 }
