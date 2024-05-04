@@ -8,7 +8,6 @@ public class InventoryController : MonoBehaviour
 
     // canvas inventory component and spawn item button
     [SerializeField] private GameObject inventory;
-    [SerializeField] private GameObject spawnItemButton;
 
     void Start()
     {
@@ -64,8 +63,6 @@ public class InventoryController : MonoBehaviour
         knightController.enabled = false;
 
         inventory.SetActive(true);
-
-        spawnItemButton.SetActive(true);
     }
 
     public void DisableInventory()
@@ -75,7 +72,5 @@ public class InventoryController : MonoBehaviour
         knightController.enabled = true;
 
         inventory.SetActive(false);
-
-        spawnItemButton.SetActive(false);
     }
 }

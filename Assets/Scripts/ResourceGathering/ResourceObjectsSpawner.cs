@@ -49,7 +49,7 @@ public class ResourceObjectsSpawner : MonoBehaviour
                 spawnPosition = GetRandomSpawnPosition();
             }
 
-            Instantiate(resourceTree, spawnPosition, Quaternion.identity);
+            Instantiate(resourceTree, new Vector3(spawnPosition.x, spawnPosition.y, -1), Quaternion.identity);
             
         }
 

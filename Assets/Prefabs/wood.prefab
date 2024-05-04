@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6229362513462798037}
   - component: {fileID: 5894428399981245207}
   m_Layer: 5
-  m_Name: wood
+  m_Name: Wood
   m_TagString: Resource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 51e33047eee4c8642862685937f7c84f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84cb753126c01ab4fa5c3b7829694b89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 307647988563347929}
   - component: {fileID: 8826873601603903792}
   m_Layer: 5
-  m_Name: rock
+  m_Name: Rock
   m_TagString: RockResource
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4a67742c3b8bbbe46884ce653ca9809f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8aed94c403d5a4f47895ed548a218d50, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
