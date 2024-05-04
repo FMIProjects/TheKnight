@@ -8,7 +8,7 @@ public class Harvestable : MonoBehaviour
 {
     [SerializeField] private int amount = 8;
     [SerializeField] private GameObject inventory;
-    [SerializeField] private GameObject prefab;
+    [SerializeField] private GameObject droppedItemPrefab;
     [SerializeField] private ToolType harvestableType;
     public void Harvest()
     {
@@ -22,7 +22,7 @@ public class Harvestable : MonoBehaviour
 
         if (spawner != null)
         {
-            spawner.CreateItem(prefab);
+            spawner.CreateItem(droppedItemPrefab);
             Debug.Log("success");
 
         }
@@ -34,4 +34,9 @@ public class Harvestable : MonoBehaviour
     {
         return harvestableType;
     }
+
+    public void SetInventory(GameObject inventory)
+    {
+        this.inventory = inventory;
+    }   
 }

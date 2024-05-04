@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amount: 8
   inventory: {fileID: 0}
-  prefab: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  droppedItemPrefab: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
   harvestableType: 1
 --- !u!58 &1435576460882478411
 CircleCollider2D:
