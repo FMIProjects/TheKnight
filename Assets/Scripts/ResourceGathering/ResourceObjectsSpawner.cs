@@ -63,7 +63,8 @@ public class ResourceObjectsSpawner : MonoBehaviour
                 spawnPosition = GetRandomSpawnPosition();
             }
 
-            Instantiate(resourceBoulder, spawnPosition, Quaternion.identity);
+            // set the z position to -1 so that the boulder is visible
+            Instantiate(resourceBoulder, new Vector3(spawnPosition.x,spawnPosition.y,-1), Quaternion.identity);
 
         }
 
