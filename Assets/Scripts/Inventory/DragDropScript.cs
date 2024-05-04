@@ -44,7 +44,10 @@ public class DragDropScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void RefreshCount(int byHowMuch)
     {
-       
+        // Get the text components of the item child ( counter )
+        // start will not always be called before this function
+        text = transform.GetChild(0).GetComponent<Text>();
+
         counter += byHowMuch;
         //if(text != null)
             text.text = counter.ToString();

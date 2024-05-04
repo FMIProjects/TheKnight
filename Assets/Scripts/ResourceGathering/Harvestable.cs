@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Harvestable : MonoBehaviour
 {
     [SerializeField] private int amount = 8;
     [SerializeField] private GameObject inventory;
     [SerializeField] private GameObject prefab;
+    [SerializeField] private ToolType harvestableType;
     public void Harvest()
     {
         --amount;
@@ -26,5 +28,10 @@ public class Harvestable : MonoBehaviour
         }
 
 
+    }
+
+    public ToolType GetToolType()
+    {
+        return harvestableType;
     }
 }
