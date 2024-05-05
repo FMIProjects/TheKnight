@@ -8,12 +8,12 @@ public class Hotbar : MonoBehaviour
 
     private List<GameObject> slots;
     private int currentSlotIndex = 0;
-    private SwordParent sword;
+    private ItemParent sword;
 
     void Start()
     {
         slots = new List<GameObject>();
-        sword = GetComponentInChildren<SwordParent>();
+        sword = GetComponentInChildren<ItemParent>();
 
         InitializeSlots();
         SetActiveSlot(0);

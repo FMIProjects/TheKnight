@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordParent : MonoBehaviour
+public class ItemParent : MonoBehaviour
 {
     private Animator knightAnimator;
-    private Animator swordAnimator;
+    private Animator itemAnimator;
     private bool isAttacking;
 
     [SerializeField] private float delay = 0.25f;
@@ -20,7 +20,7 @@ public class SwordParent : MonoBehaviour
     private void Start()
     {
         knightAnimator = GetComponentInParent<Animator>();
-        swordAnimator = GetComponentInChildren<Animator>();
+        itemAnimator = GetComponentInChildren<Animator>();
         toolCollider = GetComponentInChildren<Collider2D>();
 
         if (toolCollider != null)
@@ -85,7 +85,7 @@ public class SwordParent : MonoBehaviour
             toolCollider.enabled = true;
         }
 
-        swordAnimator.SetTrigger("Attack");
+        itemAnimator.SetTrigger("Attack");
         isAttacking = true;
         StartCoroutine(DelayAttack());
     }
