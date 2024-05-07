@@ -8,21 +8,22 @@ public class Hotbar : MonoBehaviour
 
     private List<GameObject> slots;
     private int currentSlotIndex = 0;
-    private ItemParent sword;
+    private ItemParent currentToolParent;
 
     void Start()
     {
         slots = new List<GameObject>();
-        sword = GetComponentInChildren<ItemParent>();
-
+        
         InitializeSlots();
         SetActiveSlot(0);
+
+        // get the current tool parent
+        currentToolParent = slots[0].GetComponent<ItemParent>();
 
         // Set all the other slots except the first to false
         if (slots.Count > 0)
         {
-            Debug.Log(slots.Count);
-
+          
             for (int i = 1; i < slots.Count; i++)
             {
                 slots[i].SetActive(false);
@@ -32,7 +33,7 @@ public class Hotbar : MonoBehaviour
 
     void Update()
     {
-        bool isAttacking = sword.CheckAttacking();
+        bool isAttacking = currentToolParent.CheckAttacking();
         if (!isAttacking)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -97,11 +98,17 @@ public class Hotbar : MonoBehaviour
 
         slots[currentSlotIndex].SetActive(false);
         currentSlotIndex = newIndex;
+        currentToolParent = slots[currentSlotIndex].GetComponent<ItemParent>();
         slots[currentSlotIndex].SetActive(true);
     }
 
     private IEnumerator Wait(float s)
     {
         yield return new WaitForSeconds(s);
+    }
+
+    public ItemParent GetCurrentToolParent()
+    {
+        return currentToolParent;
     }
 }
