@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordParent : MonoBehaviour
+public class ItemParent : MonoBehaviour
 {
     private Animator knightAnimator;
-    private Animator swordAnimator;
+    private Animator itemAnimator;
     private bool isAttacking;
 
     [SerializeField] private float delay = 0.25f;
@@ -15,10 +15,20 @@ public class SwordParent : MonoBehaviour
     public Transform center;
     public float radius;
 
+    private Collider2D toolCollider;
+
     private void Start()
     {
         knightAnimator = GetComponentInParent<Animator>();
-        swordAnimator = GetComponentInChildren<Animator>();
+        itemAnimator = GetComponentInChildren<Animator>();
+        toolCollider = GetComponentInChildren<Collider2D>();
+
+        if (toolCollider != null)
+        {
+            toolCollider.enabled = false;
+        }
+
+        Debug.Log(toolCollider);
     }
 
     private void Update()
@@ -62,12 +72,20 @@ public class SwordParent : MonoBehaviour
 
     private void Attack()
     {
+
+        Debug.Log("Attack");
         if (isAttacking)
         {
             return;
         }
 
-        swordAnimator.SetTrigger("Attack");
+        // if the collider exsts enable it
+        if (toolCollider != null)
+        {
+            toolCollider.enabled = true;
+        }
+
+        itemAnimator.SetTrigger("Attack");
         isAttacking = true;
         StartCoroutine(DelayAttack());
     }
@@ -76,6 +94,12 @@ public class SwordParent : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         isAttacking = false;
+
+        // if the collider exsts disable it
+        if (toolCollider != null)
+        {
+            toolCollider.enabled = false;
+        }
     }
 
     private void OnDrawGizmosSelected()

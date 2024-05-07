@@ -6,18 +6,20 @@ public class InventoryController : MonoBehaviour
     private KnightController knightController;
     private PauseMenu pauseMenu;
 
+    // canvas inventory component and spawn item button
     [SerializeField] private GameObject inventory;
-    [SerializeField] private GameObject spawnItemButton;
 
     void Start()
     {
         // Set initial state
         isInInventory = false;
+
         inventory.SetActive(false);
 
         // Get references to other components
         knightController = GetComponent<KnightController>();
         pauseMenu = inventory.GetComponentInParent<PauseMenu>();
+
     }
 
     void Update()
@@ -61,8 +63,6 @@ public class InventoryController : MonoBehaviour
         knightController.enabled = false;
 
         inventory.SetActive(true);
-
-        spawnItemButton.SetActive(true);
     }
 
     public void DisableInventory()
@@ -72,7 +72,5 @@ public class InventoryController : MonoBehaviour
         knightController.enabled = true;
 
         inventory.SetActive(false);
-
-        spawnItemButton.SetActive(false);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,10 +16,17 @@ public class SlotSwitch : MonoBehaviour
     }
 
     void Update()
-    {
+    {   
+        // get the player and the horbar
+        GameObject player = GameObject.FindWithTag("Player");
+        Hotbar hotBar = player?.GetComponent<Hotbar>();
+
+        // check if the player is attacking
+        bool isAttacking = hotBar?.GetCurrentToolParent().CheckAttacking() ?? false;
+
         int slotToChange = GetPressedKey();
 
-        if (slotToChange != -1 && current != slotToChange)
+        if (!isAttacking && slotToChange != -1 && current != slotToChange)
         {
             SetSlotColor(current, 1f);
             SetSlotColor(slotToChange, 0.5f);

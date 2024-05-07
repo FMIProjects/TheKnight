@@ -12,7 +12,8 @@ public class KnightController : MonoBehaviour
     private Animator animator;
     private Coroutine recharge;
     private Vector2 mousePosition, pointerPosition;
-    private SwordParent swordParent;
+
+    private ItemParent itemParent;
 
     [SerializeField] private float movementSpeed = 5;
     [SerializeField] private float currentMovementSpeed;
@@ -28,8 +29,7 @@ public class KnightController : MonoBehaviour
         animator = GetComponent<Animator>();
         // Get the rigidbody component
         rigidBody = GetComponent<Rigidbody2D>();
-        // Get the SwordParent component
-        swordParent = GetComponentInChildren<SwordParent>();
+       
         // Find the knight object in the scene
         knightObject = GameObject.Find("Knight");
         // Get the KnightHealthManager component from the knight object
@@ -38,12 +38,15 @@ public class KnightController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Get the ItemParent component
+        itemParent = GetComponentInChildren<ItemParent>();
+
         // Get the mouse position in world coordinates
         pointerPosition = GetMousePosition();
-        if (swordParent != null)
+        if (itemParent != null)
         {
-            // Set the mouse position for the SwordParent component
-            swordParent.mousePosition = pointerPosition;
+            // Set the mouse position for the ItemParent component
+            itemParent.mousePosition = pointerPosition;
         }
 
         // Update the position and animation
