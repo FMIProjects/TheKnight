@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraController : MonoBehaviour,IDataPersistance
 {
 
     [SerializeField] private Transform target;
@@ -9,6 +9,22 @@ public class CameraController : MonoBehaviour
     [SerializeField] public Vector2 minPosition;
 
     private void Start() { }
+
+    public void LoadData(GameData data)
+    {
+        // Load the camera position + minPosition + maxPosition from the game data
+        transform.position = data.cameraPosition;
+        minPosition = data.cameraMinPosition;
+        maxPosition = data.cameraMaxPosition;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        // Save the camera position + minPosition + maxPosition from the game data
+        data.cameraPosition = transform.position;
+        data.cameraMinPosition = minPosition;
+        data.cameraMaxPosition = maxPosition;
+    }
 
     private void FixedUpdate()
     {

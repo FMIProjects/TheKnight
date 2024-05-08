@@ -36100,7 +36100,7 @@ MonoBehaviour:
   minSpawnCoordinates: {x: 48, y: -20}
   maxSpawnCoordinates: {x: 95, y: 16}
   spawnInterval: 20
-  isActive: 0
+  isActive: 1
 --- !u!1 &838136231
 GameObject:
   m_ObjectHideFlags: 0
