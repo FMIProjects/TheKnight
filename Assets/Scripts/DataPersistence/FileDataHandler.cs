@@ -1,19 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System;
 using System.IO;
+using UnityEngine;
 
 public class FileDataHandler
 {
-  private string dataPath = "";
+    private string dataPath = "";
 
-  private string dataFileName = "data.json";
+    private string dataFileName = "data.json";
 
-    public FileDataHandler(string dataPath, string dataFileName)
+    private bool useEncryption = false;
+
+    private readonly string encryptionPassword = "verygoodENCRYPTIONpass";
+
+    public FileDataHandler(string dataPath, string dataFileName, bool useEncryption)
     {
         this.dataPath = dataPath;
         this.dataFileName = dataFileName;
+        this.useEncryption = useEncryption;
     }
 
     public GameData Load()
@@ -34,6 +37,11 @@ public class FileDataHandler
                     }
                 }
 
+                if (useEncryption)
+                {
+                    dataToLoad = EncryptDecrypt(dataToLoad);
+                }
+
                 // Deserializing the data
                 loadedData = JsonUtility.FromJson<GameData>(dataToLoad);
             }
@@ -45,7 +53,7 @@ public class FileDataHandler
         return loadedData;
     }
 
-    public void Save(GameData data) 
+    public void Save(GameData data)
     {
         string fullpath = Path.Combine(dataPath, dataFileName);
 
@@ -55,7 +63,12 @@ public class FileDataHandler
             Directory.CreateDirectory(Path.GetDirectoryName(fullpath));
 
             // Serializing the data
-            string dataToStore = JsonUtility.ToJson(data,true);
+            string dataToStore = JsonUtility.ToJson(data, true);
+
+            if (useEncryption)
+            {
+                dataToStore = EncryptDecrypt(dataToStore);
+            }
 
             // Writing the data to a file
             using (FileStream stream = new FileStream(fullpath, FileMode.Create))
@@ -70,5 +83,15 @@ public class FileDataHandler
         {
             Debug.LogError("Failed to save data: " + e.Message);
         }
+    }
+
+    private string EncryptDecrypt(string data)
+    {
+        string modifiedData = "";
+        for (int i = 0; i < data.Length; i++)
+        {
+            modifiedData += (char)(data[i] ^ encryptionPassword[i % encryptionPassword.Length]);
+        }
+        return modifiedData;
     }
 }

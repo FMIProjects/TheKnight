@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
@@ -17,7 +18,7 @@ public class GameData
     {
         this.deathCount = 0;
         playerPosition = Vector3.zero;
-        cameraPosition = Vector3.zero;
+        cameraPosition = new Vector3(0,0,-10f);
         cameraMaxPosition = new Vector2(27.06f, 22.33f);
         cameraMinPosition = new Vector2(-24f, -25.4f);
     }
