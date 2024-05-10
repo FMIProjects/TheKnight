@@ -1,13 +1,31 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class MenuManager : MonoBehaviour
 {
     public int gameStartScene;
 
-    public void StartGame()
+    [SerializeField] private Button continueButton;
+
+    private void Start()
     {
-        SceneManager.LoadScene(gameStartScene);
+       if(!DataPersistenceManager.instance.HasGameData())
+        {
+            continueButton.interactable = false;
+        }
+    }
+
+    public void NewGame()
+    {
+        DataPersistenceManager.instance.NewGame();
+        SceneManager.LoadSceneAsync(gameStartScene);
+    }
+
+    public void ContinueGame()
+    {
+        SceneManager.LoadSceneAsync(gameStartScene);
     }
 
     public void QuitGame()

@@ -20,10 +20,12 @@ public class CameraController : MonoBehaviour,IDataPersistance
 
     public void SaveData(ref GameData data)
     {
-        // Save the camera position + minPosition + maxPosition from the game data
-        data.cameraPosition = transform.position;
-        data.cameraMinPosition = minPosition;
-        data.cameraMaxPosition = maxPosition;
+        if (this != null)
+        { // Save the camera position + minPosition + maxPosition from the game data
+            data.cameraPosition = transform.position;
+            data.cameraMinPosition = minPosition;
+            data.cameraMaxPosition = maxPosition;
+        }
     }
 
     private void FixedUpdate()

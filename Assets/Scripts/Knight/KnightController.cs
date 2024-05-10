@@ -44,8 +44,11 @@ public class KnightController : MonoBehaviour, IDataPersistance
 
     public void SaveData(ref GameData data)
     {
-        // Save the player position to the game data
-        data.playerPosition = transform.position;
+        if (this != null)
+        {
+            // Save the player position to the game data
+            data.playerPosition = transform.position;
+        }
     }
 
     private void FixedUpdate()

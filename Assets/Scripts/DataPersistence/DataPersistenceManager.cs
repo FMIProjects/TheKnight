@@ -1,10 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 // Singleton class that manages the data persistence
 public class DataPersistenceManager : MonoBehaviour
 {
+    [Header("File Storage Configuration")]
+    [SerializeField] private bool initializeDataIfNull = false;
+
     [Header("File Storage Configuration")]
     [SerializeField] private string fileName;
 
@@ -21,16 +25,42 @@ public class DataPersistenceManager : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogError("There is more than one DataPersistenceManager in the scene");
+            Debug.Log("There is more than one DataPersistenceManager in the scene. Also destroying the newest one");
+            Destroy(this.gameObject);
+            return;
         }
         instance = this;
+
+        DontDestroyOnLoad(this.gameObject);
+
+        this.dataHandler = new FileDataHandler(Application.persistentDataPath, this.fileName, this.useEncryption);
+    }
+
+    public void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
+    }
+
+    public void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+    }
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        this.dataPersistanceObjects = FindAllDataPersistanceObjects();
+        LoadGame();
+    }
+
+    public void OnSceneUnloaded(Scene scene)
+    {
+        SaveGame();
     }
 
     private void Start()
     {
-        this.dataHandler = new FileDataHandler(Application.persistentDataPath, this.fileName, this.useEncryption);
-        this.dataPersistanceObjects = FindAllDataPersistanceObjects();
-        LoadGame();
     }
 
     public void NewGame()
@@ -43,10 +73,15 @@ public class DataPersistenceManager : MonoBehaviour
         // Load the game data from the file using the data handler
         this.gameData = this.dataHandler.Load();
 
+        if(this.gameData == null && this.initializeDataIfNull)
+        {
+            NewGame();
+        }
+
         if (this.gameData == null)
         {
             Debug.Log("No data to load. Creating a new game");
-            NewGame();
+            return;
         }
 
         // Loading data to all data persistance objects in the game
@@ -58,6 +93,12 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void SaveGame()
     {
+        if(this.gameData == null)
+        {
+            Debug.LogError("No game data to save");
+            return;
+        }
+
         // Passing the data to other scripts to save their data
         foreach (IDataPersistance dataPersistanceObject in this.dataPersistanceObjects)
         {
@@ -78,5 +119,10 @@ public class DataPersistenceManager : MonoBehaviour
         IEnumerable<IDataPersistance> dataPersistanceObjects = FindObjectsOfType<MonoBehaviour>().OfType<IDataPersistance>();
 
         return new List<IDataPersistance>(dataPersistanceObjects);
+    }
+
+    public bool HasGameData()
+    {
+        return this.gameData != null;
     }
 }
