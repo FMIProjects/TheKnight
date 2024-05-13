@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -19,9 +20,14 @@ public class FileDataHandler
         this.useEncryption = useEncryption;
     }
 
-    public GameData Load()
+    public GameData Load(string profileId)
     {
-        string fullpath = Path.Combine(dataPath, dataFileName);
+        if(profileId == null)
+        {
+            return null;
+        }
+
+        string fullpath = Path.Combine(dataPath,profileId,dataFileName);
         GameData loadedData = null;
         if (File.Exists(fullpath))
         {
@@ -53,9 +59,14 @@ public class FileDataHandler
         return loadedData;
     }
 
-    public void Save(GameData data)
+    public void Save(GameData data,string profileId)
     {
-        string fullpath = Path.Combine(dataPath, dataFileName);
+        if (profileId == null)
+        {
+            return;
+        }
+
+        string fullpath = Path.Combine(dataPath,profileId, dataFileName);
 
         try
         {
@@ -83,6 +94,68 @@ public class FileDataHandler
         {
             Debug.LogError("Failed to save data: " + e.Message);
         }
+    }
+
+    public Dictionary<string,GameData> LoadAllProfiles()
+    {
+        Dictionary<string, GameData> profileDictionary = new Dictionary<string, GameData>();
+
+        IEnumerable<DirectoryInfo> directoryInfos = new DirectoryInfo(dataPath).EnumerateDirectories();
+
+        foreach (DirectoryInfo directoryInfo in directoryInfos)
+        {
+            string profileId = directoryInfo.Name;
+
+            string fullpath = Path.Combine(dataPath, profileId, dataFileName);
+
+            if(!File.Exists(fullpath))
+            {
+                continue;
+            }
+
+            GameData profileData = Load(profileId);
+
+            if(profileData != null)
+            {
+                profileDictionary.Add(profileId, profileData);
+            }
+        }
+
+        return profileDictionary;
+    }
+
+    public string GetMostRecentProfile()
+    {
+        string mostRecentProfile = null;
+
+        Dictionary<string, GameData> profiles = LoadAllProfiles();
+
+        foreach (KeyValuePair<string, GameData> profile in profiles)
+        {
+            string profileId = profile.Key;
+            GameData profileData = profile.Value;
+
+            if(profileData == null)
+            {
+                continue;
+            }
+
+            if(mostRecentProfile == null)
+            {
+                mostRecentProfile = profileId;
+            }
+            else
+            {
+                DateTime mostRecentDateTime = DateTime.FromBinary(profiles[mostRecentProfile].lastUpdated);
+                DateTime currentDateTime = DateTime.FromBinary(profileData.lastUpdated);
+
+                if (currentDateTime > mostRecentDateTime)
+                {
+                    mostRecentProfile = profileId;
+                }
+            }
+        }
+        return mostRecentProfile;
     }
 
     private string EncryptDecrypt(string data)
