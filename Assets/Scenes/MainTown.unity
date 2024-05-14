@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 19217377}
   - component: {fileID: 19217379}
   - component: {fileID: 19217380}
+  - component: {fileID: 19217381}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -292,10 +293,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 51.88022, y: -44.807617}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &19217377
 MonoBehaviour:
@@ -371,6 +372,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5728c6bfc9ac6946bbf105e53f7c998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &19217381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19217375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 32355920-222d-4b17-9a32-97763c87df1b
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &20398177
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,6 +401,7 @@ GameObject:
   - component: {fileID: 20398181}
   - component: {fileID: 20398180}
   - component: {fileID: 20398179}
+  - component: {fileID: 20398183}
   m_Layer: 5
   m_Name: Slot (14)
   m_TagString: Untagged
@@ -405,10 +423,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 411.88022, y: -104.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &20398179
 MonoBehaviour:
@@ -484,6 +502,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20398177}
   m_CullTransparentMesh: 1
+--- !u!114 &20398183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20398177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 30e90f1e-8da1-4d44-bc0b-7b3c66624634
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &43663407
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,6 +741,7 @@ GameObject:
   - component: {fileID: 108791967}
   - component: {fileID: 108791966}
   - component: {fileID: 108791965}
+  - component: {fileID: 108791969}
   m_Layer: 5
   m_Name: Slot (29)
   m_TagString: Untagged
@@ -728,10 +763,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 351.88022, y: -224.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &108791965
 MonoBehaviour:
@@ -807,6 +842,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108791963}
   m_CullTransparentMesh: 1
+--- !u!114 &108791969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108791963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1b663f56-1e50-4dbc-b2f7-d740f153eed0
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &137250463
 GameObject:
   m_ObjectHideFlags: 0
@@ -954,6 +1005,7 @@ GameObject:
   - component: {fileID: 154661368}
   - component: {fileID: 154661367}
   - component: {fileID: 154661366}
+  - component: {fileID: 154661370}
   m_Layer: 5
   m_Name: Slot (6)
   m_TagString: Untagged
@@ -975,10 +1027,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 411.88022, y: -44.807617}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &154661366
 MonoBehaviour:
@@ -1054,6 +1106,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154661364}
   m_CullTransparentMesh: 1
+--- !u!114 &154661370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154661364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: a7cfee46-f656-4748-ac66-d7cf024ec90d
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &158161735
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,6 +1380,7 @@ GameObject:
   - component: {fileID: 219069757}
   - component: {fileID: 219069756}
   - component: {fileID: 219069755}
+  - component: {fileID: 219069759}
   m_Layer: 5
   m_Name: Slot (5)
   m_TagString: Untagged
@@ -1333,10 +1402,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 351.88022, y: -44.807617}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &219069755
 MonoBehaviour:
@@ -1412,6 +1481,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 219069753}
   m_CullTransparentMesh: 1
+--- !u!114 &219069759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219069753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 24a2eb30-20c0-4c82-8311-fea60233820b
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &233433426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1518,6 +1603,7 @@ GameObject:
   - component: {fileID: 244620997}
   - component: {fileID: 244620996}
   - component: {fileID: 244620995}
+  - component: {fileID: 244620999}
   m_Layer: 5
   m_Name: Slot (20)
   m_TagString: Untagged
@@ -1539,10 +1625,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 291.88022, y: -164.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &244620995
 MonoBehaviour:
@@ -1618,6 +1704,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 244620993}
   m_CullTransparentMesh: 1
+--- !u!114 &244620999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244620993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 56ebf9a3-7d20-40d9-b16c-2caf4d3d199c
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &249742756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1824,6 +1926,7 @@ GameObject:
   - component: {fileID: 333963039}
   - component: {fileID: 333963038}
   - component: {fileID: 333963037}
+  - component: {fileID: 333963041}
   m_Layer: 5
   m_Name: Slot (24)
   m_TagString: Untagged
@@ -1845,10 +1948,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 51.88022, y: -224.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &333963037
 MonoBehaviour:
@@ -1924,6 +2027,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333963035}
   m_CullTransparentMesh: 1
+--- !u!114 &333963041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333963035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 106df8b1-a395-4907-b6c9-72e588a699b6
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &341645314
 GameObject:
   m_ObjectHideFlags: 0
@@ -2240,6 +2359,7 @@ GameObject:
   - component: {fileID: 504551813}
   - component: {fileID: 504551812}
   - component: {fileID: 504551811}
+  - component: {fileID: 504551815}
   m_Layer: 5
   m_Name: Slot (15)
   m_TagString: Untagged
@@ -2261,10 +2381,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 471.88022, y: -104.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &504551811
 MonoBehaviour:
@@ -2340,6 +2460,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504551809}
   m_CullTransparentMesh: 1
+--- !u!114 &504551815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504551809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: c577949e-56b9-43ff-9c27-a2f1f1d8e5db
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,6 +3098,7 @@ GameObject:
   - component: {fileID: 598119085}
   - component: {fileID: 598119084}
   - component: {fileID: 598119083}
+  - component: {fileID: 598119087}
   m_Layer: 5
   m_Name: Slot (21)
   m_TagString: Untagged
@@ -2983,10 +3120,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 351.88022, y: -164.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &598119083
 MonoBehaviour:
@@ -3062,6 +3199,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598119081}
   m_CullTransparentMesh: 1
+--- !u!114 &598119087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598119081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0cd64774-6203-4c80-aec1-8f6079b32891
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &603557562
 GameObject:
   m_ObjectHideFlags: 0
@@ -3081,7 +3234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &603557563
 RectTransform:
   m_ObjectHideFlags: 0
@@ -35701,6 +35854,7 @@ GameObject:
   - component: {fileID: 708043313}
   - component: {fileID: 708043312}
   - component: {fileID: 708043311}
+  - component: {fileID: 708043315}
   m_Layer: 5
   m_Name: Slot (4)
   m_TagString: Untagged
@@ -35722,10 +35876,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 291.88022, y: -44.807617}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &708043311
 MonoBehaviour:
@@ -35801,6 +35955,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708043309}
   m_CullTransparentMesh: 1
+--- !u!114 &708043315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708043309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0fd64f2d-2188-43ac-a1c2-c8e1f848e1ba
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &753810723
 GameObject:
   m_ObjectHideFlags: 0
@@ -35950,6 +36120,7 @@ GameObject:
   - component: {fileID: 782699417}
   - component: {fileID: 782699416}
   - component: {fileID: 782699415}
+  - component: {fileID: 782699419}
   m_Layer: 5
   m_Name: Slot (13)
   m_TagString: Untagged
@@ -35971,10 +36142,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 351.88022, y: -104.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &782699415
 MonoBehaviour:
@@ -36050,6 +36221,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782699413}
   m_CullTransparentMesh: 1
+--- !u!114 &782699419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782699413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 61a7da86-f199-4d1c-a500-0d7f49ce797a
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &790473708
 GameObject:
   m_ObjectHideFlags: 0
@@ -36309,6 +36496,7 @@ GameObject:
   - component: {fileID: 840773165}
   - component: {fileID: 840773164}
   - component: {fileID: 840773163}
+  - component: {fileID: 840773167}
   m_Layer: 5
   m_Name: Slot (23)
   m_TagString: Untagged
@@ -36330,10 +36518,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 471.88022, y: -164.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &840773163
 MonoBehaviour:
@@ -36409,6 +36597,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840773161}
   m_CullTransparentMesh: 1
+--- !u!114 &840773167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840773161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 40f1baba-ac0a-4f16-81f2-09f187dd9996
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &878046059
 GameObject:
   m_ObjectHideFlags: 0
@@ -36565,6 +36769,7 @@ GameObject:
   - component: {fileID: 910056916}
   - component: {fileID: 910056915}
   - component: {fileID: 910056914}
+  - component: {fileID: 910056918}
   m_Layer: 5
   m_Name: Slot (26)
   m_TagString: Untagged
@@ -36586,10 +36791,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 171.88022, y: -224.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &910056914
 MonoBehaviour:
@@ -36665,6 +36870,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910056912}
   m_CullTransparentMesh: 1
+--- !u!114 &910056918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 910056912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 13c53383-a963-4f50-9a6f-5b33feff60d5
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &952838949
 GameObject:
   m_ObjectHideFlags: 0
@@ -37148,6 +37369,7 @@ GameObject:
   - component: {fileID: 1232709791}
   - component: {fileID: 1232709790}
   - component: {fileID: 1232709789}
+  - component: {fileID: 1232709793}
   m_Layer: 5
   m_Name: Slot (9)
   m_TagString: Untagged
@@ -37169,10 +37391,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 111.88022, y: -104.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1232709789
 MonoBehaviour:
@@ -37248,6 +37470,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232709787}
   m_CullTransparentMesh: 1
+--- !u!114 &1232709793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232709787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: bb939260-1b3e-4efe-8bc3-f6b561a512df
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1232981233
 GameObject:
   m_ObjectHideFlags: 0
@@ -37261,6 +37499,7 @@ GameObject:
   - component: {fileID: 1232981237}
   - component: {fileID: 1232981236}
   - component: {fileID: 1232981235}
+  - component: {fileID: 1232981239}
   m_Layer: 5
   m_Name: Slot (8)
   m_TagString: Untagged
@@ -37282,10 +37521,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 51.88022, y: -104.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1232981235
 MonoBehaviour:
@@ -37361,6 +37600,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232981233}
   m_CullTransparentMesh: 1
+--- !u!114 &1232981239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232981233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: e9650d91-7f2d-43da-b0e0-7480dcdc4d91
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1236558670
 GameObject:
   m_ObjectHideFlags: 0
@@ -37797,6 +38052,7 @@ GameObject:
   - component: {fileID: 1348514656}
   - component: {fileID: 1348514655}
   - component: {fileID: 1348514654}
+  - component: {fileID: 1348514658}
   m_Layer: 5
   m_Name: Slot (25)
   m_TagString: Untagged
@@ -37818,10 +38074,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 111.88022, y: -224.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1348514654
 MonoBehaviour:
@@ -37897,6 +38153,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348514652}
   m_CullTransparentMesh: 1
+--- !u!114 &1348514658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348514652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0666033d-ae0e-4946-a6c7-00388c7ac36c
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1368140357
 GameObject:
   m_ObjectHideFlags: 0
@@ -38092,6 +38364,7 @@ GameObject:
   - component: {fileID: 1428391264}
   - component: {fileID: 1428391263}
   - component: {fileID: 1428391262}
+  - component: {fileID: 1428391266}
   m_Layer: 5
   m_Name: Slot (19)
   m_TagString: Untagged
@@ -38113,10 +38386,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 231.88022, y: -164.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1428391262
 MonoBehaviour:
@@ -38192,6 +38465,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428391260}
   m_CullTransparentMesh: 1
+--- !u!114 &1428391266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428391260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 5a644085-4596-4cdd-98d4-04b3978fd1a5
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1440500137
 GameObject:
   m_ObjectHideFlags: 0
@@ -38400,6 +38689,7 @@ GameObject:
   - component: {fileID: 1441808449}
   - component: {fileID: 1441808448}
   - component: {fileID: 1441808447}
+  - component: {fileID: 1441808451}
   m_Layer: 5
   m_Name: Slot (30)
   m_TagString: Untagged
@@ -38421,10 +38711,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 411.88022, y: -224.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1441808447
 MonoBehaviour:
@@ -38500,6 +38790,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441808445}
   m_CullTransparentMesh: 1
+--- !u!114 &1441808451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441808445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: defd036a-9d11-4b93-86ff-6fc37a635c7f
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1449033810
 GameObject:
   m_ObjectHideFlags: 0
@@ -122557,6 +122863,7 @@ GameObject:
   - component: {fileID: 1457427477}
   - component: {fileID: 1457427476}
   - component: {fileID: 1457427475}
+  - component: {fileID: 1457427479}
   m_Layer: 5
   m_Name: Slot (3)
   m_TagString: Untagged
@@ -122578,10 +122885,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 231.88022, y: -44.807617}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1457427475
 MonoBehaviour:
@@ -122657,6 +122964,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1457427473}
   m_CullTransparentMesh: 1
+--- !u!114 &1457427479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1457427473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 319245d8-4e6d-4ef4-9400-355685947983
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1465040722
 GameObject:
   m_ObjectHideFlags: 0
@@ -122670,6 +122993,7 @@ GameObject:
   - component: {fileID: 1465040726}
   - component: {fileID: 1465040725}
   - component: {fileID: 1465040724}
+  - component: {fileID: 1465040728}
   m_Layer: 5
   m_Name: Slot (16)
   m_TagString: Untagged
@@ -122691,10 +123015,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 51.88022, y: -164.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1465040724
 MonoBehaviour:
@@ -122770,6 +123094,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465040722}
   m_CullTransparentMesh: 1
+--- !u!114 &1465040728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465040722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: ac880676-d76e-4365-8b8f-956d0a0fcae6
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1547791049
 GameObject:
   m_ObjectHideFlags: 0
@@ -122879,6 +123219,7 @@ GameObject:
   - component: {fileID: 1553197805}
   - component: {fileID: 1553197804}
   - component: {fileID: 1553197803}
+  - component: {fileID: 1553197807}
   m_Layer: 5
   m_Name: Slot (28)
   m_TagString: Untagged
@@ -122900,10 +123241,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 291.88022, y: -224.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1553197803
 MonoBehaviour:
@@ -122979,6 +123320,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1553197801}
   m_CullTransparentMesh: 1
+--- !u!114 &1553197807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553197801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 856650aa-18f2-4b89-858b-7a59439a102d
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1565871113
 GameObject:
   m_ObjectHideFlags: 0
@@ -122992,6 +123349,7 @@ GameObject:
   - component: {fileID: 1565871117}
   - component: {fileID: 1565871116}
   - component: {fileID: 1565871115}
+  - component: {fileID: 1565871119}
   m_Layer: 5
   m_Name: Slot (1)
   m_TagString: Untagged
@@ -123013,10 +123371,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 111.88022, y: -44.807617}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1565871115
 MonoBehaviour:
@@ -123092,6 +123450,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565871113}
   m_CullTransparentMesh: 1
+--- !u!114 &1565871119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565871113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: daf7ada5-8217-48aa-b3d6-11388a83cc0e
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1595210575
 GameObject:
   m_ObjectHideFlags: 0
@@ -123105,6 +123479,7 @@ GameObject:
   - component: {fileID: 1595210579}
   - component: {fileID: 1595210578}
   - component: {fileID: 1595210577}
+  - component: {fileID: 1595210581}
   m_Layer: 5
   m_Name: Slot (10)
   m_TagString: Untagged
@@ -123126,10 +123501,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 171.88022, y: -104.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1595210577
 MonoBehaviour:
@@ -123205,6 +123580,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595210575}
   m_CullTransparentMesh: 1
+--- !u!114 &1595210581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595210575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0319466f-20a7-4fc7-8e14-9c01e82fe91f
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1607225154
 GameObject:
   m_ObjectHideFlags: 0
@@ -123218,6 +123609,7 @@ GameObject:
   - component: {fileID: 1607225158}
   - component: {fileID: 1607225157}
   - component: {fileID: 1607225156}
+  - component: {fileID: 1607225160}
   m_Layer: 5
   m_Name: Slot (31)
   m_TagString: Untagged
@@ -123239,10 +123631,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 471.88022, y: -224.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1607225156
 MonoBehaviour:
@@ -123318,6 +123710,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1607225154}
   m_CullTransparentMesh: 1
+--- !u!114 &1607225160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607225154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 3ca517f8-fd11-49af-a6b7-2a1a2b4da581
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1617820654
 GameObject:
   m_ObjectHideFlags: 0
@@ -123481,6 +123889,7 @@ GameObject:
   - component: {fileID: 1624270707}
   - component: {fileID: 1624270706}
   - component: {fileID: 1624270705}
+  - component: {fileID: 1624270709}
   m_Layer: 5
   m_Name: Slot (2)
   m_TagString: Untagged
@@ -123502,10 +123911,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 171.88022, y: -44.807617}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1624270705
 MonoBehaviour:
@@ -123581,6 +123990,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624270703}
   m_CullTransparentMesh: 1
+--- !u!114 &1624270709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624270703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: da08b7c6-8e35-41ca-a813-0ce0660651b5
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1628969062
 GameObject:
   m_ObjectHideFlags: 0
@@ -123594,6 +124019,7 @@ GameObject:
   - component: {fileID: 1628969066}
   - component: {fileID: 1628969065}
   - component: {fileID: 1628969064}
+  - component: {fileID: 1628969068}
   m_Layer: 5
   m_Name: Slot (27)
   m_TagString: Untagged
@@ -123615,10 +124041,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 231.88022, y: -224.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1628969064
 MonoBehaviour:
@@ -123694,6 +124120,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628969062}
   m_CullTransparentMesh: 1
+--- !u!114 &1628969068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628969062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 9b2f1543-9ce4-4281-8c97-c74a48971466
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1639924878
 GameObject:
   m_ObjectHideFlags: 0
@@ -123756,6 +124198,7 @@ GameObject:
   - component: {fileID: 1687919609}
   - component: {fileID: 1687919608}
   - component: {fileID: 1687919607}
+  - component: {fileID: 1687919611}
   m_Layer: 5
   m_Name: Slot (11)
   m_TagString: Untagged
@@ -123777,10 +124220,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 231.88022, y: -104.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1687919607
 MonoBehaviour:
@@ -123856,6 +124299,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687919605}
   m_CullTransparentMesh: 1
+--- !u!114 &1687919611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687919605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2c285a2f-80ae-45df-809d-f9f9d7527bc3
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1709535531
 GameObject:
   m_ObjectHideFlags: 0
@@ -123931,6 +124390,7 @@ GameObject:
   - component: {fileID: 1790881926}
   - component: {fileID: 1790881925}
   - component: {fileID: 1790881924}
+  - component: {fileID: 1790881928}
   m_Layer: 5
   m_Name: Slot (18)
   m_TagString: Untagged
@@ -123952,10 +124412,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 171.88022, y: -164.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1790881924
 MonoBehaviour:
@@ -124031,6 +124491,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790881922}
   m_CullTransparentMesh: 1
+--- !u!114 &1790881928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790881922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: e9b102d1-aed5-49eb-a7a9-fee510983a5e
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1825413436
 GameObject:
   m_ObjectHideFlags: 0
@@ -124044,6 +124520,7 @@ GameObject:
   - component: {fileID: 1825413440}
   - component: {fileID: 1825413439}
   - component: {fileID: 1825413438}
+  - component: {fileID: 1825413442}
   m_Layer: 5
   m_Name: Slot (12)
   m_TagString: Untagged
@@ -124065,10 +124542,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 291.88022, y: -104.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1825413438
 MonoBehaviour:
@@ -124144,6 +124621,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1825413436}
   m_CullTransparentMesh: 1
+--- !u!114 &1825413442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825413436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: ea6038a5-22b6-41c0-9cf5-dcd8f6cdb1e3
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1895932440
 GameObject:
   m_ObjectHideFlags: 0
@@ -124157,6 +124650,7 @@ GameObject:
   - component: {fileID: 1895932444}
   - component: {fileID: 1895932443}
   - component: {fileID: 1895932442}
+  - component: {fileID: 1895932446}
   m_Layer: 5
   m_Name: Slot (7)
   m_TagString: Untagged
@@ -124178,10 +124672,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 471.88022, y: -44.807617}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1895932442
 MonoBehaviour:
@@ -124257,6 +124751,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895932440}
   m_CullTransparentMesh: 1
+--- !u!114 &1895932446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895932440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 8f79fb88-4a5f-4910-9b75-5a2a97f2689c
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &1980310887
 GameObject:
   m_ObjectHideFlags: 0
@@ -124270,6 +124780,7 @@ GameObject:
   - component: {fileID: 1980310891}
   - component: {fileID: 1980310890}
   - component: {fileID: 1980310889}
+  - component: {fileID: 1980310893}
   m_Layer: 5
   m_Name: Slot (22)
   m_TagString: Untagged
@@ -124291,10 +124802,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 411.88022, y: -164.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1980310889
 MonoBehaviour:
@@ -124370,6 +124881,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980310887}
   m_CullTransparentMesh: 1
+--- !u!114 &1980310893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980310887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: e7b6e847-5eef-47c5-bc02-fdd781bc1695
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &2003404189
 GameObject:
   m_ObjectHideFlags: 0
@@ -124790,6 +125317,7 @@ GameObject:
   - component: {fileID: 2098873514}
   - component: {fileID: 2098873513}
   - component: {fileID: 2098873512}
+  - component: {fileID: 2098873516}
   m_Layer: 5
   m_Name: Slot (17)
   m_TagString: Untagged
@@ -124811,10 +125339,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 603557563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 111.88022, y: -164.80762}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2098873512
 MonoBehaviour:
@@ -124890,6 +125418,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2098873510}
   m_CullTransparentMesh: 1
+--- !u!114 &2098873516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098873510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc606670601d7d42af647ba54ab4b4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 51430e16-07c7-40d8-86d5-b14667e33f33
+  wood: {fileID: 584784802258238358, guid: c008cc8d1630af9488a003d00efa40ce, type: 3}
+  rock: {fileID: 4216250382233629657, guid: e748d9572152f1e428325bd13db42ea1, type: 3}
+  itemEquipped: 0
 --- !u!1 &2106801199
 GameObject:
   m_ObjectHideFlags: 0
@@ -124976,6 +125520,10 @@ PrefabInstance:
     - target: {fileID: 2614570200267974318, guid: 8075ef566854ab04c883cc42ec8c8463, type: 3}
       propertyPath: m_Name
       value: DataPersistanceManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2739763037161122703, guid: 8075ef566854ab04c883cc42ec8c8463, type: 3}
+      propertyPath: useEncryption
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4813779544561576956, guid: 8075ef566854ab04c883cc42ec8c8463, type: 3}
       propertyPath: m_LocalPosition.x

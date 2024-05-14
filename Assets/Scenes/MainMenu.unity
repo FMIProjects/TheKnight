@@ -136,6 +136,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2184375866310317460, guid: 827a40dd04a472646aa5b4f8f09a49ab, type: 3}
+      propertyPath: saveSlotsMenu
+      value: 
+      objectReference: {fileID: 286522485}
+    - target: {fileID: 2184375866310317460, guid: 827a40dd04a472646aa5b4f8f09a49ab, type: 3}
       propertyPath: continueButton
       value: 
       objectReference: {fileID: 1090258407}
@@ -496,7 +500,7 @@ MonoBehaviour:
   gameStartScene: 1
   continueButton: {fileID: 1090258407}
   loadGameButton: {fileID: 0}
-  saveSlotsMenu: {fileID: 0}
+  saveSlotsMenu: {fileID: 286522485}
 --- !u!114 &675190657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1127,6 +1131,10 @@ PrefabInstance:
       propertyPath: profileId
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2184375866310317460, guid: 827a40dd04a472646aa5b4f8f09a49ab, type: 3}
+      propertyPath: saveSlotsMenu
+      value: 
+      objectReference: {fileID: 286522485}
     - target: {fileID: 2184375866310317460, guid: 827a40dd04a472646aa5b4f8f09a49ab, type: 3}
       propertyPath: continueButton
       value: 
@@ -2609,6 +2617,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2184375866310317460, guid: 827a40dd04a472646aa5b4f8f09a49ab, type: 3}
+      propertyPath: saveSlotsMenu
+      value: 
+      objectReference: {fileID: 286522485}
+    - target: {fileID: 2184375866310317460, guid: 827a40dd04a472646aa5b4f8f09a49ab, type: 3}
       propertyPath: continueButton
       value: 
       objectReference: {fileID: 1090258407}
@@ -2860,6 +2872,10 @@ PrefabInstance:
       propertyPath: profileId
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2184375866310317460, guid: 827a40dd04a472646aa5b4f8f09a49ab, type: 3}
+      propertyPath: saveSlotsMenu
+      value: 
+      objectReference: {fileID: 286522485}
     - target: {fileID: 2184375866310317460, guid: 827a40dd04a472646aa5b4f8f09a49ab, type: 3}
       propertyPath: continueButton
       value: 

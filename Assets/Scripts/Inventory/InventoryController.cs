@@ -14,7 +14,7 @@ public class InventoryController : MonoBehaviour
         // Set initial state
         isInInventory = false;
 
-        inventory.SetActive(false);
+        inventory.transform.localScale = new Vector3(0, 0, 0);
 
         // Get references to other components
         knightController = GetComponent<KnightController>();
@@ -62,7 +62,7 @@ public class InventoryController : MonoBehaviour
 
         knightController.enabled = false;
 
-        inventory.SetActive(true);
+        inventory.transform.localScale = new Vector3(1, 1, 1);
     }
 
     public void DisableInventory()
@@ -71,6 +71,7 @@ public class InventoryController : MonoBehaviour
 
         knightController.enabled = true;
 
-        inventory.SetActive(false);
+
+        inventory.transform.localScale = new Vector3(0, 0, 0);
     }
 }
