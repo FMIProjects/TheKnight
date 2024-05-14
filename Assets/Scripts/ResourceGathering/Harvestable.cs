@@ -26,8 +26,6 @@ public class Harvestable : MonoBehaviour
             Debug.Log("success");
 
         }
-
-
     }
 
     public ToolType GetToolType()

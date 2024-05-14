@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,6 +29,7 @@ public class SpawnItem : MonoBehaviour
                 dragDropOriginal = child.GetChild(0).GetComponent<DragDropScript>();
 
                 // If the item that is being spawned is the same as the item that is already in the slot and the slot is not full
+                Debug.Log(Equals(itemPrefab.tag, child.GetChild(0).gameObject.tag) + " " + !dragDropOriginal.IsFull(1));
                 if (itemPrefab.tag == child.GetChild(0).gameObject.tag && !dragDropOriginal.IsFull(1))
                 {
                

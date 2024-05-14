@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class KnightHealthManager : MonoBehaviour
+public class KnightHealthManager : MonoBehaviour, IDataPersistance
 {
     [SerializeField] private Image healthBar;
     [SerializeField] private GameObject knightObject;
@@ -13,6 +13,27 @@ public class KnightHealthManager : MonoBehaviour
 
     private Animator animator;
     private DamageFlash damageFlash;
+
+    private int deathCount = 0;
+    private bool isRespawning = false;
+
+    public void LoadData(GameData data)
+    {
+        this.deathCount = data.deathCount;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.deathCount = this.deathCount;
+    }
+
+    private void Reload()
+    {
+        Heal(100f);
+        animator.SetFloat("Health", healthAmount);
+        animator.SetBool("isRespawned", true);
+        isRespawning = false;
+    }
 
     private void Start()
     {
@@ -26,8 +47,9 @@ public class KnightHealthManager : MonoBehaviour
     {
         animator.SetFloat("Health", healthAmount);
 
-        if (healthAmount <= 0)
+        if (healthAmount <= 0 && !isRespawning)
         {
+            animator.SetBool("isRespawned", false);
             sword.SetActive(false);
             StartCoroutine(Respawn());
         }
@@ -63,7 +85,10 @@ public class KnightHealthManager : MonoBehaviour
 
     private IEnumerator Respawn()
     {
+        isRespawning = true;
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene("MainTown");
+        deathCount++;
+        transform.position = new Vector3(0, 0, 0);
+        Reload();
     }
 }

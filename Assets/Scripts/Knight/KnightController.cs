@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KnightController : MonoBehaviour
+public class KnightController : MonoBehaviour, IDataPersistance
 {
     public GameObject knightObject;
 
@@ -34,6 +34,21 @@ public class KnightController : MonoBehaviour
         knightObject = GameObject.Find("Knight");
         // Get the KnightHealthManager component from the knight object
         healthManager = knightObject.GetComponent<KnightHealthManager>();
+    }
+
+    public void LoadData(GameData data)
+    {
+        // Load the player position from the game data
+        transform.position = data.playerPosition;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        if (this != null)
+        {
+            // Save the player position to the game data
+            data.playerPosition = transform.position;
+        }
     }
 
     private void FixedUpdate()

@@ -57,6 +57,7 @@ public class PauseMenu : MonoBehaviour
     // Loads the main menu scene by setting the time scale to normal and loading the specified game start scene.
     public void LoadMenu()
     {
+        DataPersistenceManager.instance.SaveGame();
         Time.timeScale = 1f;
         SceneManager.LoadScene(gameStartScene);
     }
