@@ -1,9 +1,11 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class EnemyHealthManager : MonoBehaviour
 {
+    [SerializeField] private Image healthBar;
     public float healthAmount = 20f;
     public GameObject knightObject;
     private Animator animator;
@@ -19,9 +21,11 @@ public class EnemyHealthManager : MonoBehaviour
     private void Update()
     {
         animator.SetFloat("Health", healthAmount);
+        
         if (healthAmount <= 0)
         {
             GetComponent<EnemyController>().enabled = false;
+            healthBar.transform.parent.gameObject.SetActive(false);
             StartCoroutine(Death());
         }
     }
@@ -33,6 +37,7 @@ public class EnemyHealthManager : MonoBehaviour
             OnHitWithReference?.Invoke(knightObject);
             damageFlash.Flash();
             healthAmount -= damage;
+            healthBar.fillAmount = healthAmount / 20f;
         }
     }
 
