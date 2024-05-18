@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6376589af0f7614f8180ee44ed7e8a3, type: 3}
+  m_Name: MeadowLayout
+  m_EditorClassIdentifier: 
+  tiles:
+  - {fileID: 11400000, guid: 74a0c30c60ed99047932f060b5d69f12, type: 2}
+  - {fileID: 11400000, guid: 4ae7ac88d3d4f0c4fae9e4c76655df28, type: 2}
+  - {fileID: 11400000, guid: 5f5ad953856578243bd3b99e7912a3ea, type: 2}
+  - {fileID: 11400000, guid: db8aa2ce6a4228945b05b3eec37af8a2, type: 2}
+  - {fileID: 11400000, guid: db415f180734d9940b62498d633b8cd7, type: 2}
+  - {fileID: 11400000, guid: 59201f5a809c7084e8af8dea804e989d, type: 2}
+  weights: 320000000500000001000000010000000100000001000000
+  weightedSelection: 1

@@ -10,11 +10,16 @@ public class TilemapVisualizer : MonoBehaviour
     [SerializeField]
     private Tilemap tilemap;
     [SerializeField]
-    private TileBase[] tiles;
-    [SerializeField]
-    private int[] weights;
-    [SerializeField]
-    private bool weightedSelection = false;
+    private TilemapVisualizerSO parameters;
+
+    private void Start()
+    {
+        if (parameters.weightedSelection)
+        {
+            ValidateWeights();
+        }
+
+    }
 
     public void PaintFloorTiles(IEnumerable<Vector2Int> positions)
     {
@@ -28,7 +33,7 @@ public class TilemapVisualizer : MonoBehaviour
     {
         var tilePosition = new Vector3Int(position.x, position.y, 0);
 
-        if(weightedSelection)
+        if(parameters.weightedSelection)
             tilemap.SetTile(tilePosition, SelectRandomWeightedTile());
 
         else
@@ -43,13 +48,13 @@ public class TilemapVisualizer : MonoBehaviour
         */
 
         // get the partial sums of the weights and the total weight
-        int numberTiles = tiles.Length;
+        int numberTiles = parameters.tiles.Length;
         int[] partialSums = new int[numberTiles+1];
         partialSums[0] = 0;
 
         for(int i=0;i<numberTiles;++i)
         {
-            partialSums[i+1] = partialSums[i] + weights[i];
+            partialSums[i+1] = partialSums[i] + parameters.weights[i];
         }
 
         int totalWeight = partialSums[numberTiles];
@@ -66,11 +71,20 @@ public class TilemapVisualizer : MonoBehaviour
          If the weight is found return the index
          If the value is not found , the method returns a negative number that is the bitwise complement of the index of the next element that is larger than the value
          */
-        return tiles[randomIndex >= 0 ? randomIndex-1 : ~randomIndex-1];
+        return parameters.tiles[randomIndex >= 0 ? randomIndex-1 : ~randomIndex-1];
     }
 
     private TileBase SelectRandomTile()
     {
-        return tiles[UnityEngine.Random.Range(0, tiles.Length)];
+        return parameters.tiles[UnityEngine.Random.Range(0, parameters.tiles.Length)];
     }
+
+    private void ValidateWeights()
+    {
+        int numberTiles = parameters.tiles.Length;
+        int numberWeights = parameters.weights.Length;
+
+        Debug.Assert(numberTiles == numberWeights, "The number of weights should be at least the number of tiles.");
+    }
+
 }
