@@ -25,9 +25,28 @@ public static class ProceduralGenerationAlgorithms
         return path;
     }
 
+    public static List<Vector2Int> RandomWalkCorridor(Vector2Int statPosition, int corridorLength)
+    {
+        // generate a corridor of a given length
+        List<Vector2Int> corridorPositions = new List<Vector2Int>();
+        // get a random direction
+        var direction = Direction2D.GetRandomDirection();
+        var currentPosition = statPosition;
+        corridorPositions.Add(currentPosition);
+
+        // walk straight for the given length in that direction
+        for(int i=0;i<corridorLength; i++)
+        {
+            currentPosition += direction;
+            corridorPositions.Add(currentPosition);
+        }
+
+        return corridorPositions;
+    }
+
     public static class Direction2D
     {
-        public static List<Vector2Int> cardianlDirections = new List<Vector2Int>
+        public static List<Vector2Int> cardinalDirections = new List<Vector2Int>
         {
             new Vector2Int(0,1), //UP
             new Vector2Int(0,-1), //DOWN
@@ -38,9 +57,9 @@ public static class ProceduralGenerationAlgorithms
         public static Vector2Int GetRandomDirection()
         {
             
-            int randomIndex = UnityEngine.Random.Range(0, cardianlDirections.Count);
+            int randomIndex = UnityEngine.Random.Range(0, cardinalDirections.Count);
 
-            return cardianlDirections[randomIndex];
+            return cardinalDirections[randomIndex];
 
         }
     }

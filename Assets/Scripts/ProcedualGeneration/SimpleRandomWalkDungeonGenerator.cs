@@ -7,7 +7,7 @@ using UnityEngine;
 public class SimpleRandomWalkDungeonGenerator : DungeonGenerator
 {
     [SerializeField]
-    SimpleRandomWalkSO parameters;
+    SimpleRandomWalkSO walkParameters;
 
 
     private void Start()
@@ -17,12 +17,17 @@ public class SimpleRandomWalkDungeonGenerator : DungeonGenerator
 
     protected override void RunProceduralGeneration()
     {
-        HashSet<Vector2Int> positions = RunRandomWalk();
+        HashSet<Vector2Int> positions = RunRandomWalk(walkParameters);
 
+        // paint the floor tiles
         tilemapVisualizer.PaintFloorTiles(positions);
+        // create the walls based on the floor positions
+        WallGenerator.CreateWalls(positions, tilemapVisualizer);
+        
     }
 
-    protected HashSet<Vector2Int> RunRandomWalk()
+    // will pe used in inherited classes
+    protected HashSet<Vector2Int> RunRandomWalk(SimpleRandomWalkSO parameters)
     {
         var currentPosition = startPosition;
         HashSet<Vector2Int> positions = new HashSet<Vector2Int>();

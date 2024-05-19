@@ -6,7 +6,9 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(fileName = "TilemapVisualizerSO", menuName = "ProceduralGenerationSO/TilemapVisualizerSO")]
 public class TilemapVisualizerSO : ScriptableObject
 {
-    public TileBase[] tiles;
+    public TileBase[] groundTiles;
+    public TileBase wallTile;
+    public TileBase wallGroundTile;
     public int[] weights;
     public bool weightedSelection = false;
 }
