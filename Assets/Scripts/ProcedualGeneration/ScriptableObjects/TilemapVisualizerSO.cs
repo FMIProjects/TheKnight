@@ -7,8 +7,16 @@ using UnityEngine.Tilemaps;
 public class TilemapVisualizerSO : ScriptableObject
 {
     public TileBase[] groundTiles;
-    public TileBase wallTile;
+
+    // the wall are 2x2 trees so we need to have 4 tiles for each corner
+    public TileBase wallTileTopLeftCorner;
+    public TileBase wallTileTopRightCorner;
+    public TileBase wallTileBottomLeftCorner;
+    public TileBase wallTileBottomRightCorner;
+
+    // the wall ground tile which in the default exemople will be a grass tile
     public TileBase wallGroundTile;
+
     public int[] weights;
     public bool weightedSelection = false;
 }

@@ -8,7 +8,7 @@ public abstract class DungeonGenerator : MonoBehaviour
     [SerializeField]
     protected TilemapVisualizer tilemapVisualizer;
     [SerializeField]
-    protected Vector2Int startPosition = Vector2Int.zero;
+    protected MapCell2 startPosition = MapCell2.zero;
 
     public void GenerateDungeon()
     {

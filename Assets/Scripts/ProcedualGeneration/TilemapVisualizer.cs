@@ -28,27 +28,43 @@ public class TilemapVisualizer : MonoBehaviour
 
     }
 
-    public void PaintWallTiles(IEnumerable<Vector2Int> positions)
+    // the walls will be trees which have a size of 2x2
+    // so the parameter will pe an enumerable of MapCell2
+
+    public void PaintWallCells(IEnumerable<MapCell2> positions)
     {
         foreach (var position in positions)
         {
-            PaintSingleWallTile(position);
+            PaintSingleWallCell(position);
         }
     }
 
-    private void PaintSingleWallTile(Vector2Int position)
+    private void PaintSingleWallCell(MapCell2 position)
     {
-        // get the 3d poition of the tile
-        var tilePosition = new Vector3Int(position.x, position.y, 0);
+        // get the 3d position of the tiles
+        var tilePositionTopLeftCorner = new Vector3Int(position.topLeftCorner.x, position.topLeftCorner.y, 0);
+        var tilePositionTopRightCorner = new Vector3Int(position.topRightCorner.x, position.topRightCorner.y, 0);
+        var tilePositionBottomLeftCorner = new Vector3Int(position.bottomLeftCorner.x, position.bottomLeftCorner.y, 0);
+        var tilePositionBottomRightCorner = new Vector3Int(position.bottomRightCorner.x, position.bottomRightCorner.y, 0);
 
         // set the ground tile of the wall
-        tilemapGround.SetTile(tilePosition,parameters.wallGroundTile);
-        // set the wall tile
-        tilemapCollider.SetTile(tilePosition, parameters.wallTile);
+        tilemapGround.SetTile(tilePositionTopLeftCorner, parameters.wallGroundTile);
+        tilemapGround.SetTile(tilePositionTopRightCorner, parameters.wallGroundTile); 
+        tilemapGround.SetTile(tilePositionBottomLeftCorner, parameters.wallGroundTile);
+        tilemapGround.SetTile(tilePositionBottomRightCorner, parameters.wallGroundTile);
+
+        // set the wall tiles
+        tilemapCollider.SetTile(tilePositionTopLeftCorner, parameters.wallTileTopLeftCorner);
+        tilemapCollider.SetTile(tilePositionTopRightCorner, parameters.wallTileTopRightCorner);
+        tilemapCollider.SetTile(tilePositionBottomLeftCorner, parameters.wallTileBottomLeftCorner);
+        tilemapCollider.SetTile(tilePositionBottomRightCorner, parameters.wallTileBottomRightCorner);
+
+        
     }
 
     public void PaintFloorTiles(IEnumerable<Vector2Int> positions)
     {
+        
         foreach (var position in positions)
         {
             PaintSingleFloorTile(position);
@@ -56,7 +72,8 @@ public class TilemapVisualizer : MonoBehaviour
     }
 
     private void PaintSingleFloorTile(Vector2Int position)
-    {   
+    {
+        
         var tilePosition = new Vector3Int(position.x, position.y, 0);
 
         if(parameters.weightedSelection)

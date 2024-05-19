@@ -12,25 +12,28 @@ public class SimpleRandomWalkDungeonGenerator : DungeonGenerator
 
     private void Start()
     {
-        RunProceduralGeneration();
+        GenerateDungeon();
     }
 
     protected override void RunProceduralGeneration()
     {
-        HashSet<Vector2Int> positions = RunRandomWalk(walkParameters);
-
+        
+        HashSet<MapCell2> positions = RunRandomWalk(walkParameters);
+        
+        IEnumerable<Vector2Int> vectorPositions = positions.SelectMany(cell => cell.getCorners());
+        
         // paint the floor tiles
-        tilemapVisualizer.PaintFloorTiles(positions);
+        tilemapVisualizer.PaintFloorTiles(vectorPositions);
         // create the walls based on the floor positions
         WallGenerator.CreateWalls(positions, tilemapVisualizer);
         
     }
 
     // will pe used in inherited classes
-    protected HashSet<Vector2Int> RunRandomWalk(SimpleRandomWalkSO parameters)
+    protected HashSet<MapCell2> RunRandomWalk(SimpleRandomWalkSO parameters)
     {
         var currentPosition = startPosition;
-        HashSet<Vector2Int> positions = new HashSet<Vector2Int>();
+        HashSet<MapCell2> positions = new HashSet<MapCell2>();
 
         // start the simple walk for a number of iterations from a random position
         for(int i=0; i < parameters.iterations; ++i)

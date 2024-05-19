@@ -6,20 +6,20 @@ using static ProceduralGenerationAlgorithms;
 
 public static class WallGenerator 
 {
-    public static void  CreateWalls(HashSet<Vector2Int> floorPositions,TilemapVisualizer tilemapVisualizer)
+    public static void  CreateWalls(HashSet<MapCell2> floorPositions,TilemapVisualizer tilemapVisualizer)
     {   
         // find the wall positions
-        var wallPositions = FindWallsInDirections(floorPositions, Direction2D.cardinalDirections);
+        var wallPositions = FindWallsInDirections(floorPositions, Direction2D.cardinalDirectionsCell2);
 
         // and then paint them
-        tilemapVisualizer.PaintWallTiles(wallPositions);
+        tilemapVisualizer.PaintWallCells(wallPositions);
         
     }
 
-    private static HashSet<Vector2Int> FindWallsInDirections(HashSet<Vector2Int> floorPositions, List<Vector2Int> directionList)
+    private static HashSet<MapCell2> FindWallsInDirections(HashSet<MapCell2> floorPositions, List<Vector2Int> directionList)
     {
         
-        var wallPositions = new HashSet<Vector2Int>();
+        var wallPositions = new HashSet<MapCell2>();
 
         // for all floor positions verify if the neighbour is also painted
         foreach (var floorPosition in floorPositions)

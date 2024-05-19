@@ -7,17 +7,18 @@ using UnityEngine;
 public static class ProceduralGenerationAlgorithms
 {
     
-    public static HashSet<Vector2Int> SimpleRandomWalk(Vector2Int startPosition,int steps)
+
+    public static HashSet<MapCell2> SimpleRandomWalk(MapCell2 startPosition, int steps)
     {
-        HashSet<Vector2Int> path = new HashSet<Vector2Int>();
+        HashSet<MapCell2> path = new HashSet<MapCell2>();
         path.Add(startPosition);
-        
+
         var previousPosition = startPosition;
 
-        for(int i=0; i< steps; i++)
+        for (int i = 0; i < steps; i++)
         {
             // generate take a step in a random direction
-            var newPosition = previousPosition + Direction2D.GetRandomDirection();
+            var newPosition = previousPosition + Direction2D.GetRandomDirectionCell2();
             path.Add(newPosition);
             previousPosition = newPosition;
         }
@@ -25,12 +26,12 @@ public static class ProceduralGenerationAlgorithms
         return path;
     }
 
-    public static List<Vector2Int> RandomWalkCorridor(Vector2Int statPosition, int corridorLength)
+    public static List<MapCell2> RandomWalkCorridor(MapCell2 statPosition, int corridorLength)
     {
         // generate a corridor of a given length
-        List<Vector2Int> corridorPositions = new List<Vector2Int>();
+        List<MapCell2> corridorPositions = new List<MapCell2>();
         // get a random direction
-        var direction = Direction2D.GetRandomDirection();
+        var direction = Direction2D.GetRandomDirectionCell2();
         var currentPosition = statPosition;
         corridorPositions.Add(currentPosition);
 
@@ -54,6 +55,14 @@ public static class ProceduralGenerationAlgorithms
             new Vector2Int(-1,0) //LEFT
         };
 
+        public static List<Vector2Int> cardinalDirectionsCell2 = new List<Vector2Int>
+        {
+            new Vector2Int(0,2), //UP
+            new Vector2Int(0,-2), //DOWN
+            new Vector2Int(2,0), //RIGHT
+            new Vector2Int(-2,0) //LEFT
+        };
+
         public static Vector2Int GetRandomDirection()
         {
             
@@ -62,6 +71,14 @@ public static class ProceduralGenerationAlgorithms
             return cardinalDirections[randomIndex];
 
         }
+
+        public static Vector2Int GetRandomDirectionCell2()
+        {
+            int randomIndex = UnityEngine.Random.Range(0, cardinalDirectionsCell2.Count);
+
+            return cardinalDirectionsCell2[randomIndex];
+        }
+
     }
 
     
