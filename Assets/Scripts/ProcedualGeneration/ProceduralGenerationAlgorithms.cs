@@ -63,6 +63,14 @@ public static class ProceduralGenerationAlgorithms
             new Vector2Int(-2,0) //LEFT
         };
 
+        public static List<Vector2Int> diagonalDirectionsCell2 = new List<Vector2Int>
+        {
+            new Vector2Int(2,2), //UP-RIGHT
+            new Vector2Int(2,-2), //DOWN-RIGHT
+            new Vector2Int(-2,2), //UP-LEFT
+            new Vector2Int(-2,-2) //DOWN-LEFT
+        };
+
         public static Vector2Int GetRandomDirection()
         {
             
