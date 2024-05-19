@@ -7,8 +7,11 @@ using UnityEngine;
 public class SimpleRandomWalkDungeonGenerator : DungeonGenerator
 {
     [SerializeField]
-    SimpleRandomWalkSO walkParameters;
+    private SimpleRandomWalkSO walkParameters;
 
+    // these will be used to set the camera bounds
+    private HashSet<MapCell2> floorPositions;
+    private HashSet<MapCell2> wallPositions;
 
     private void Start()
     {
@@ -18,14 +21,14 @@ public class SimpleRandomWalkDungeonGenerator : DungeonGenerator
     protected override void RunProceduralGeneration()
     {
         
-        HashSet<MapCell2> positions = RunRandomWalk(walkParameters);
+        HashSet<MapCell2> floorPositions = RunRandomWalk(walkParameters);
         
-        IEnumerable<Vector2Int> vectorPositions = positions.SelectMany(cell => cell.getCorners());
+        IEnumerable<Vector2Int> vectorPositions = floorPositions.SelectMany(cell => cell.getCorners());
         
         // paint the floor tiles
         tilemapVisualizer.PaintFloorTiles(vectorPositions);
         // create the walls based on the floor positions
-        WallGenerator.CreateWalls(positions, tilemapVisualizer);
+        wallPositions = WallGenerator.CreateWalls(floorPositions, tilemapVisualizer);
         
     }
 
@@ -50,4 +53,15 @@ public class SimpleRandomWalkDungeonGenerator : DungeonGenerator
         return positions;
     }
 
+    //getter for the wall positions
+    public HashSet<MapCell2> GetWallPositions()
+    {
+        return wallPositions;
+    }
+
+    //getter for the floor positions
+    public HashSet<MapCell2> GetFloorPositions()
+    {
+        return floorPositions;
+    }
 }

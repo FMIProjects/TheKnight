@@ -2225,7 +2225,7 @@ GameObject:
   - component: {fileID: 511767243}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Grid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2272,8 +2272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemapVisualizer: {fileID: 537820715}
-  startPosition: {x: 0, y: 0}
-  parameters: {fileID: 11400000, guid: aad33d2af5532934db51e0180adc87e6, type: 2}
+  walkParameters: {fileID: 11400000, guid: bfaf0e29e283fc944afc918cec8bebd3, type: 2}
 --- !u!1 &525465325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2448,7 +2447,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f2694bd583cde41bb3041327bab782, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 1506914851}
   parameters: {fileID: 11400000, guid: eb90c2a87ce08914297a0e268b6d944a, type: 2}
 --- !u!1 &548425195
 GameObject:
@@ -5627,6 +5625,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1313792125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1313792127}
+  - component: {fileID: 1313792126}
+  m_Layer: 0
+  m_Name: Utils
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1313792126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313792125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 173d90b810028a2428d5ef934363b814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1313792127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313792125}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 60.649414, y: 1.1842582, z: 0.5088277}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1340189794
 GameObject:
   m_ObjectHideFlags: 0
@@ -6239,7 +6281,7 @@ GameObject:
   - component: {fileID: 1506914850}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: TileMapGround
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9074,3 +9116,4 @@ SceneRoots:
   - {fileID: 511767242}
   - {fileID: 1310505935}
   - {fileID: 537820714}
+  - {fileID: 1313792127}

@@ -7,13 +7,15 @@ using static ProceduralGenerationAlgorithms;
 
 public static class WallGenerator 
 {
-    public static void  CreateWalls(HashSet<MapCell2> floorPositions,TilemapVisualizer tilemapVisualizer)
+    public static HashSet<MapCell2> CreateWalls(HashSet<MapCell2> floorPositions,TilemapVisualizer tilemapVisualizer)
     {   
         // find the wall positions
         var wallPositions = FindWallsInDirections(floorPositions);
 
         // and then paint them
         tilemapVisualizer.PaintWallCells(wallPositions);
+
+        return wallPositions;
         
     }
 
