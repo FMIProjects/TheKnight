@@ -44,7 +44,7 @@ public class MapCell2
     
     public static Vector2 ComputeMiddle(MapCell2 cell)
     {
-        return new Vector2((cell.topLeftCorner.x + cell.topRightCorner.x) / 2, (cell.topLeftCorner.y + cell.bottomLeftCorner.y) / 2);
+        return new Vector2((cell.topLeftCorner.x + cell.topRightCorner.x) / 2.0f, (cell.topLeftCorner.y + cell.bottomLeftCorner.y) / 2.0f);
     }
 
     public static float Distance(MapCell2 cell1, MapCell2 cell2)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -18,6 +19,9 @@ public class GenerationAftermathUtils : MonoBehaviour
     private bool boundsAreSet = false;
     private bool gapsAreFilled = false;
     private bool sceneSwitcherPlaced = false;
+    private bool enemiesPlaced = false;
+    private bool resourceObjectsPlaced = false;
+
     // needed to fill the gaps and to set the camera bounds
     HashSet<MapCell2> wallPositions;
     HashSet<MapCell2> floorPositions;
@@ -31,8 +35,29 @@ public class GenerationAftermathUtils : MonoBehaviour
         SetCameraBounds();
         FillGaps();
         PlaceSceneSwitcher();
+        PlaceEnemies();
+        PlaceResourceObjects();
 
+    }
 
+    private void PlaceResourceObjects()
+    {
+        if(resourceObjectsPlaced)
+        {
+            return;
+        }
+
+        resourceObjectsPlaced = true;
+    }
+
+    private void PlaceEnemies()
+    {
+        if (enemiesPlaced)
+        {
+            return;
+        }
+
+        enemiesPlaced = true;
     }
 
     private void PlaceSceneSwitcher()
@@ -41,14 +66,14 @@ public class GenerationAftermathUtils : MonoBehaviour
         {
             return;
         }
-
+         
         floorPositions = GameObject.FindGameObjectWithTag("Grid").GetComponent<SimpleRandomWalkDungeonGenerator>().GetFloorPositions();
         sceneSwitcher = GameObject.FindGameObjectWithTag("SceneSwitcher");
 
         // calculate the fartherst position from the center of the map using the euclidian distance
 
         MapCell2 bestPosition = MapCell2.zero;
-        float maxDistance = float.MinValue;
+        float maxDistance = 0.0f;
 
         foreach(var cell in floorPositions)
         {
@@ -59,12 +84,15 @@ public class GenerationAftermathUtils : MonoBehaviour
                 bestPosition = cell;
             }
         }
-
+        
+        // get the middle 
         Vector2 middle = MapCell2.ComputeMiddle(bestPosition); 
 
+        // set the position of the scene switcher to the middle of the farthest position
         sceneSwitcher.transform.position = new Vector3(middle.x, middle.y, -1);
 
-        Debug.Log(bestPosition); 
+        // remove the position to mark it as used
+        floorPositions.Remove(bestPosition);
 
         sceneSwitcherPlaced = true;
     }

@@ -2272,7 +2272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemapVisualizer: {fileID: 537820715}
-  walkParameters: {fileID: 11400000, guid: bfaf0e29e283fc944afc918cec8bebd3, type: 2}
+  walkParameters: {fileID: 11400000, guid: 7f4f17f8a9b0d6047a507ae277f0b7ca, type: 2}
 --- !u!1 &525465325
 GameObject:
   m_ObjectHideFlags: 0
@@ -5505,7 +5505,7 @@ GameObject:
   - component: {fileID: 1310505932}
   m_Layer: 0
   m_Name: Portal
-  m_TagString: Untagged
+  m_TagString: SceneSwitcher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5654,6 +5654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173d90b810028a2428d5ef934363b814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tilemapVisualizer: {fileID: 537820715}
 --- !u!4 &1313792127
 Transform:
   m_ObjectHideFlags: 0
