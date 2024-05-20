@@ -111,6 +111,12 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void SaveGame()
     {
+        if (SceneManager.GetActiveScene().name == "MainLevel")
+        {
+            Debug.Log("SaveGame skipped: current scene is MainLevel.");
+            return;
+        }
+
         if (disableDataPersistence)
         {
             return;
@@ -136,6 +142,12 @@ public class DataPersistenceManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+        if (SceneManager.GetActiveScene().name == "MainLevel")
+        {
+            Debug.Log("SaveGame skipped: current scene is MainLevel.");
+            return;
+        }
+
         SaveGame();
     }
 
