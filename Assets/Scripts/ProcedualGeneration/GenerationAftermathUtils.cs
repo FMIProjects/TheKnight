@@ -9,6 +9,12 @@ public class GenerationAftermathUtils : MonoBehaviour
     [SerializeField]
     private TilemapVisualizer tilemapVisualizer;
 
+    [SerializeField]
+    private GameObject enemyPrefab;
+
+    [SerializeField]
+    private GameObject knightObject;
+
     // needed to set the camera bounds
     CameraController cameraController;
 
@@ -56,6 +62,36 @@ public class GenerationAftermathUtils : MonoBehaviour
         {
             return;
         }
+
+        // set the knight object for the enemy health manager
+        enemyPrefab.GetComponent<EnemyHealthManager>().knightObject = knightObject;
+
+        int numberEnemies = ComputeNumberOfEnemies();
+
+        // remove the neighbours of the center cell so that the enemies are not spawned near the player
+
+        RemoveCenterNeighbours();
+
+        // convert the hash set to list in order to randomly select the positions
+        List<MapCell2> floorCells = new List<MapCell2>(floorPositions);
+
+        for(int i=0;i < numberEnemies; ++i)
+        {
+            // get a random cell
+            var randomCell = floorCells[UnityEngine.Random.Range(0, floorCells.Count)];
+
+            // remove it to mark as used
+            floorCells.Remove(randomCell);
+            floorPositions.Remove(randomCell);
+
+            // spawn the enemy in the middle of the selected cell
+            Vector2 spawnPosition = MapCell2.ComputeMiddle(randomCell);
+
+            Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+
+        }
+
+
 
         enemiesPlaced = true;
     }
@@ -182,6 +218,24 @@ public class GenerationAftermathUtils : MonoBehaviour
             maxPosition.y = Mathf.Max(cell.topRightCorner.y, maxPosition.y);
         }
 
+    }
+
+    private void RemoveCenterNeighbours()
+    {
+        var centerNeighbours = MapCell2.GetNeighbours(MapCell2.zero);
+
+        floorPositions.ExceptWith(centerNeighbours);
+        
+        foreach(var neighbour in centerNeighbours)
+        {
+            floorPositions.ExceptWith(MapCell2.GetNeighbours(neighbour));
+        }
+        
+    }
+
+    private int ComputeNumberOfEnemies()
+    {
+        return floorPositions.Count / 20;
     }
 
 

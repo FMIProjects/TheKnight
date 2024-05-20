@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static ProceduralGenerationAlgorithms;
 
 // a cell will be a 2x2 square
 public class MapCell2
@@ -42,6 +43,68 @@ public class MapCell2
         return cell;
     }
     
+    public MapCell2 GetTopNeighbour()
+    {
+        return this + new Vector2Int(0, 2);
+    }
+
+    public MapCell2 GetBottomNeighbour()
+    {
+        return this - new Vector2Int(0, 2);
+    }
+
+    public MapCell2 GetLeftNeighbour()
+    {
+        return this - new Vector2Int(2, 0);
+    }
+
+    public MapCell2 GetRightNeighbour()
+    {
+        return this + new Vector2Int(2, 0);
+    }
+
+    public MapCell2 GetTopLeftNeighbour()
+    {
+        return this + new Vector2Int(-2, 2);
+    }
+
+    public MapCell2 GetTopRightNeighbour()
+    {
+        return this + new Vector2Int(2, 2);
+    }
+
+    public MapCell2 GetBottomLeftNeighbour()
+    {
+        return this + new Vector2Int(-2, -2);
+    }
+
+    public MapCell2 GetBottomRightNeighbour()
+    {
+        return this + new Vector2Int(2, -2);
+    }
+
+    // returns the neighbours of a cell
+    public static HashSet<MapCell2> GetNeighbours(MapCell2 cell)
+    {
+        var neighbours = new HashSet<MapCell2>();
+
+        var directions = Direction2D.cardinalDirectionsCell2;
+        var diagonalDirections = Direction2D.diagonalDirectionsCell2;
+
+        foreach(var direction in directions)
+        {
+            neighbours.Add(cell + direction);
+        }
+
+        foreach(var direction in diagonalDirections)
+        {
+            neighbours.Add(cell + direction);
+        }
+        
+
+        return neighbours;
+    }
+
     public static Vector2 ComputeMiddle(MapCell2 cell)
     {
         return new Vector2((cell.topLeftCorner.x + cell.topRightCorner.x) / 2.0f, (cell.topLeftCorner.y + cell.bottomLeftCorner.y) / 2.0f);
