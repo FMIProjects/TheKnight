@@ -15,6 +15,9 @@ public class GenerationAftermathUtils : MonoBehaviour
     [SerializeField]
     private GameObject knightObject;
 
+    [SerializeField]
+    private ProceduralResourceGenerator resourceGeneration;
+
     // needed to set the camera bounds
     CameraController cameraController;
 
@@ -52,6 +55,8 @@ public class GenerationAftermathUtils : MonoBehaviour
         {
             return;
         }
+
+        resourceGeneration.GenerateResources(floorPositions);
 
         resourceObjectsPlaced = true;
     }

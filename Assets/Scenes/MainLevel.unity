@@ -5655,6 +5655,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemapVisualizer: {fileID: 537820715}
+  enemyPrefab: {fileID: 6012639190414595254, guid: 442beb8c69f565c47a2369bc810287a5, type: 3}
+  knightObject: {fileID: 568957405}
+  resourceGeneration: {fileID: 1711342746}
 --- !u!4 &1313792127
 Transform:
   m_ObjectHideFlags: 0
@@ -5667,7 +5670,8 @@ Transform:
   m_LocalPosition: {x: 60.649414, y: 1.1842582, z: 0.5088277}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1711342747}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1340189794
@@ -7173,6 +7177,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1654352542}
   m_CullTransparentMesh: 1
+--- !u!1 &1711342745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1711342747}
+  - component: {fileID: 1711342746}
+  m_Layer: 0
+  m_Name: ResourceGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1711342746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711342745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98c80e9715d2c6f49ad37b6e0681c091, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceTree: {fileID: 1596494609619421969, guid: c400d1049d92b664e9984197a246b289, type: 3}
+  resourceBoulder: {fileID: 7219514542741002576, guid: e8ffa51bdb6760043930f4f7506d3c2b, type: 3}
+  inventory: {fileID: 1843500514}
+--- !u!4 &1711342747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711342745}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -41.263203, y: -2.0268235, z: -0.5346089}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1313792127}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1727136920
 GameObject:
   m_ObjectHideFlags: 0
