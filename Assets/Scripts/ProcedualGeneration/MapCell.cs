@@ -35,13 +35,25 @@ public class MapCell2
         // create a cell which will be on the right of the start startPosition
 
         cell.topLeftCorner = new Vector2Int(startPosition.x,startPosition.y);
-        cell.bottomLeftCorner = new Vector2Int(startPosition.x + 1, startPosition.y);
-        cell.topRightCorner = new Vector2Int(startPosition.x, startPosition.y-1);
+        cell.bottomLeftCorner = new Vector2Int(startPosition.x, startPosition.y-1);
+        cell.topRightCorner = new Vector2Int(startPosition.x+1, startPosition.y);
         cell.bottomRightCorner = new Vector2Int(startPosition.x + 1, startPosition.y-1);
 
         return cell;
     }
+    
+    public static Vector2 ComputeMiddle(MapCell2 cell)
+    {
+        return new Vector2((cell.topLeftCorner.x + cell.topRightCorner.x) / 2, (cell.topLeftCorner.y + cell.bottomLeftCorner.y) / 2);
+    }
 
+    public static float Distance(MapCell2 cell1, MapCell2 cell2)
+    {
+        var middle1 = ComputeMiddle(cell1);
+        var middle2 = ComputeMiddle(cell2);
+
+        return Vector2.Distance(middle1, middle2);
+    }   
 
     // operator overloads
 

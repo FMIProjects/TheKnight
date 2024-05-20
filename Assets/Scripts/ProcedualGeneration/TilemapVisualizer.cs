@@ -71,7 +71,7 @@ public class TilemapVisualizer : MonoBehaviour
         }
     }
 
-    private void PaintSingleFloorTile(Vector2Int position)
+    public void PaintSingleFloorTile(Vector2Int position)
     {
         
         var tilePosition = new Vector3Int(position.x, position.y, 0);

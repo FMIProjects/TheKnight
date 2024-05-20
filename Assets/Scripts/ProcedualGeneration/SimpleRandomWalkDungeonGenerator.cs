@@ -21,7 +21,7 @@ public class SimpleRandomWalkDungeonGenerator : DungeonGenerator
     protected override void RunProceduralGeneration()
     {
         
-        HashSet<MapCell2> floorPositions = RunRandomWalk(walkParameters);
+        floorPositions = RunRandomWalk(walkParameters);
         
         IEnumerable<Vector2Int> vectorPositions = floorPositions.SelectMany(cell => cell.getCorners());
         
