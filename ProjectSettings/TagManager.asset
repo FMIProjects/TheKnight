@@ -12,6 +12,9 @@ TagManager:
   - WoodResource
   - RockResource
   - Resource
+  - TileMapGround
+  - Grid
+  - SceneSwitcher
   layers:
   - Default
   - TransparentFX

@@ -8,8 +8,7 @@ public class CameraController : MonoBehaviour,IDataPersistance
     [SerializeField] public Vector2 maxPosition;
     [SerializeField] public Vector2 minPosition;
 
-    private void Start() { }
-
+  
     public void LoadData(GameData data)
     {
         // Load the camera position + minPosition + maxPosition from the game data
@@ -30,11 +29,11 @@ public class CameraController : MonoBehaviour,IDataPersistance
 
     private void FixedUpdate()
     {
-        if (target.position == new Vector3(0, 0, 0))
-        {
-            maxPosition = new Vector2(27.06f, 22.33f);
-            minPosition = new Vector2(-24f, -25.4f);
-        }
+        //if (target.position == new Vector3(0, 0, 0))
+        //{
+        //    maxPosition = new Vector2(27.06f, 22.33f);
+        //    minPosition = new Vector2(-24f, -25.4f);
+        //}
 
         if (transform.position != target.position)
         {

@@ -9,7 +9,7 @@ public class ResourceObjectsSpawner : MonoBehaviour
     [SerializeField] private GameObject resourceBoulder;
     // inventory needs to be manually assigned to each spawned object
     [SerializeField] private GameObject inventory;
-    [SerializeField] private int numberEachObject;
+    [SerializeField] private int countEachObject;
     [SerializeField] private Vector2 minSpawnCoordinates;
     [SerializeField] private Vector2 maxSpawnCoordinates;
     [SerializeField] private bool isActive = true;
@@ -40,7 +40,7 @@ public class ResourceObjectsSpawner : MonoBehaviour
 
     private void SpawnObjects()
     {
-        for(int i = 0; i < numberEachObject; i++)
+        for(int i = 0; i < countEachObject; i++)
         {
             Vector2 spawnPosition = GetRandomSpawnPosition();
 
@@ -49,12 +49,13 @@ public class ResourceObjectsSpawner : MonoBehaviour
                 spawnPosition = GetRandomSpawnPosition();
             }
 
+            // set the z position to -1 so that the tree is visible
             Instantiate(resourceTree, new Vector3(spawnPosition.x, spawnPosition.y, -1), Quaternion.identity);
             
         }
 
 
-        for (int i = 0; i < numberEachObject; i++)
+        for (int i = 0; i < countEachObject; i++)
         {
             Vector2 spawnPosition = GetRandomSpawnPosition();
 

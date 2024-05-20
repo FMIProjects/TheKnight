@@ -13,8 +13,13 @@ public class EnemySpawner : MonoBehaviour
     public float spawnInterval = 10f;
     public bool isActive = true;
 
+    // needed for the enemy health manager
+    public GameObject knightObject;
+
     private void Start()
     {
+        // set the knight object for the enemy health manager
+        enemyPrefab.GetComponent<EnemyHealthManager>().knightObject = knightObject;   
         StartCoroutine(SpawnEnemiesRoutine());
     }
 

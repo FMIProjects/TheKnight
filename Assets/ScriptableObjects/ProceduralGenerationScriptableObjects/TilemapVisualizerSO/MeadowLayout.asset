@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6376589af0f7614f8180ee44ed7e8a3, type: 3}
+  m_Name: MeadowLayout
+  m_EditorClassIdentifier: 
+  groundTiles:
+  - {fileID: 11400000, guid: 74a0c30c60ed99047932f060b5d69f12, type: 2}
+  - {fileID: 11400000, guid: c995f0a950f10654c920d28f3695a0a4, type: 2}
+  - {fileID: 11400000, guid: 5f5ad953856578243bd3b99e7912a3ea, type: 2}
+  - {fileID: 11400000, guid: db8aa2ce6a4228945b05b3eec37af8a2, type: 2}
+  - {fileID: 11400000, guid: 8794b258510526d4e9ea51495a7fc698, type: 2}
+  - {fileID: 11400000, guid: 7d2729f7d90c84d4c9333cf113b2f62b, type: 2}
+  wallTileTopLeftCorner: {fileID: 11400000, guid: ca50f93c34e6cf4438cf5ab37ee1c9f8, type: 2}
+  wallTileTopRightCorner: {fileID: 11400000, guid: 35c807ce54e83d2439b82c77a8f1ff7e, type: 2}
+  wallTileBottomLeftCorner: {fileID: 11400000, guid: 2cc83ffe004fdd84caaf3834533a74c5, type: 2}
+  wallTileBottomRightCorner: {fileID: 11400000, guid: 90c85d471215011408a3f57f2250b06b, type: 2}
+  wallGroundTile: {fileID: 11400000, guid: 74a0c30c60ed99047932f060b5d69f12, type: 2}
+  weights: 320000000500000001000000010000000100000001000000
+  weightedSelection: 1
