@@ -55,3 +55,6 @@ TagManager:
   - name: Knight
     uniqueID: 1203037041
     locked: 0
+  - name: House
+    uniqueID: 3536195051
+    locked: 0

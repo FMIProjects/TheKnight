@@ -21,6 +21,8 @@ public class GameData
 
     public SerializableDictionary<string, int> slotsCount;
 
+    public SerializableDictionary<string, bool> builtHouses;
+
 
     public GameData()
     {
