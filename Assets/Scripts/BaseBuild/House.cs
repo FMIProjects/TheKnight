@@ -24,7 +24,7 @@ public class House : MonoBehaviour, IDataPersistance
     void Start()
     {
         inventorySlots = inventory.GetComponentsInChildren<Slot>();
-
+        
         if (isBuilt)
         {
             gameObject.SetActive(true);
@@ -88,6 +88,7 @@ public class House : MonoBehaviour, IDataPersistance
             }
         }
 
+
         // Check if the player has enough wood and rock to build the house
         return woodCount >= woodCostPerHouse && rockCount >= rockCostPerHouse;
     }
@@ -102,14 +103,19 @@ public class House : MonoBehaviour, IDataPersistance
         {
             if (slot.itemInfo.itemType == "wood")
             {
+
                 int woodToDeduct = Mathf.Min(slot.itemInfo.itemCount, woodRemaining, 8); // Max items per slot is 8
+                // Deduct the wood from the slot
                 slot.itemInfo.itemCount -= woodToDeduct;
+                // Deduct the wood from the remaining wood
                 woodRemaining -= woodToDeduct;
 
                 GameObject item = slot.transform.GetChild(0).gameObject;
 
+                // Refresh the count of the UI
                 DragDropScript dragDropOriginal = item.transform.GetComponent<DragDropScript>();
-                dragDropOriginal.RefreshCount(-slot.itemInfo.itemCount);
+                dragDropOriginal.RefreshCount(-woodToDeduct);
+
 
                 if (woodRemaining <= 0)
                 {
@@ -123,14 +129,18 @@ public class House : MonoBehaviour, IDataPersistance
         {
             if (slot.itemInfo.itemType == "rock")
             {
+                
                 int rockToDeduct = Mathf.Min(slot.itemInfo.itemCount, rockRemaining, 8); // Max items per slot is 8
+                // Deduct the rock from the slot
                 slot.itemInfo.itemCount -= rockToDeduct;
+                // Deduct the rock from the remaining rock
                 rockRemaining -= rockToDeduct;
 
                 GameObject item = slot.transform.GetChild(0).gameObject;
 
                 DragDropScript dragDropOriginal = item.transform.GetComponent<DragDropScript>();
-                dragDropOriginal.RefreshCount(-slot.itemInfo.itemCount);
+                // Refresh the count of the UI
+                dragDropOriginal.RefreshCount(-rockToDeduct);           
 
                 if (rockRemaining <= 0)
                 {

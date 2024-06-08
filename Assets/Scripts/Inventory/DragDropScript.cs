@@ -49,8 +49,16 @@ public class DragDropScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         text = transform.GetChild(0).GetComponent<Text>();
 
         counter += byHowMuch;
-        //if(text != null)
-            text.text = counter.ToString();
+
+        Debug.Log("Counter: " + counter + "By how much: " + byHowMuch);
+
+        text.text = counter.ToString();
+
+        // If the counter is less than or equal to 0, destroy the item
+        if (counter <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public int GetCount()

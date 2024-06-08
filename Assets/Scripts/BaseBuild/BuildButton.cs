@@ -10,7 +10,10 @@ public class BuildButton : MonoBehaviour
     void Start()
     {
         button = GetComponent<Button>();
-        button.onClick.AddListener(OnBuildButtonClicked);
+
+        Debug.Log(button);
+
+        button?.onClick.AddListener(OnBuildButtonClicked);
     }
 
     public void OnBuildButtonClicked()
