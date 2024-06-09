@@ -21,6 +21,8 @@ public class GameData
 
     public SerializableDictionary<string, int> slotsCount;
 
+    public SerializableDictionary<string, bool> builtHouses;
+
 
     public GameData()
     {
@@ -35,6 +37,26 @@ public class GameData
 
     public int GetPercentageComplete()
     {
-        return 0;
+        if (builtHouses == null || builtHouses.Count == 0)
+        {
+            return 0;
+        }
+
+        int builtCount = 0;
+        foreach (var house in builtHouses.Values)
+        {
+            if (house)
+            {
+                builtCount++;
+            }
+        }
+
+        // Assuming that the total number of houses is the number of keys in the builtHouses dictionary.
+        int totalHouses = builtHouses.Count;
+
+        // Calculate percentage complete.
+        float percentage = ((float)builtCount / totalHouses) * 100;
+
+        return Mathf.RoundToInt(percentage);
     }
 }

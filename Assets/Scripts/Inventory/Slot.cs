@@ -6,6 +6,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public struct ItemInfo
 {
@@ -76,12 +77,12 @@ public class Slot : MonoBehaviour, IDataPersistance
             gameData.slotsType.Remove(id);
             gameData.slotsCount.Remove(id);
         }
-
     }
 
 
     void Update()
     {
+
         if (transform.childCount > 0)
         {
             itemEquipped = true;
