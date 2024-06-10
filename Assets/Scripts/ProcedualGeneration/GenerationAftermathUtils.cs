@@ -30,7 +30,8 @@ public class GenerationAftermathUtils : MonoBehaviour
     private bool sceneSwitcherPlaced = false;
     private bool enemiesPlaced = false;
     private bool resourceObjectsPlaced = false;
-
+    private int numberEnemies;
+    private bool isCompleted = false;
     // needed to fill the gaps and to set the camera bounds
     HashSet<MapCell2> wallPositions;
     HashSet<MapCell2> floorPositions;
@@ -47,6 +48,9 @@ public class GenerationAftermathUtils : MonoBehaviour
         PlaceEnemies();
         PlaceResourceObjects();
 
+        //real update
+
+        TryCompleteDungeon();
     }
 
     private void PlaceResourceObjects()
@@ -71,7 +75,8 @@ public class GenerationAftermathUtils : MonoBehaviour
         // set the knight object for the enemy health manager
         enemyPrefab.GetComponent<EnemyHealthManager>().knightObject = knightObject;
 
-        int numberEnemies = ComputeNumberOfEnemies();
+        numberEnemies = ComputeNumberOfEnemies();
+
 
         // remove the neighbours of the center cell so that the enemies are not spawned near the player
 
@@ -135,6 +140,8 @@ public class GenerationAftermathUtils : MonoBehaviour
         // remove the position to mark it as used
         floorPositions.Remove(bestPosition);
 
+        // deactivate the scene switcher
+        sceneSwitcher.SetActive(false);
         sceneSwitcherPlaced = true;
     }
 
@@ -241,6 +248,25 @@ public class GenerationAftermathUtils : MonoBehaviour
     private int ComputeNumberOfEnemies()
     {
         return floorPositions.Count / 20;
+    }
+
+    private void TryCompleteDungeon()
+    {
+        if(isCompleted)
+        {
+            return;
+        }
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        Debug.Log(enemies.Length);
+        if (enemies.Length <= (int) (numberEnemies/2.0))
+        {
+            Debug.Log("Dungeon completed");
+            sceneSwitcher.SetActive(true);
+            isCompleted = true;
+
+        }
+
     }
 
 
