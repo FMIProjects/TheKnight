@@ -40,12 +40,12 @@ TBA
 # Tasks
 
 See every task is detail by accesing the [wiki](https://github.com/FMIProjects/TheKnight/wiki) .
-- [ ] [User Stories](https://github.com/FMIProjects/TheKnight/wiki/User-Stories)
-- [ ] [Diagrams](https://github.com/FMIProjects/TheKnight/wiki/Diagrams)
+- [X] [User Stories](https://github.com/FMIProjects/TheKnight/wiki/User-Stories)
+- [X] [Diagrams](https://github.com/FMIProjects/TheKnight/wiki/Diagrams)
 - [X] [Source Control](https://github.com/FMIProjects/TheKnight/wiki/Source-Control)
 - [ ] [Unit Tests](https://github.com/FMIProjects/TheKnight/wiki/Unit-Tests)
 - [X] [Bugs](https://github.com/FMIProjects/TheKnight/wiki/Bugs)
 - [X] [Refactoring + Code Standards](https://github.com/FMIProjects/TheKnight/wiki/Refactoring)
 - [X] [Commented Code](https://github.com/FMIProjects/TheKnight/wiki/Commented-Code)
-- [ ] [Design Patterns](https://github.com/FMIProjects/TheKnight/wiki/Design-Patterns)
-- [ ] [AI Usage](https://github.com/FMIProjects/TheKnight/wiki/AI-Usage)
+- [X] [Design Patterns](https://github.com/FMIProjects/TheKnight/wiki/Design-Patterns)
+- [X] [AI Usage](https://github.com/FMIProjects/TheKnight/wiki/AI-Usage)
