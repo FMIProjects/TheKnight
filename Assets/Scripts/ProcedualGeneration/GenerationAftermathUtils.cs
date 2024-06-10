@@ -258,8 +258,8 @@ public class GenerationAftermathUtils : MonoBehaviour
         }
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        Debug.Log(enemies.Length);
-        if (enemies.Length <= (int) (numberEnemies/2.0))
+       
+        if (enemies.Length <= numberEnemies/2)
         {
             Debug.Log("Dungeon completed");
             sceneSwitcher.SetActive(true);

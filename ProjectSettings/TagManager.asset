@@ -15,6 +15,7 @@ TagManager:
   - TileMapGround
   - Grid
   - SceneSwitcher
+  - EnemyCounter
   layers:
   - Default
   - TransparentFX
