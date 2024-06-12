@@ -35,7 +35,7 @@ All members are part of group 243.
 
 # Demo
 
-[DEMO](https://www.youtube.com/watch?v=0EZ53z1yYt0&t=63s)
+[DEMO](https://www.youtube.com/watch?v=0EZ53z1yYt0)
 
 # Tasks
 
